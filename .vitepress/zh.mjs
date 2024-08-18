@@ -23,7 +23,14 @@ export const zh = defineConfig({
       },
       { text: '使用帮助', link: '/help/help1', activeMatch: '/help/' },
       { text: '赞助', link: '/sponsor' },
-      { text: '博客', link: '/blog' }
+      {
+        text: '更多',
+        items: [
+          { text: '博客', link: '/blog' },
+          { text: '理想文档', link: 'https://github.com/wanglin2/lx-doc' },
+          { text: '意见反馈', link: 'https://github.com/wanglin2/mind-map/issues' }
+        ]
+      }
     ],
 
     sidebar: {

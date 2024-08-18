@@ -27,7 +27,14 @@ export const en = defineConfig({
       },
       { text: 'Help', link: '/help/help1', activeMatch: '/help/' },
       { text: 'Sponsor', link: '/sponsor' },
-      { text: 'Blog', link: '/en/blog' }
+      {
+        text: 'More',
+        items: [
+          { text: 'Blog', link: '/en/blog' },
+          { text: 'Ideal Document', link: 'https://github.com/wanglin2/lx-doc' },
+          { text: 'Issues', link: 'https://github.com/wanglin2/mind-map/issues' }
+        ]
+      }
     ],
 
     sidebar: {
