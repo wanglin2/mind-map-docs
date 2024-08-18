@@ -16,7 +16,6 @@ export default defineConfig({
     [
       'script',
       {
-        async: '',
         src: '//sdk.51.la/js-sdk-pro.min.js',
         charset: 'UTF-8',
         id: 'LA_COLLECT'
