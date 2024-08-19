@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as a,a4 as t}from"./chunks/framework.B358x4hV.js";const v=JSON.parse('{"title":"Render 实例","description":"","frontmatter":{},"headers":[],"relativePath":"api/render.md","filePath":"api/render.md"}'),d={name:"api/render.md"},i=t("",111),c=[i];function l(n,r,h,s,u,p){return a(),o("div",null,c)}const q=e(d,[["render",l]]);export{v as __pageData,q as default};

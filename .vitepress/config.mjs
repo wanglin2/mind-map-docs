@@ -1,13 +1,13 @@
 import { defineConfig } from 'vitepress'
-import { zh } from './zh.mjs'
+import { zh, search as searchZh } from './zh.mjs'
 import { en } from './en.mjs'
-import { pagefindPlugin } from 'vitepress-plugin-pagefind'
+// import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  vite: {
-    plugins: [pagefindPlugin()]
-  },
+  // vite: {
+  //   plugins: [pagefindPlugin()]
+  // },
   srcDir: 'src',
   base: '/mind-map-docs/',
   title: 'SimpleMindMap',
@@ -36,6 +36,18 @@ export default defineConfig({
     ]
   ],
   outDir: './docs',
+  themeConfig: {
+    search: {
+      provider: 'local',
+      options: {
+        locales: {
+          root: {
+            ...searchZh
+          }
+        }
+      }
+    }
+  },
   locales: {
     root: { label: '中文', ...zh },
     en: {

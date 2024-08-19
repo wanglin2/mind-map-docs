@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as t,a4 as o}from"./chunks/framework.B358x4hV.js";const u=JSON.parse('{"title":"客户端","description":"","frontmatter":{},"headers":[],"relativePath":"help/help2.md","filePath":"help/help2.md"}'),p={name:"help/help2.md"},r=o("",13),c=[r];function d(s,n,h,i,l,_){return t(),a("div",null,c)}const f=e(p,[["render",d]]);export{u as __pageData,f as default};

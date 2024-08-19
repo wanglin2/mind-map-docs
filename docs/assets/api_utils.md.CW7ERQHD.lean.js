@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as s,a4 as i}from"./chunks/framework.B358x4hV.js";const g=JSON.parse('{"title":"内置工具方法","description":"","frontmatter":{},"headers":[],"relativePath":"api/utils.md","filePath":"api/utils.md"}'),t={name:"api/utils.md"},l=i("",247),n=[l];function o(h,p,d,r,c,k){return s(),e("div",null,n)}const b=a(t,[["render",o]]);export{g as __pageData,b as default};

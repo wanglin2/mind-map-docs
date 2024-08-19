@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as t,a4 as o}from"./chunks/framework.B358x4hV.js";const m=JSON.parse('{"title":"复制粘贴","description":"","frontmatter":{},"headers":[],"relativePath":"help/help4.md","filePath":"help/help4.md"}'),r={name:"help/help4.md"},c=o("",12),d=[c];function l(h,i,n,p,s,_){return t(),a("div",null,d)}const f=e(r,[["render",l]]);export{m as __pageData,f as default};

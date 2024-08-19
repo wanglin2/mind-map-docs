@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as i,a4 as n}from"./chunks/framework.B358x4hV.js";const x=JSON.parse('{"title":"XMind解析","description":"","frontmatter":{},"headers":[],"relativePath":"api/xmind.md","filePath":"api/xmind.md"}'),d={name:"api/xmind.md"},t=n("",25),o=[t];function s(c,l,p,m,r,h){return i(),a("div",null,o)}const u=e(d,[["render",s]]);export{x as __pageData,u as default};

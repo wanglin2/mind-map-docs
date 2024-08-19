@@ -1,0 +1,1 @@
+import{_ as a,c as s,o as i,a4 as n}from"./chunks/framework.B358x4hV.js";const m=JSON.parse('{"title":"Drag插件","description":"","frontmatter":{},"headers":[],"relativePath":"plugins/drag.md","filePath":"plugins/drag.md"}'),t={name:"plugins/drag.md"},e=n("",8),p=[e];function r(l,d,h,o,c,k){return i(),s("div",null,p)}const _=a(t,[["render",r]]);export{m as __pageData,_ as default};
