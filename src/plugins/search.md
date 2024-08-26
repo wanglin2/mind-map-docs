@@ -35,6 +35,16 @@ mindMap.on('search_info_change', (data) => {
 
 ## 方法
 
+### jump(index, callback)
+
+> v0.11.0+
+
+- `index`：搜索结果列表的指定索引
+
+- `callback`：回调函数，当定位完成后执行
+
+定位到搜索结果指定索引的节点。
+
 ### search(searchText, callback)
 
 - `searchText`：要进行搜索的文本

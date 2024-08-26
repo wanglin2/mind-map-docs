@@ -47,7 +47,7 @@ mindMap.keyCommand.addShortcut('Control+Enter', () => {})
 
 > v0.2.3+
 
-保存当前注册的快捷键数据，然后清空快捷键数据
+保存当前注册的快捷键数据，然后清空快捷键数据，如果当前已经存在缓存数据了，那么不做任何处理
 
 ### restore()
 

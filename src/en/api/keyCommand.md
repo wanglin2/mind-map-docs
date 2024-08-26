@@ -52,7 +52,7 @@ Restore shortcut responses
 
 > v0.2.3+
 
-Save the current registered shortcut data, then clear the shortcut data
+Save the current registered shortcut data, then clear the shortcut data, If there is already cached data, no processing will be done
 
 ### restore()
 

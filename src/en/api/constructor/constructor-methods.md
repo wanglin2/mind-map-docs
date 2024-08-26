@@ -195,6 +195,7 @@ Listen to an event. Event list:
 | before_update_config（v0.10.4+）    | Triggered before updating the configuration, that is, when the 'mindMap.updateConfig' method is called to update the configuration | opt（The configuration object before updating refers to an object, not a copy, so when the after_uupdate_comfig event is triggered, the object will also change synchronously. Therefore, it is necessary to cache a certain configuration field that you need）  |
 | after_update_config（v0.10.4+）    | Triggered after updating configuration |  opt（Updated configuration object） |
 | node_note_click（v0.10.6+）    | Click event of node note icon | this(Current node instance)、e（Event Object）、node（Icon node）  |
+| search_match_node_list_change（v0.11.0+）    | Search plugin: Triggered when the list of matched nodes changes during search | list（The matching node list, please note that the data in the array items may be node instances or node data, and it is necessary to make a good judgment）  |
 
 ### emit(event, ...args)
 

@@ -41,3 +41,13 @@ resolve: { alias: { stream: "stream-browserify" } }
 2.不降低版本的话，可以通过修改你的构建工具的相关配置，修改`babel`的配置，让它编译一下`node_modules`中的`simple-mind-map`库，或`@svgdotjs/svg.js`库，如果用的是`vue-cli`或`vite`，它们也直接提供了相关配置。另外需要安装编译该语法的`babel`插件，并且配置到`babel`的配置文件中：
 
 `@babel/plugin-proposal-nullish-coalescing-operator`、`@babel/plugin-proposal-optional-chaining`。
+
+## 6.启动服务报quill依赖的错误
+
+<img src="../assets/img/错误2.png" style="width: 850px" />
+
+当前Node环境不支持用到的js语法，需要编译quill依赖。
+
+如果你是`webpack`项目，那么需要修改`babel-loader`的配置，将`quill`加到`include`选项里。
+
+如果你是`vue-cli`项目，那么需要将`quill`加到`vue.config.js`的`transpileDependencies`选项里。

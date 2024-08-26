@@ -1,5 +1,49 @@
 # Changelog
 
+## 0.11.0
+
+Adjustment:
+
+> 1.Upgrade the Quill editor version of the RichText plugin;
+>
+> 2.Rename the Node class to MindMapNode class to avoid conflicts with the native Node class;
+>
+> 3.The fixed version of the @svgdotjs/svg.js library is 3.2.0;
+
+Fix:
+
+> 1.Fixed the issue where the default style was not removed when pasting text in the rich text plugin;
+>
+> 2.Fix the issue of entering demonstration mode incorrectly;
+>
+> 3.Fixed the issue where the rendering tree data was not updated when the data_change event was triggered during forward and backward movement;
+
+New:
+
+> 1.KeyCommand class: 1. If there is currently cached data, the save method does not allow adding new caches; 2. The cached data is empty, and the restore method is not executed;
+>
+> 2.Reduce the prompt when pasting clipboard content on Firefox browser once;
+>
+> 3.Add a method for search plugins to redirect search results to specified index nodes;
+
+Demo:
+
+> 1.When the search box is focused, nodes are prohibited from responding to key events to avoid key conflicts;
+>
+> 2.Remove document and homepage routing, only retain mind maps;
+>
+> 3.The input label data is empty and cannot be added;
+>
+> 4.Display the list of newly added search results;
+>
+> 5.Hide related sidebars in read-only mode;
+>
+> 6.Fixed the issue of asynchronous outline and canvas node data when moving forward and backward;
+>
+> 7.The zoom factor input box prohibits entering non numeric values;
+
+Client:
+
 ## 0.10.6
 
 > 2024.8.15

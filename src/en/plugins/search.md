@@ -35,6 +35,16 @@ mindMap.on('search_info_change', (data) => {
 
 ## Method
 
+### jump(index, callback)
+
+> v0.11.0+
+
+- `index`：The specified index of the search result list
+
+- `callback`：Callback function, executed after positioning is completed
+
+Locate the node at the specified index of the search results.
+
 ### search(searchText, callback)
 
 - `searchText`: Text to search for

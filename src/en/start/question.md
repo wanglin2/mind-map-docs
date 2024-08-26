@@ -48,3 +48,13 @@ This is because your build environment does not support this JavaScript syntax, 
 2.If you don't reduce the version, you can modify the relevant configuration of your build tool, modify the configuration of 'babel', and have it compile the 'simple-mind-map' library in 'node.modules' or the  '@svgdotjs/svg.js' library. If you are using 'vue-cli' or 'vite', they also provide the relevant configuration directly. In addition, it is necessary to install the 'babel' plugin that compiles this syntax and configure it in the 'babel' configuration file:
 
 `@babel/plugin-proposal-nullish-coalescing-operator`、`@babel/plugin-proposal-optional-chaining`。
+
+## 6.Start service error reporting quill dependency
+
+<img src="../assets/img/错误2.png" style="width: 850px" />
+
+The current Node environment does not support the use of JS syntax and requires the compilation of quill dependencies.
+
+If you are a 'webpack' project, you need to modify the configuration of 'babel-loader' by adding 'quill' to the 'include' option.
+
+If you are a 'vue-cli' project, you need to add 'quill' to the 'transpileDependencies' option in 'vue.config.js'.
