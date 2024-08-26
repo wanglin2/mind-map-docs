@@ -51,7 +51,7 @@ This is because your build environment does not support this JavaScript syntax, 
 
 ## 6.Start service error reporting quill dependency
 
-<img src="../assets/img/错误2.png" style="width: 850px" />
+<img src="../../assets/img/错误2.png" style="width: 850px" />
 
 The current Node environment does not support the use of JS syntax and requires the compilation of quill dependencies.
 
