@@ -51,7 +51,7 @@ const mindMap = new MindMap({
 | defaultInsertSecondLevelNodeText（v0.4.7+）     | 默认插入的二级节点的文字               | String  | 二级节点 |
 | defaultInsertBelowSecondLevelNodeText（v0.4.7+）     | 默认插入的二级以下节点的文字   | String  | 分支主题 |
 | expandBtnStyle（v0.5.0+）     | 展开收起按钮的颜色，（fontSize及strokeColor字段为0.7.0+版本新增的，用于设置收起时显示节点数量的文字样式）  | Object  | \{ color: '#808080', fill: '#fff', fontSize: 13, strokeColor: '#333333' \} |
-| expandBtnIcon（v0.5.0+）     | 自定义展开收起按钮的图标，可以传图标的svg字符串  | Object  | \{ open: '', close: '' \} |
+| expandBtnIcon（v0.5.0+）     | 自定义展开收起按钮的图标，可以传图标的svg字符串（节点收起时渲染open图标，展开时渲染close图标）  | Object  | \{ open: '', close: '' \} |
 | expandBtnNumHandler（v0.7.0+）     | 用于自定义收起时显示节点数量的内容，接收一个参数，代表收起的节点实例，需要返回一个数字或字符串，代表最终显示的内容，比如你可以当数量大于99时，显示99+  | Function  |  |
 | isShowExpandNum（v0.7.0+）     | 节点收起时是否显示收起的数量  | Boolean  | true |
 | enableShortcutOnlyWhenMouseInSvg（v0.5.1+）     | 是否只有当鼠标在画布内才响应快捷键事件  | Boolean  | true |

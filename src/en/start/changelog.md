@@ -2,6 +2,8 @@
 
 ## 0.11.0
 
+> 2024.8.26
+
 Adjustment:
 
 > 1.Upgrade the Quill editor version of the RichText plugin;
@@ -43,6 +45,14 @@ Demo:
 > 7.The zoom factor input box prohibits entering non numeric values;
 
 Client:
+
+> 1.Support opening empty files (.smm);
+>
+> 2.Support setting default themes and structures;
+>
+> 3.Attachments support selecting folders;
+>
+> 4.Attachments support saving as relative paths;
 
 ## 0.10.6
 

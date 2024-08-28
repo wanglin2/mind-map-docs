@@ -51,7 +51,7 @@ Node tree rendering is an asynchronous operation, so it is not possible to immed
 | defaultInsertSecondLevelNodeText（v0.4.7+）     | Text of the default inserted secondary node | String  | 二级节点 |
 | defaultInsertBelowSecondLevelNodeText（v0.4.7+）     | Text for nodes below the second level inserted by default  | String  | 分支主题 |
 | expandBtnStyle（v0.5.0+）     | Expand the color of the stow button, (The fontSize and strokeColor fields were added in version 0.7.0+to set the text style for displaying the number of nodes when folded) | Object  | \{ color: '#808080', fill: '#fff', fontSize: 13, strokeColor: '#333333' \} |
-| expandBtnIcon（v0.5.0+）     | Customize the icon of the expand/collapse button, and you can transfer the svg string of the icon  | Object  | \{ open: '', close: '' \} |
+| expandBtnIcon（v0.5.0+）     | Customize the icon of the expand/collapse button, and you can transfer the svg string of the icon (When the node is collapsed, render the open icon, and when it is expanded, render the close icon)  | Object  | \{ open: '', close: '' \} |
 | expandBtnNumHandler（v0.7.0+）     | Used to customize the content of displaying the number of nodes when folding, receiving a parameter that represents the instance of the folding node, and returning a number or string that represents the final displayed content. For example, when the number is greater than 99, 99 can be displayed+  | Function  |  |
 | isShowExpandNum（v0.7.0+）     | Display the number of folded nodes when they are folded up  | Boolean  | true |
 | enableShortcutOnlyWhenMouseInSvg（v0.5.1+）     | Only respond to shortcut key events when the mouse is inside the canvas  | Boolean  | true |
