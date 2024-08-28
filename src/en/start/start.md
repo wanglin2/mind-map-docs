@@ -108,6 +108,8 @@ https://unpkg.com/browse/simple-mind-map@0.9.2/dist/
 
 You can find all the packaged files for a certain version.
 
+You can try the library's features here: [Online playground](https://wanglin2.github.io/playground/)，Built in 'simple-mind-map' dependency, which can be directly imported for use.
+
 ## Development
 
 If you only use library, you don't need to read this section.

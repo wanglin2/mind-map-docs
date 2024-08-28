@@ -103,6 +103,8 @@ https://unpkg.com/browse/simple-mind-map@0.9.2/dist/
 
 可以找到某个版本的所有打包后的文件。
 
+可以在这里尝试库的功能：[在线playground](https://wanglin2.github.io/playground/)，内置了`simple-mind-map`的依赖，可以直接导入进行使用。
+
 ## 开发
 
 如果你只是使用库的话可以不用阅读此小节。
