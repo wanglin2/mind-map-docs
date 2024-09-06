@@ -258,11 +258,7 @@ MindMap.defineTheme('redSpirit', {
       color: 'rgb(255, 233, 157)',
       borderColor: '',
       borderWidth: 0,
-      fontSize: 24,
-      active: {
-        borderColor: 'rgb(255, 233, 157)',
-        borderWidth: 3,
-      }
+      fontSize: 24
     },
     // 二级节点样式
     second: {
@@ -270,18 +266,12 @@ MindMap.defineTheme('redSpirit', {
       color: 'rgb(211, 58, 21)',
       borderColor: 'rgb(222, 101, 85)',
       borderWidth: 2,
-      fontSize: 18,
-      active: {
-        borderColor: 'rgb(255, 233, 157)',
-      }
+      fontSize: 18
     },
     // 三级及以下节点样式
     node: {
       fontSize: 14,
-      color: 'rgb(144, 71, 43)',
-      active: {
-        borderColor: 'rgb(255, 233, 157)'
-      }
+      color: 'rgb(144, 71, 43)'
     },
     // 概要节点样式
     generalization: {
@@ -289,14 +279,11 @@ MindMap.defineTheme('redSpirit', {
       fillColor: 'rgb(255, 247, 211)',
       borderColor: 'rgb(255, 202, 162)',
       borderWidth: 2,
-      color: 'rgb(187, 101, 69)',
-      active: {
-        borderColor: 'rgb(222, 101, 85)'
-      }
+      color: 'rgb(187, 101, 69)'
     }
 })
 ```
 
 ## 完整示例
 
-<iframe style="width: 100%; height: 455px; border: none;" src="https://wanglin2.github.io/playground/#eNrFV+tvG0UQ/1dWh9A5yDk/0wTjVIXCB6QGoRaJD7kIne/W9rbn3eN2nUcjSxBQadpUBYEoL6ESiZIPSKCCSh5U+Wf8SP8LZm/vZfuSlqpSP/ixszO/mf3N7Nzcpvam5xmrXazVtDq3feIJxLHoeudNSjoe8wXaRD5u5hGjS6xLBXbyiLct12Vrl3ET9VDTZx2kA4IeWywR6ixZntoyNQ5iF892QDrbsTxTMylCJnWxQFImNRcR7bqukhcKaPD468H2neHxJ8O/j0Y/fH5ya2u0dTC4ee/klz2T2oxygSxbkFX8HnMwB+skotzyyoxJFcrNL4Z3dvv7R092v4vM7LZFW/iDNu5gMMvNoMXzaFP6DSMx4PDBbk63XYtzYusA1wsRh3/tDW7sDA4e9R8fj77ZG3775zi6g5uEZqGHjBgphZzuY+eKR3wi9LzSQgh8nHy2M/z+jye7P51sP1TChmVfa/lAvnORucyvId1vNXLlubk8KlcW4Ku8MKPnE4Djn0eHx0BbGsMFt2PWlWIelaR1qVKKraXWh8QR7RqqJIDDB1snDz6NYUcP742ObqjdFqbYt1xy3RKE0UvPYp6Oatp8LMZyGcIrlvJoYS59wOH9A1URw/v/DP69q+Q+Y6IW0YhQk7juGFZxPo+qVfmJoRCyp/msgMu5+ZROg/kO9iOsSXl43GIsbjIqrpDruIbK1VioijUV3iTsWQFMuIqYRQiqMvhJmOkf7owOf5smh2OoT+csegLf4ddpBJUgE3Oy3pKCyTxHVtomDlHO4Ku08GL4yqBlfxtoGdy91T/6tb9/e5ofCm0kzU4SU5LDNBUlWUnzcMJqJeX4eaI+Pejw2kzFOn5nnhZ1dqKrcBkgnWenMdAsylyeKz89j2P0LAB+UAHnXv/f/IxVzyQ90IdFDxpyVr9O2mnUseNHVm660ctHDl6LGnMujAm7NeQwu9vBVBgtLN5xAZqKtzbedXJ6aHkReLagVfn6THg0xxJW6limJgWmNnZSKRZ4XUixqcUtTD0M06mXinabuI6PqVReTjAm4DK9THpKt4TE2bjDDKcryV5a7yVFEP0NZZEdoURchr4vp4D3GSfqQizrLm7KZ6puQ+ogTSuhupB1AmUGeQRFHhRXb+YNNXUEd27041eDL38P71wwffQPb/ePHqULjtGcLvvFR6qcwU9OLvNBE7lEuEhKLSr5YEoxVi23K8eCSE+5h1KFT72gZi+YumAhMAxMlsCwQqjukFUUzCKLphYG8TbuMFMLtkMF4iS7cYGCSr0Au2nFCEkw5jYsqaI2TVFvdIVgFF2wXWJfA5XUrARq6WmqXlC6oS1AT9qmBh2wPW1umsBJgo3+1QspLmDJxYaraLkQzpqmZhTUgBnNWJh3DJtzU4sza6RoizKzphpYqVh8NdBDyIsryMfgEfIWbATFJz+vTNIbQSWGVoMztyuUIYxTUIcwG4QrwbxkMe2+jUmrDerVYtFbjzxn+30t8tyx/BYBvxGqZzkOoa1IEIduhNl+xohLUQRh0PEaAKFSgxxoeU1lQI70xlXOKLxBBPBmuAEZiDuDqcELgmoHRgH+Gj70ZdLBMlmzDZ+tcewDiKmFVzXjpUHatoXweK1QcNc/pnyDG4zzWZvONjC5Csc24Km40aU2N2zWKUCZY8EzakO6CQ/T03r/AbfdVt0=" />
+<iframe style="width: 100%; height: 455px; border: none;" src="https://wanglin2.github.io/playground/#eNrFVltvG0UU/iujRWht5KyvaYJxqkLhAalBqEXiIRuh9e7YHjqeWe2Ok7aRJQioNG2qgkCUm1CJRMkDEqigkgtV/owv6b/omZ3Ziy9p+9YHWztnzvnOdc45W8bbvm9t9LBRNxqhGxBfoBCLnn/eZqTr80CgLRTgVgFxtsp7TGCvgMKOQynfvIxbqI9aAe8iExDMRGKVMG/V8dWVbYRApnihC9SFruPbhs0QshnFAkma5FxBrEepoheLaPjk2+HO3dHJZ6N/j8c/fXl6e3u8fTi8df/0t32buZyFAjmuIBv4A+7hEKRTi3Jr63mbKZRbX43u7g0Ojp/u/RCLuR2HtfFHHdzFIJbLo5XzaEvq1ZZY4Hx0mzNd6oQhcU2A62vE0T/7w5u7w8PHgycn4+/2R9//PYnu4RZh89B1RKwMQ84MsHfFJwERZkFxIQQ6Tr/YHf3419O9X053Hili03GvtgMIvneRUx7UkRm0m7nK4mIBVarL8FdZzpuFFODk1/HRCYQti0FB7YR0tVRAZSldrpYTacn1MfFEp46qKeDo4fbpw88T2PGj++Pjm+q2jRkOHEpuOIJwdullxLNWzYpP2FipgHmlcgEtL2YdHD04VBUxevDf8P97ih5wLupxGBFqEUonsEpLBVSryV8ChZA7G88qqFxcyvA0eeDhIMaapmt3Swm5xZm4Qm7gOqrUFK2fWj442h0f/TFrfIihfrznmR8Zp//OcqAMkVqU9ZAmdNr8M8M65U9ljj/l5Vl/DnbAn+G924Pj3wcHd2YdY/A+s26lYLW5PpRlipbAtFo1D/1kSp2upBktk2X0In3zY1uD+oAIPj9yEWdJhu9c5cWhm3BsGfCjoJ97M/EMuoroQ3uZ133S5hD3n6QB52bblmygeDNuMzkdAEzryONur4uZsNpYvEcBmol3rr/v5UwteRFC5MDDC8y8NtxzhJOJoW1Igm1kSIos8DUhybaRPEjV2rNZk4xuh1AvwEwyr6UYU3BztUxryj6gVNmkwjlK19O7LN8rsiD+1LRYjjAiLkMXkzPtQx4SVctrJsUtOSFMF1IHaVrX7ELWCVQX5BEYw6im+vm31AyNnsv452+GX/+pn0s0SwdHdwbHj7MFx1nOlI/0EzVPQU9OHgvRy71EQpGWGsrOXGvDoT055GI+pR5KFX6NotokYIeAg8Aw/h2B4YRQwyMbKJqsK7ahjXgXd7ltRNeagXjpbVKgwNIowm2WMUYSnNOmI1nUpS0azZ4QnKELLiXuVWDJTH5gy+4GjaLi1bIAPS2bGdsge9YWMIWTGht/NYqZWMAxFNepCssFvTnZhlVU61K8MeCwa7lhaBtJZq1M2OLMbKreUy6VXo/4EPKTCgowaIS8RRdR8cnfa9PhjaFSQacZctoTShCWA6hDmHT6JLifHmbVdzBpd4C9Vir512LN8/W+EWvuOkGbgN4Y1Xc8j7B2TEhMt3S2X9LicmyBNjo5AyBUapQDo2CoDMgF1fo05Az24Qje1heQgaQz2Aasu6odWEX4tALoy6SLZbIWmgHfDHEAILahn+qcFVjJzqZaSmnb+kb/GQSw9N8=" />

@@ -6,6 +6,8 @@ This plugin is used to achieve collaborative editing.
 
 Please refer to the [Instantiation Options](../api/constructor/constructor-options.html#_11-cooperate-plugin) for configuration.
 
+> Special reminder: This plugin is for reference only and cannot be directly used in actual projects. If you encounter cross browser or cross computer collaboration issues, you may need to study 'yjs' yourself, For example, using 'y-websocket' instead of 'y-webrtc' and so on.
+
 ## Introduce
 
 This plugin implements collaborative editing through [Yjs](https://github.com/yjs/yjs). The basic principle is to convert the tree data of the mind map into flat object data, and then collaborate through shared data of type [Y.Map](https://docs.yjs.dev/api/shared-types/y.map). That is, when certain operations are performed on the canvas, the 'y.map' object will be updated, and other collaborative clients will receive the updated data, convert it back to tree structure data, and update the canvas to achieve real-time updates.

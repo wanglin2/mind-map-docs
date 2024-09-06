@@ -10,21 +10,28 @@
 
 > 感谢[Emircan ERKUL](https://github.com/emircanerkul)提供的第一版英文翻译。
 >
->因为精力有限，目前大部分翻译都是使用机翻的，所以准确度难免有问题。
->
->目前【教程】部分是没有进行翻译的，如果你有兴趣，欢迎加入我们。
+> 因为精力有限，目前大部分翻译都是使用机翻的，所以准确度难免有问题。
 
-如果你也想参与翻译本文档的话，可以先克隆本仓库。
+## 翻译文档
 
-翻译的文档在`/web/src/pages/Doc/`目录下，目前支持英文(`en`)、简体中文(`zh`)两种语言。
+如果你想加入到文档的翻译工作中，可以`fork`文档项目：[https://github.com/wanglin2/mind-map-docs](https://github.com/wanglin2/mind-map-docs)。
 
-如果是新增一种语言类型，那么可以在`/web/src/pages/Doc/`目录下创建一个新目录，然后给每个章节创建一个文件夹，你也可以直接复制已存在的语言目录下的所有章节目录进行翻译，注意，你只需要编写`index.md`文件，章节目录下的`index.vue`文件是脚本根据`index.md`自动生成的。
+可以参考[英文翻译](https://github.com/wanglin2/mind-map-docs/tree/main/src/en)，新建一个你要翻译的语言的文件夹，全部翻译完成后需要在`.vitepress`目录下新增一个`[语言].mjs`文件，内容参考其他语言文件修改即可。
 
-如果是给已存在的语言类型新增翻译章节，可以在目标语言目录下创建新的章节目录，目录下只需要创建`index.md`文件即可。
+最后需要修改一下`.vitepress/config.mjs`，引入`[语言].mjs`文件，修改`locales`配置即可。
 
-当你完成翻译后，可以直接提交`Pull requests`。
+全部完成后就可以提交`pr`到`main`分支了。
 
-如果你是前端程序员，想运行服务，查看文档页面的效果，如果新增章节，需要修改`/web/src/pages/Doc/catalogList.js`文件，在`StartList`或者`APIList`数组里选择合适的位置插入新章节的`path`。然后需要在`web`目录下运行`npm run buildDoc`编译目录和路由，最后`npm run serve`启动本地服务，打开以下路径即可查看文档：
+> 目前【教程】部分是没有进行翻译的，如果你有兴趣，也欢迎翻译到英文。
 
-`ip:port/#/doc/zh/introduction`
+## 翻译在线Demo
 
+除了文档，在线`Demo`也是支持多语言的，所以你也可以帮助新增语言，相比文档，这个工作量会小很多。
+
+首先需要`fork`本项目，然后：
+
+1.在`web/src/lang/`目录下新增新语言的文件，内容可以参考现有语言。翻译完成后需要在`web/src/lang/index.js`文件中导出。
+
+2.在`web/src/config/`目录下新增新语言的文件，内容可以参考现有语言。翻译完成后需要在`web/src/config/index.js`文件中导出。
+
+全部完成后就可以提交`pr`到`feature`分支了。

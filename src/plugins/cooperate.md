@@ -6,6 +6,8 @@
 
 配置请参考[实例化选项](../api/constructor/constructor-options.html#_11-cooperate插件)。
 
+> 特别提醒：本插件仅提供参考，无法直接用于实际项目，如果遇到跨浏览器或跨电脑无法协同的问题可能需要自行研究一下`yjs`，比如用`y-websocket`代替`y-webrtc`等等。
+
 ## 介绍
 
 该插件通过[Yjs](https://github.com/yjs/yjs)实现协同编辑，基本原理是将思维导图的树数据转成平级的对象数据，然后通过[Y.Map](https://docs.yjs.dev/api/shared-types/y.map)类型的共享数据进行协同，即当画布上进行了某些操作后会更新`y.map`对象，然后其他协同的客户端会接收到更新后的数据，再转换回树结构数据，更新画布即可实现实时更新。

@@ -156,6 +156,10 @@ export const en = defineConfig({
           text: 'Charge',
           items: [
             {
+              text: 'Regarding paid plugins',
+              link: '/en/plugins/about'
+            },
+            {
               text: 'HandDrawnLikeStyle plugin',
               link: '/en/plugins/handDrawnLikeStyle'
             },

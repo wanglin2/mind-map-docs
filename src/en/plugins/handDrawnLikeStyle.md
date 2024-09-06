@@ -1,12 +1,6 @@
 # HandDrawnLikeStyle chargeable plugin
 
-> Regarding fees
->
-> Mind map is an open-source project under the MIT protocol. In theory, as long as the copyright statement of mind map is retained, there is no charge for commercial use, and this protocol will not be changed in the future. Moreover, neither the online version nor the client will consider charging. However, in order to ensure the sustainable development of the project, revenue will be obtained through various means, such as existing sponsorship methods. The second approach is to use paid plugins, with the basic principle that basic functions, core functions, and necessary functions are not charged, while optional additional functions may be charged.
->
-> Finally, the fee is only applicable to developers. If it is only the online version or client version of the mind map, users do not need to pay, and all functions can be used for free.
-
-HandDrawnLikeStyle is the first paid plugin that provides a hand drawn style, where the connections and shapes of nodes become hand drawn, just like the following:
+HandDrawnLikeStyle plugin provides a hand drawn style, where the connections and shapes of nodes become hand drawn, just like the following:
 
 <img src="../../assets/img/手绘风格.png" style="width: 800px" />
 
@@ -16,7 +10,7 @@ The internal implementation is through the [rough](https://github.com/rough-stuf
 
 ## Charge
 
-At present, the charging method is relatively primitive. By scanning the code and transferring money, please note the plugin you want to purchase and your email address(If you reach the maximum text limit, you can make the payment in two installments), and then the plugin file will be sent to your email. Purchase should be made after full use and consideration. If you are not familiar with front-end development and do not know how to use plugins, please consider purchasing carefully. There will be no refund unless there are special reasons. If you find bugs or have requirements, you can submit relevant issues.
+Scanning the code and transferring money, please note the plugin you want to purchase and your email address(If you reach the maximum text limit, you can make the payment in two installments), and then the plugin file will be sent to your email. Purchase should be made after full use and consideration. If you are not familiar with front-end development and do not know how to use plugins, please consider purchasing carefully. There will be no refund unless there are special reasons. If you find bugs or have requirements, you can submit relevant issues.
 
 Price: ￥ 29.9, including unpackaged source code and packaged files.
 

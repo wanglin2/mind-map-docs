@@ -152,6 +152,10 @@ export const zh = defineConfig({
           text: '收费',
           items: [
             {
+              text: '关于收费插件',
+              link: '/plugins/about'
+            },
+            {
               text: 'HandDrawnLikeStyle插件',
               link: '/plugins/handDrawnLikeStyle'
             },
