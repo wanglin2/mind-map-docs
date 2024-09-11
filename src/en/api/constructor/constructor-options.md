@@ -52,7 +52,7 @@ Node tree rendering is an asynchronous operation, so it is not possible to immed
 | defaultInsertBelowSecondLevelNodeText（v0.4.7+）     | Text for nodes below the second level inserted by default  | String  | 分支主题 |
 | expandBtnStyle（v0.5.0+）     | Expand the color of the stow button, (The fontSize and strokeColor fields were added in version 0.7.0+to set the text style for displaying the number of nodes when folded) | Object  | \{ color: '#808080', fill: '#fff', fontSize: 13, strokeColor: '#333333' \} |
 | expandBtnIcon（v0.5.0+）     | Customize the icon of the expand/collapse button, and you can transfer the svg string of the icon (When the node is collapsed, render the open icon, and when it is expanded, render the close icon)  | Object  | \{ open: '', close: '' \} |
-| expandBtnNumHandler（v0.7.0+）     | Used to customize the content of displaying the number of nodes when folding, receiving a parameter that represents the instance of the folding node, and returning a number or string that represents the final displayed content. For example, when the number is greater than 99, 99 can be displayed+  | Function  |  |
+| expandBtnNumHandler（v0.7.0+）     | Used to customize the display of the number of nodes when collapsed, a function can be passed. Versions before v0.11.1 receive a parameter representing the total number of all descendant nodes of the collapsed node, while versions v0.11.1+receive two parameters. The first parameter still has the total number of descendant nodes, and the second parameter is the instance of the node. Need return a number or string that represents the final displayed content. For example, when the number is greater than 99, 99 can be displayed+  | Function  |  |
 | isShowExpandNum（v0.7.0+）     | Display the number of folded nodes when they are folded up  | Boolean  | true |
 | enableShortcutOnlyWhenMouseInSvg（v0.5.1+）     | Only respond to shortcut key events when the mouse is inside the canvas  | Boolean  | true |
 | enableNodeTransitionMove（v0.5.1+）（v0.6.7+ is remove this feature）     | Whether to enable node animation transition  | Boolean  | true |
@@ -92,7 +92,7 @@ Node tree rendering is an asynchronous operation, so it is not possible to immed
 | handleIsSplitByWrapOnPasteCreateNewNode（v0.8.0+）     | When creating a new node by pasting text, control whether to automatically split the nodes based on line breaks. If there is a line break, multiple nodes will be created based on the line break. Otherwise, only one node will be created, and a function can be passed to return promise. resolve represents splitting based on line breaks, and reject represents ignoring line breaks |  Function / null  | null  |
 | addHistoryTime（v0.8.0+）     | Only one historical record can be added within the specified time to avoid adding unnecessary intermediate states. Unit: ms  | Number | 100  |
 | isDisableDrag（v0.8.1+）     | Is disable dragging the canvas  | Boolean | false  |
-| highlightNodeBoxStyle（v0.9.0+）     |  Highlight box style when the mouse moves into the summary to highlight the node it belongs to |  Object | \{ stroke: 'rgb(94, 200, 248)', fill: 'transparent' \}  |
+| highlightNodeBoxStyle（v0.9.0+）（v0.11.1+ has been removed）     |  Highlight box style when the mouse moves into the summary to highlight the node it belongs to |  Object | \{ stroke: 'rgb(94, 200, 248)', fill: 'transparent' \}  |
 | createNewNodeBehavior（v0.9.1+）     | Behavior when creating a new node. default（By default, newly created nodes will be activated and enter editing mode. If multiple new nodes are created simultaneously, they will only be activated and will not enter editing mode）、notActive（Do not activate newly created nodes）、activeOnly（Only activate newly created nodes and do not enter editing mode）  | String | default  |
 | defaultNodeImage（v0.9.1-fix.2+）     | Image address, the default image displayed when node image loading fails  |  String |   |
 | handleNodePasteImg（v0.9.2+）     | The processing method for pasting images from the clipboard on a node is to convert them into data:URL data and insert them into the node by default. You can use this method to upload image data to the server and save the URL of the image. An asynchronous method can be passed to receive image data of Blob type, and the specified structure needs to be returned: \{ url, size: \{width, height\} \}  |  null or Function | null  |
@@ -106,6 +106,8 @@ Node tree rendering is an asynchronous operation, so it is not possible to immed
 | openPerformance（v0.10.4+）     | Whether to enable performance mode or not, by default, all nodes will be rendered directly, regardless of whether they are in the visible area of the canvas. This will cause a lag when there are a large number of nodes (1000+). If your data volume is large, you can enable performance mode through this configuration, that is, only rendering nodes within the visible area of the canvas, and not rendering nodes beyond it. This will greatly improve rendering speed, but of course, it will also bring some other problems, such as: 1. When dragging or scaling the canvas, real-time calculation and rendering of nodes without nodes will be performed, which will bring some lag; When exporting images, SVG, and PDF, all nodes need to be rendered first, so it may be slower; 3. Other currently undiscovered issues | Boolean | false |
 | performanceConfig（v0.10.4+）     | Performance optimization mode configuration. time（How often do nodes refresh after a view change. Unit:ms）、padding（Still rendering nodes beyond the specified range around the canvas）、removeNodeWhenOutCanvas（Is the node deleted from the canvas after being moved out of the visible area of the canvas） | Object | \{ time: 250,  padding: 100, removeNodeWhenOutCanvas: true \} |
 | notShowExpandBtn（v0.10.6+）     | Is not display the expand/collapse button, higher priority than the 'alwaysShowExpandBtn' configuration |  Boolean | false |
+| emptyTextMeasureHeightText（v0.11.1+）     | If the node text is empty, in order to avoid the collapse of the height of the blank node, a height will be measured using the text specified in this field | String | abc123我和你 |
+| openRealtimeRenderOnNodeTextEdit（v0.11.1+）     | Is the node size and position updated in real-time during node text editing? Enabling it may cause lag when there are a large number of nodes | Boolean | false |
 
 #### 1.1 Data structure
 
@@ -341,3 +343,15 @@ new MindMap({
 | ---------------- | ------- | ---------------- | -------------------- |
 | outerFramePaddingX（v0.10.3+）     | Number  | 10 | Horizontal inner margin of the outer frame |
 | outerFramePaddingY（v0.10.3+）     | Number  | 10 | Vertical inner margin of the outer frame |
+
+#### 16.Painter plugin
+
+| Field Name         | Type    | Default Value    | Description       |
+| -------------------------------- | ------- | ---------------- | ------ |
+| onlyPainterNodeCustomStyles（v0.11.1+）     | Boolean  | false | Is only format the manually set styles for brushing nodes and ignore the styles applied by nodes through themes |
+
+#### 17.NodeImgAdjust plugin
+
+| Field Name         | Type    | Default Value    | Description       |
+| -------------------------------- | ------- | ---------------- | ------ |
+| beforeDeleteNodeImg（v0.11.1+）     | Function  | null | Intercept the deletion of node images. Clicking the delete button on the node image will call this function before deleting the image. If the function returns true, the deletion will be canceled, can be an asynchronous function that returns a Promise instance |

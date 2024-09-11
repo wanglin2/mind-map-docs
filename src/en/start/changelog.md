@@ -1,5 +1,59 @@
 # Changelog
 
+## 0.11.1
+
+Fix:
+
+> 1.Fixed the issue of adding historical records even without modifying the text in rich text mode;
+>
+> 2.Fixed the issue where the style of the summary node was not updated when switching themes;
+>
+> 3.Fix the issue of spelling errors in normal words in the default theme configuration;
+>
+> 4.Fixed the issue of exporting SVG with an error when there is a<>symbol in the formula;
+>
+> 5.Fixed the issue of node height collapse when the node text is empty in non rich text mode;
+
+New:
+
+> 1.Add a plugin for importing and exporting Freemind software format;
+>
+> 2.Add a plugin for importing and exporting Excel software formats;
+>
+> 3.Format brush supports brushing all effective styles of nodes, including those from themes and customizations;
+>
+> 4.Add an instantiation option to enable real-time updates of node size and position through node text editing;
+>
+> 5.Theme supports configuring the direction of background gradient;
+>
+> 6.Theme supports setting node hover and the color of the rectangle box when activated;
+>
+> 7.The paste operation during text editing in non rich text mode preserves the line breaks of the text;
+>
+> 8.The organizational chart supports curved connections;
+>
+> 9.Add instantiation options for intercepting and deleting node images;
+>
+> 10.The expandBtnNumHandler option adds callback parameters for node instances;
+>
+> 11.Expand and collapse all commands to support specifying the UID of a node;
+>
+> 12.Remove the highlightNodeBoxStyle instantiation option, and the color of the summary interval highlight box is determined by the hover RectColor field and hover RectColor instantiation option of the theme;
+>
+> 13.Optimize the dual finger drag experience of MacBook touchpad;
+
+Demo:
+
+> 1.Support importing and exporting FreeMind files;
+>
+> 2.Support importing and exporting Excel files;
+>
+> 3.Support setting the gradient direction of node background;
+>
+> 4.Double confirmation before adding or deleting node images;
+>
+> 5.Support clicking on the canvas to unzoom the focus state of the input box;
+
 ## 0.11.0
 
 > 2024.8.26

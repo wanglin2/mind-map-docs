@@ -91,7 +91,13 @@
     gradientStyle: false,
     // 如果gradientStyle为true，那么可以通过这两个字段来定义渐变的起止颜色
     startColor: '#549688',
-    endColor: '#fff'
+    endColor: '#fff',
+    startDir: [0, 0],
+    endDir: [1, 0],
+    // 连线标记的位置，start（头部）、end（尾部），该配置在showLineMarker配置为true时生效
+    lineMarkerDir: 'end',
+    // 节点鼠标hover和激活时显示的矩形边框的颜色，主题里不设置，默认会取hoverRectColor实例化选项的值
+    hoverRectColor: ''
   },
   // 二级节点样式
   second: {
@@ -113,7 +119,11 @@
     textDecoration: 'none',
     gradientStyle: false,
     startColor: '#549688',
-    endColor: '#fff'
+    endColor: '#fff',
+    startDir: [0, 0],
+    endDir: [1, 0],
+    lineMarkerDir: 'end',
+    hoverRectColor: ''
   },
   // 三级及以下节点样式
   node: {
@@ -134,7 +144,11 @@
     textDecoration: 'none',
     gradientStyle: false,
     startColor: '#549688',
-    endColor: '#fff'
+    endColor: '#fff',
+    startDir: [0, 0],
+    endDir: [1, 0],
+    lineMarkerDir: 'end',
+    hoverRectColor: ''
   },
   // 概要节点样式
   generalization: {
@@ -155,7 +169,10 @@
     textDecoration: 'none',
     gradientStyle: false,
     startColor: '#549688',
-    endColor: '#fff'
+    endColor: '#fff',
+    startDir: [0, 0],
+    endDir: [1, 0],
+    hoverRectColor: ''
   }
 }
 ```

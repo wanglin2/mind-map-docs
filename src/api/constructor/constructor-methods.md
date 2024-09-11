@@ -195,6 +195,7 @@ mindMap.setTheme('主题名称')
 | after_update_config（v0.10.4+）    | 更新配置后触发 |  opt（更新后的配置对象） |
 | node_note_click（v0.10.6+）    | 节点备注图标的点击事件 | this(当前节点实例)、e（事件对象）、node（图标节点）  |
 | search_match_node_list_change（v0.11.0+）    | 搜索插件：当搜索匹配的节点列表改变时触发 | list（匹配的节点列表，请注意，数组项里的数据可能是节点实例也可能是节点数据，需要做好判断）  |
+| node_text_edit_change（v0.11.1+）    | 节点文本编辑中当输入的文本改变时触发 | { node, text, richText } 字段含义依次为：当前正在编辑的节点实例、当前最新的文本、是否是富文本 |
 
 ### emit(event, ...args)
 
@@ -283,8 +284,8 @@ mindMap.updateConfig({
 | SET_NODE_ACTIVE                     | 设置节点是否激活（该命令仅更新节点数据中的激活字段和节点激活样式，如果你想实现和鼠标点击节点激活的效果，请直接使用节点实例的`active()`方法）   | node（要设置的节点）、active（布尔值，是否激活）             |
 | CLEAR_ACTIVE_NODE                   | 清除当前已激活节点的激活状态，操作节点为当前激活的节点       |                                                              |
 | SET_NODE_EXPAND                     | 设置节点是否展开                                             | node（要设置的节点）、expand（布尔值，是否展开）             |
-| EXPAND_ALL                          | 展开所有节点                                                 |                                                              |
-| UNEXPAND_ALL                        | 收起所有节点       | isSetRootNodeCenter（v0.9.11+，默认为true，收起所有节点后是否将根节点移至中心） |
+| EXPAND_ALL     | 展开所有节点      |   uid（v0.11.1+，只展开指定uid节点下的所有子孙节点）           |
+| UNEXPAND_ALL     | 收起所有节点       | isSetRootNodeCenter（v0.9.11+，默认为true，收起所有节点后是否将根节点移至中心）、uid（v0.11.1+，只收起指定uid节点的所有子孙节点） |
 | UNEXPAND_TO_LEVEL（v0.2.8+）        | 展开到指定层级                                               | level（要展开到的层级，1、2、3...）                          |
 | SET_NODE_DATA                       | 更新节点数据，即更新节点数据对象里`data`对象的数据，注意这个命令不会触发视图的更新           | node（要设置的节点）、data（对象，要更新的数据，如`{expand: true}`） |
 | SET_NODE_TEXT                       | 设置节点文本                                                 | node（要设置的节点）、text（要设置的文本字符串，换行可以使用`\n`）、richText（v0.4.0+，如果要设置的是富文本字符，需要设为`true`）、resetRichText（v0.6.10+是否要复位富文本，默认为false，如果传true那么会重置富文本节点的样式） |

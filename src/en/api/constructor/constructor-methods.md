@@ -196,6 +196,7 @@ Listen to an event. Event list:
 | after_update_config（v0.10.4+）    | Triggered after updating configuration |  opt（Updated configuration object） |
 | node_note_click（v0.10.6+）    | Click event of node note icon | this(Current node instance)、e（Event Object）、node（Icon node）  |
 | search_match_node_list_change（v0.11.0+）    | Search plugin: Triggered when the list of matched nodes changes during search | list（The matching node list, please note that the data in the array items may be node instances or node data, and it is necessary to make a good judgment）  |
+| node_text_edit_change（v0.11.1+）    | Triggered when the input text changes in node text editing | { node, text, richText } The meanings of the fields are: the node instance currently being edited, the latest text, and whether it is rich text |
 
 ### emit(event, ...args)
 
@@ -286,8 +287,8 @@ redo. All commands are as follows:
 | SET_NODE_ACTIVE                    | Set whether the node is active(This command only updates the activation fields and node activation styles in the node data. If you want to achieve the same effect as clicking on a node with the mouse, please use the 'active()' method of the node instance directly.)   | node (the node to set), active (boolean, whether to activate) |
 | CLEAR_ACTIVE_NODE                  | Clear the active state of the currently active node(s), the active node will be the operation node |                                                              |
 | SET_NODE_EXPAND                    | Set whether the node is expanded                             | node (the node to set), expand (boolean, whether to expand)  |
-| EXPAND_ALL                         | Expand all nodes                                             |                                                              |
-| UNEXPAND_ALL                       | Collapse all nodes  | isSetRootNodeCenter（v0.9.11+，default is true，Will the root node be moved to the center after retracting all nodes）  |
+| EXPAND_ALL    | Expand all nodes   |  uid（v0.11.1+，Expand only all descendant nodes under the specified UID node）        |
+| UNEXPAND_ALL      | Collapse all nodes  | isSetRootNodeCenter（v0.9.11+，default is true，Will the root node be moved to the center after retracting all nodes）、uid（v0.11.1+，Only retract all descendant nodes of the specified UID node）  |
 | UNEXPAND_TO_LEVEL (v0.2.8+)        | Expand to a specified level                                  | level (the level to expand to, 1, 2, 3...)                   |
 | SET_NODE_DATA                      | Update node data, that is, update the data in the data object of the node data object. Note that this command will not trigger view updates | node (the node to set), data (object, the data to update, e.g. `{expand: true}`) |
 | SET_NODE_TEXT                      | Set node text                                                | node (the node to set), text (the new text for the node), richText（v0.4.0+, If you want to set a rich text character, you need to set it to `true`）、resetRichText（v0.6.10+Do you want to reset rich text? The default is false. If true is passed, the style of the rich text node will be reset） |

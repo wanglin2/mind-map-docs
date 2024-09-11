@@ -37,7 +37,7 @@ Manually activate multiple nodes. To activate a single node, please directly cal
 
 Manually deactivate multiple nodes. To deactivate a single node, please directly call the 'deactivate()' method of the node instance.
 
-### highlightNode(node, range)
+### highlightNode(node, range, style)
 
 > v0.9.0+
 
@@ -45,9 +45,20 @@ Manually deactivate multiple nodes. To deactivate a single node, please directly
 
 - `range`：Optional, Array, a range array, [0, 1]
 
+- `style`：v0.11.1+，Set the style, format, and default values of the highlight box as follows:
+
+```js
+{
+    stroke: 'rgb(94, 200, 248)',
+    fill: 'transparent'
+}
+```
+
 Highlight a node or child node. If the 'range' parameter is not passed, the specified 'node' node is directly highlighted. If the 'range' passes a range of child nodes to be highlighted, the child nodes of that range will be highlighted.
 
-The highlight effect is wrapped by a rectangular box, and the stroke and fill style of the rectangle can be configured through the 'highlightNodeBoxStyle' instantiation option.
+The highlight effect is wrapped by a rectangular box. 
+
+> Before v0.11.1, the stroke and fill style of the rectangle can be configured through the 'highlightNodeBoxStyle' instantiation option.
 
 ### closeHighlightNode()
 

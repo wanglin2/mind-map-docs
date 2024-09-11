@@ -38,7 +38,7 @@
 
 手动取消激活多个节点，取消激活单个节点请直接调用节点实例的`deactivate()`方法。
 
-### highlightNode(node, range)
+### highlightNode(node, range, style)
 
 > v0.9.0+
 
@@ -46,9 +46,20 @@
 
 - `range`：可选，Array，一个范围数组，[0, 1]
 
+- `style`：v0.11.1+，设置高亮框的样式，格式和默认值如下：
+
+```js
+{
+    stroke: 'rgb(94, 200, 248)',
+    fill: 'transparent'
+}
+```
+
 高亮节点或子节点。如果`range`参数没有传递，那么直接高亮指定的`node`节点，如果`range`传递了一个要高亮的子节点的范围，那么会高亮该范围的子节点。
 
-高亮效果为通过一个矩形框来包裹，矩形的描边和填充样式可以通过`highlightNodeBoxStyle`实例化选项进行配置。
+高亮效果为通过一个矩形框来包裹。
+
+> v0.11.1之前的版本，矩形的描边和填充样式可以通过`highlightNodeBoxStyle`实例化选项进行配置。
 
 ### closeHighlightNode()
 

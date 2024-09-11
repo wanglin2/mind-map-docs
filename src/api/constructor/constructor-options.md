@@ -52,7 +52,7 @@ const mindMap = new MindMap({
 | defaultInsertBelowSecondLevelNodeText（v0.4.7+）     | 默认插入的二级以下节点的文字   | String  | 分支主题 |
 | expandBtnStyle（v0.5.0+）     | 展开收起按钮的颜色，（fontSize及strokeColor字段为0.7.0+版本新增的，用于设置收起时显示节点数量的文字样式）  | Object  | \{ color: '#808080', fill: '#fff', fontSize: 13, strokeColor: '#333333' \} |
 | expandBtnIcon（v0.5.0+）     | 自定义展开收起按钮的图标，可以传图标的svg字符串（节点收起时渲染open图标，展开时渲染close图标）  | Object  | \{ open: '', close: '' \} |
-| expandBtnNumHandler（v0.7.0+）     | 用于自定义收起时显示节点数量的内容，接收一个参数，代表收起的节点实例，需要返回一个数字或字符串，代表最终显示的内容，比如你可以当数量大于99时，显示99+  | Function  |  |
+| expandBtnNumHandler（v0.7.0+）     | 用于自定义收起时显示节点数量的内容，可以传递一个函数，v0.11.1之前的版本接收一个参数，代表收起的节点所有子孙节点的总数量，v0.11.1+版本接收两个参数，第一个还是有子孙节点的总数量，第二个为该节点实例。需要返回一个数字或字符串，代表最终显示的内容，比如你可以当数量大于99时，显示99+  | Function  |  |
 | isShowExpandNum（v0.7.0+）     | 节点收起时是否显示收起的数量  | Boolean  | true |
 | enableShortcutOnlyWhenMouseInSvg（v0.5.1+）     | 是否只有当鼠标在画布内才响应快捷键事件  | Boolean  | true |
 | enableNodeTransitionMove（v0.5.1+）（v0.6.7+已去除该特性）     | 是否开启节点动画过渡  | Boolean  | true |
@@ -92,7 +92,7 @@ const mindMap = new MindMap({
 | handleIsSplitByWrapOnPasteCreateNewNode（v0.8.0+）     | 粘贴文本的方式创建新节点时，控制是否按换行自动分割节点，即如果存在换行，那么会根据换行创建多个节点，否则只会创建一个节点，可以传递一个函数，返回promise，resolve代表根据换行分割，reject代表忽略换行 | Function / null | null  |
 | addHistoryTime（v0.8.0+）     | 指定时间内只允许添加一次历史记录，避免添加没有必要的中间状态，单位：ms  | Number | 100  |
 | isDisableDrag（v0.8.1+）     | 是否禁止拖动画布  | Boolean | false  |
-| highlightNodeBoxStyle（v0.9.0+）     | 鼠标移入概要高亮所属节点时的高亮框样式  | Object | \{ stroke: 'rgb(94, 200, 248)', fill: 'transparent' \}  |
+| highlightNodeBoxStyle（v0.9.0+）（v0.11.1+已移除）     | 鼠标移入概要高亮所属节点时的高亮框样式  | Object | \{ stroke: 'rgb(94, 200, 248)', fill: 'transparent' \}  |
 | createNewNodeBehavior（v0.9.1+）     | 创建新节点时的行为。default（默认会激活新创建的节点，并且进入编辑模式。如果同时创建了多个新节点，那么只会激活而不会进入编辑模式）、notActive（不激活新创建的节点）、activeOnly（只激活新创建的节点，不进入编辑模式）  | String | default  |
 | defaultNodeImage（v0.9.1-fix.2+）     | 图片地址，当节点图片加载失败时显示的默认图片  | String |   |
 | handleNodePasteImg（v0.9.2+）     | 在节点上粘贴剪贴板中的图片的处理方法，默认是转换为data:url数据插入到节点中，你可以通过该方法来将图片数据上传到服务器，实现保存图片的url。可以传递一个异步方法，接收Blob类型的图片数据，需要返回指定结构：{ url, size: {width, height} }  | null 或 Function | null  |
@@ -106,6 +106,8 @@ const mindMap = new MindMap({
 | openPerformance（v0.10.4+）     | 是否开启性能模式，默认情况下所有节点都会直接渲染，无论是否处于画布可视区域，这样当节点数量比较多时（1000+）会比较卡，如果你的数据量比较大，那么可以通过该配置开启性能模式，即只渲染画布可视区域内的节点，超出的节点不渲染，这样会大幅提高渲染速度，当然同时也会带来一些其他问题，比如：1.当拖动或是缩放画布时会实时计算并渲染未节点的节点，所以会带来一定卡顿；2.导出图片、svg、pdf时需要先渲染全部节点，所以会比较慢；3.其他目前未发现的问题 | Boolean | false |
 | performanceConfig（v0.10.4+）     | 性能优化模式配置。time（当视图改变后多久刷新一次节点，单位：ms）、padding（超出画布四周指定范围内依旧渲染节点）、removeNodeWhenOutCanvas（节点移出画布可视区域后是否从画布删除） | Object | \{ time: 250,  padding: 100, removeNodeWhenOutCanvas: true \} |
 | notShowExpandBtn（v0.10.6+）     | 不显示展开收起按钮，优先级比alwaysShowExpandBtn配置高 | Boolean | false |
+| emptyTextMeasureHeightText（v0.11.1+）     | 如果节点文本为空，那么为了避免空白节点高度塌陷，会用该字段指定的文本测量一个高度 | String | abc123我和你 |
+| openRealtimeRenderOnNodeTextEdit（v0.11.1+）     | 是否在进行节点文本编辑时实时更新节点大小和节点位置，开启后当节点数量比较多时可能会造成卡顿 | Boolean | false |
 
 #### 1.1数据结构
 
@@ -339,7 +341,19 @@ new MindMap({
 
 #### 15.OuterFrame插件
 
-| 字段名称                         | 类型    | 默认值           | 描述                                                         |
-| -------------------------------- | ------- | ---------------- | ------------------------------------------------------------ |
+| 字段名称                         | 类型    | 默认值           | 描述    |
+| -------------------------------- | ------- | ---------------- | ------- |
 | outerFramePaddingX（v0.10.3+）     | Number  | 10 | 外框的水平内边距 |
 | outerFramePaddingY（v0.10.3+）     | Number  | 10 | 外框的垂直内边距 |
+
+#### 16.Painter插件
+
+| 字段名称                         | 类型    | 默认值           | 描述      |
+| -------------------------------- | ------- | ---------------- | ------ |
+| onlyPainterNodeCustomStyles（v0.11.1+）     | Boolean  | false | 是否只格式刷节点手动设置的样式，忽略节点通过主题应用的样式 |
+
+#### 17.NodeImgAdjust插件
+
+| 字段名称                         | 类型    | 默认值           | 描述      |
+| -------------------------------- | ------- | ---------------- | ------ |
+| beforeDeleteNodeImg（v0.11.1+）     | Function  | null | 拦截节点图片的删除，点击节点图片上的删除按钮删除图片前会调用该函数，如果函数返回true则取消删除，可以是异步函数，返回一个Promise实例 |
