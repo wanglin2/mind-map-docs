@@ -164,7 +164,9 @@ export const en = defineConfig({
               link: '/en/plugins/handDrawnLikeStyle'
             },
             { text: 'Notation plugin', link: '/en/plugins/notation' },
-            { text: 'Numbers plugin', link: '/en/plugins/numbers' }
+            { text: 'Numbers plugin', link: '/en/plugins/numbers' },
+            { text: 'Freemind plugin', link: '/en/plugins/freemind' },
+            { text: 'Excel plugin', link: '/en/plugins/excel' }
           ]
         }
       ],

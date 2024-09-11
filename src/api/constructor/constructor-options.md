@@ -331,7 +331,7 @@ new MindMap({
 | margin         | Number  | 50                  | 高亮框的外边距 |
 | openBlankMode（v0.9.12+） | Boolean | true     | 是否开启填空模式，即带下划线的文本默认不显示，按回车键才依次显示 |
 
-#### 14.Formula插件
+### 14.Formula插件
 
 | 字段名称       | 描述         | 类型    | 默认值           |
 | ------------- | ------- | ---------------- | ------- |
@@ -339,20 +339,20 @@ new MindMap({
 | katexFontPath（v0.10.3+）     | katex库的字体文件的请求路径。仅当katex的output配置为html时才会请求字体文件。可以通过mindMap.formula.getKatexConfig()方法来获取当前的配置。字体文件可以从node_modules中找到：katex/dist/fonts/。可以上传到你的服务器或cdn。最终的字体请求路径为`${katexFontPath}fonts/KaTeX_AMS-Regular.woff2`，可以自行拼接进行测试是否可以访问 | String  | https://unpkg.com/katex@0.16.11/dist |
 | getKatexOutputType（v0.10.3+）     | 自定义katex库的输出模式。默认当Chrome内核100以下会使用html方式，否则使用mathml方式，如果你有自己的规则，那么可以传递一个函数，函数返回值为：mathml或html | Function、null  | null |
 
-#### 15.OuterFrame插件
+### 15.OuterFrame插件
 
 | 字段名称                         | 类型    | 默认值           | 描述    |
 | -------------------------------- | ------- | ---------------- | ------- |
 | outerFramePaddingX（v0.10.3+）     | Number  | 10 | 外框的水平内边距 |
 | outerFramePaddingY（v0.10.3+）     | Number  | 10 | 外框的垂直内边距 |
 
-#### 16.Painter插件
+### 16.Painter插件
 
 | 字段名称                         | 类型    | 默认值           | 描述      |
 | -------------------------------- | ------- | ---------------- | ------ |
 | onlyPainterNodeCustomStyles（v0.11.1+）     | Boolean  | false | 是否只格式刷节点手动设置的样式，忽略节点通过主题应用的样式 |
 
-#### 17.NodeImgAdjust插件
+### 17.NodeImgAdjust插件
 
 | 字段名称                         | 类型    | 默认值           | 描述      |
 | -------------------------------- | ------- | ---------------- | ------ |
