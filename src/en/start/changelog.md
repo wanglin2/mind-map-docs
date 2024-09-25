@@ -1,6 +1,44 @@
 # Changelog
 
+## 0.11.2
+
+> 2024.9.25
+
+Fix:
+
+> 1.Fixed the issue of node rich text editing being able to paste images;
+>
+> 2.Fixed the issue of error when switching themes during summarization;
+>
+> 3.Fixed the issue where exporting images failed when the mind map size was very large;
+>
+> 4.Fixed the issue of invalid gradient direction in custom theme nodes;
+>
+> 5.Fixed the issue where the formula plugin extends Quill multiple times when creating multiple mind map instances; Optimize the formula plugin to adapt to creating multiple instances;
+>
+> 6.Fixed the issue where when creating multiple mind map instances, calling addPlugin to add the same plugin only works for the first instance;
+
+New:
+
+> 1.Add a custom option to determine whether the wheel event comes from the touchpad instantiation;
+>
+> 2.New round corner configuration for highlighting nodes in the theme;
+>
+> 3.Theme supports configuring the inner margins of nodes at various levels;
+>
+> 4.Add an instantiation option for the default event of whether to prevent container element mousedown event;
+
+Demo:
+
+> 1.Fixed the issue where the secondary menu in the right-click menu would exceed its boundaries;
+>
+> 2.Add a right-click menu to expand all subordinate nodes of a node with just one click;
+>
+> 3.Optimized node images by adding display styles for inaccessible images;
+
 ## 0.11.1
+
+> 2024.9.11
 
 Fix:
 

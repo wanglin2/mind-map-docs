@@ -37,6 +37,10 @@ const mindMap = new MindMap({
 | theme                            | 主题，可选列表：default（默认）、classic（脑图经典）、minions（小黄人）、pinkGrape（粉红葡萄）、mint（薄荷）、gold（金色vip）、vitalityOrange（活力橙）、greenLeaf（绿叶）、dark2（暗色2）、skyGreen（天清绿）、classic2（脑图经典2）、classic3（脑图经典3）、classic4（脑图经典4，v0.2.0+）、classicGreen（经典绿）、classicBlue（经典蓝）、blueSky（天空蓝）、brainImpairedPink（脑残粉）、dark（暗色）、earthYellow（泥土黄）、freshGreen（清新绿）、freshRed（清新红）、romanticPurple（浪漫紫）、simpleBlack（v0.5.4+简约黑）、courseGreen（v0.5.4+课程绿）、coffee（v0.5.4+咖啡）、redSpirit（v0.5.4+红色精神）、blackHumour（v0.5.4+黑色幽默）、lateNightOffice（v0.5.4+深夜办公室）、blackGold（v0.5.4+黑金）、avocado（v.5.10-fix.2+牛油果）、autumn（v.5.10-fix.2+秋天）、orangeJuice（v.5.10-fix.2+橙汁） | String  | default          |
 | themeConfig                      | 主题配置，会和所选择的主题进行合并，可用字段可参考：[default.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/themes/default.js) | Object  | {}               |
 | scaleRatio                       | 放大缩小的增量比例       | Number  | 0.1              |
+| translateRatio（v0.11.2+）       | 平移的步长比例，只在鼠标滚轮和触控板触发的平移中应用      | Number  |      1         |
+| minZoomRatio（v0.11.2+）         | 最小缩小值，百分数，最小为0，该选项只会影响view.narrow方法（影响的行为为Ctrl+-快捷键、鼠标滚轮及触控板），不会影响其他方法，比如view.setScale，需要你自行限制传入的大小       | Number  |      20         |
+| maxZoomRatio（v0.11.2+）         |  最大放大值，百分数，传-1代表不限制，否则传0以上数字，，该选项只会影响view.enlarge方法      | Number  |      400        |
+| customCheckIsTouchPad（v0.11.2+）   | 自定义判断wheel事件是否来自电脑的触控板，默认是通过判断e.deltaY的值是否小于10，显然这种方法是不准确的，当鼠标滚动的很慢，或者触摸移动的很快时判断就失效了，如果你有更好的方法，欢迎提交issue，如果你希望自己来判断，那么可以传递一个函数，接收一个参数e（事件对象），需要返回true或false，代表是否是来自触控板    | Function、Null  |              |
 | maxTag                           | 节点里最多显示的标签数量，多余的会被丢弃     | Number  | 5                |
 | tagPosition（v0.10.3+）      | 标签显示的位置，相对于节点文本，bottom（下方）、right（右侧）  | String  | right      |
 | imgTextMargin                    | 节点里图片和文字的间距 | Number  | 5                |
@@ -108,6 +112,7 @@ const mindMap = new MindMap({
 | notShowExpandBtn（v0.10.6+）     | 不显示展开收起按钮，优先级比alwaysShowExpandBtn配置高 | Boolean | false |
 | emptyTextMeasureHeightText（v0.11.1+）     | 如果节点文本为空，那么为了避免空白节点高度塌陷，会用该字段指定的文本测量一个高度 | String | abc123我和你 |
 | openRealtimeRenderOnNodeTextEdit（v0.11.1+）     | 是否在进行节点文本编辑时实时更新节点大小和节点位置，开启后当节点数量比较多时可能会造成卡顿 | Boolean | false |
+| mousedownEventPreventDefault（v0.11.2+）     | 默认会给容器元素el绑定mousedown事件，并且会阻止其默认事件，这会带来一定问题，比如你聚焦在思维导图外的其他输入框，点击画布就不会触发其失焦，可以通过该选项关闭阻止。关闭后也会带来一定问题，比如鼠标框选节点时可能会选中节点文字，看你如何取舍 | Boolean | true |
 
 #### 1.1数据结构
 
@@ -188,6 +193,7 @@ const mindMap = new MindMap({
 | addContentToHeader（v0.9.9+）     | Function、null | null  | 导出png、svg、pdf时在头部添加自定义内容。可传递一个函数，这个函数可以返回null代表不添加内容，也可以返回一个对象，详细介绍请参考下方【导出时如何添加自定义内容】 |
 | addContentToFooter（v0.9.9+）     | Function、null | null  | 基本释义同addContentToHeader，在尾部添加自定义内容 |
 | handleBeingExportSvg（v0.10.1+）     | Function、null | null  | 导出png、svg、pdf时会获取画布上的svg数据进行克隆，然后通过该克隆的元素进行导出，如果你想对该克隆元素做一些处理，比如新增、替换、修改其中的一些元素，那么可以通过该参数传递一个处理函数，接收svg元素对象，处理后，需要返回原svg元素对象。（需要注意的是svg对象指的是@svgdotjs/svg.js库的元素对象，所以你需要阅读该库的文档来操作该对象） |
+| maxCanvasSize（v0.11.2+）     | Number | 16384  | 图片或pdf都是通过canvas将svg绘制出来再进行导出，所以如果思维导图尺寸特别大，宽高可能会超出canvas支持的上限，所以会进行缩放，这个上限可以通过该参数设置，代表canvas宽和高的最大值 |
 
 #### 2.1导出时如何添加自定义内容
 

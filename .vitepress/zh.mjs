@@ -9,6 +9,7 @@ export const zh = defineConfig({
     nav: [
       { text: '在线使用', link: 'https://wanglin2.github.io/mind-map/' },
       { text: '客户端', link: '/client' },
+      { text: '云存储版', link: '/cloudStorage' },
       { text: '开始', link: '/start/introduction', activeMatch: '/start/' },
       { text: '教程', link: '/course/course1', activeMatch: '/course/' },
       {

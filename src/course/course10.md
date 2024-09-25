@@ -97,7 +97,13 @@
     // 连线标记的位置，start（头部）、end（尾部），该配置在showLineMarker配置为true时生效
     lineMarkerDir: 'end',
     // 节点鼠标hover和激活时显示的矩形边框的颜色，主题里不设置，默认会取hoverRectColor实例化选项的值
-    hoverRectColor: ''
+    hoverRectColor: '',
+    hoverRectColor: '',
+    // 点鼠标hover和激活时显示的矩形边框的圆角大小
+    hoverRectRadius: 5,
+    // 默认使用外层的
+    // paddingX: 15,
+    // paddingY: 5
   },
   // 二级节点样式
   second: {
@@ -123,7 +129,11 @@
     startDir: [0, 0],
     endDir: [1, 0],
     lineMarkerDir: 'end',
-    hoverRectColor: ''
+    hoverRectColor: '',
+    hoverRectColor: '',
+    hoverRectRadius: 5,
+    // paddingX: 15,
+    // paddingY: 5
   },
   // 三级及以下节点样式
   node: {
@@ -148,7 +158,11 @@
     startDir: [0, 0],
     endDir: [1, 0],
     lineMarkerDir: 'end',
-    hoverRectColor: ''
+    hoverRectColor: '',
+    hoverRectColor: '',
+    hoverRectRadius: 5,
+    // paddingX: 15,
+    // paddingY: 5
   },
   // 概要节点样式
   generalization: {
@@ -172,7 +186,11 @@
     endColor: '#fff',
     startDir: [0, 0],
     endDir: [1, 0],
-    hoverRectColor: ''
+    hoverRectColor: '',
+    hoverRectColor: '',
+    hoverRectRadius: 5,
+    // paddingX: 15,
+    // paddingY: 5
   }
 }
 ```

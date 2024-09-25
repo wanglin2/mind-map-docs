@@ -9,6 +9,7 @@ export const en = defineConfig({
     nav: [
       { text: 'Online use', link: 'https://wanglin2.github.io/mind-map/' },
       { text: 'Client', link: '/en/client' },
+      { text: 'Cloud storage', link: '/cloudStorage' },
       {
         text: 'Start',
         link: '/en/start/introduction',
