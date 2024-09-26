@@ -36,6 +36,14 @@ Demo:
 >
 > 3.Optimized node images by adding display styles for inaccessible images;
 
+Client:
+
+> 1.Fix the issue where the Linux installation package lacks the top minimize maximize close button;
+>
+> 2.The editing window supports remembering the previous size;
+>
+> 3.Add the setting of whether dragging the canvas triggers automatic saving;
+
 ## 0.11.1
 
 > 2024.9.11
