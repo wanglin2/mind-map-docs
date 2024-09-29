@@ -62,4 +62,32 @@ Scrollbar.instanceName = 'yourPlugin'
 
 插件的原理无非是监听一些你需要的事件，然后调用一些你需要的方法来完成一些功能，其实没啥好多说的，建议看一下内部插件的实现。
 
-当你完成了一个插件后，你可以考虑发布到`npm`，提供给其他开发者使用。
+当你完成了一个插件后，你可以考虑发布到`npm`，提供给其他开发者使用，插件包的名称建议以该格式来命名：`simple-mind-map-plugin-xxx`。打包可以使用`esbuild`，下面提供一个插件包的`package.json`内容供参考：
+
+```js
+{
+  "name": "simple-mind-map-plugin-xxx",
+  "version": "1.0.0",
+  "description": "插件的描述",
+  "module": "index.js",
+  "main": "./dist/xxx.esm.min.js",
+  "scripts": {
+    "build": "esbuild ./index.js --bundle --minify --external:buffer --format=esm --outfile=./dist/xxx.esm.min.js && esbuild ./index.js --bundle --minify --external:buffer --format=cjs --outfile=./dist/xxx.cjs.min.js"
+  },
+  "author": "作者名字",
+  "license": "MIT",
+  "dependencies": {
+    "esbuild": "^0.17.15"
+  }
+}
+
+```
+
+插件包目录结构：
+
+```
+simple-mind-map-plugin-xxx
+    dist/
+    index.js
+    package.json
+```
