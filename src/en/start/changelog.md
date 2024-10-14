@@ -1,5 +1,37 @@
 # Changelog
 
+## 0.12.0
+
+Fix:
+
+> 1.Fixed the issue of incorrect search results when searching for replacement text that is a substring of the replacement text;
+>
+> 2.Modify the logic of dispatching node activation events, remove unnecessary judgments, and avoid triggering events even if the activation node has not changed;
+>
+> 3.Fixed the issue where exporting images and SVG line breaks fail when there are consecutive numbers or letters in the node text in rich text mode;
+>
+> 4.Fixed the issue where the withdrawal of a new node operation in non rich text mode also requires two attempts;
+>
+> 5.Fixed the issue of error when dragging child nodes outside the canvas when enabling performance mode;
+
+New:
+
+> 1.Extract the theme files from the library and demo as separate packages;
+>
+> 2.Support dragging and dropping to adjust node width;
+>
+> 3.The clipboard contains both text and image data. By default, only text is pasted, which can be modified through the instantiation option;
+>
+> 4.Methods for adding and removing necessary CSS styles;
+>
+> 5.The size of the zoom node image button supports configuration;
+>
+> 6.Support setting the maximum and minimum values for drag and drop adjustment of image size;
+>
+> 7.When multiple nodes are activated simultaneously, editing the text of a node only applies to that node;
+>
+> 8.Add instantiation options for intercepting and connecting lines;
+
 ## 0.11.2
 
 > 2024.9.25

@@ -128,19 +128,20 @@ export const en = defineConfig({
         {
           text: 'Free',
           items: [
+            { text: 'Themes plugin', link: '/en/plugins/themes' },
+            { text: 'RichText plugin', link: '/en/plugins/richText' },
+            { text: 'Export plugin', link: '/en/plugins/doExport' },
+            { text: 'Drag plugin', link: '/en/plugins/drag' },
+            { text: 'Select plugin', link: '/en/plugins/select' },
             {
               text: 'AssociativeLine plugin',
               link: '/en/plugins/associativeLine'
             },
-            { text: 'Export plugin', link: '/en/plugins/doExport' },
-            { text: 'Drag plugin', link: '/en/plugins/drag' },
             {
               text: 'KeyboardNavigation plugin',
               link: '/en/plugins/keyboardNavigation'
             },
             { text: 'MiniMap plugin', link: '/en/plugins/miniMap' },
-            { text: 'RichText plugin', link: '/en/plugins/richText' },
-            { text: 'Select plugin', link: '/en/plugins/select' },
             { text: 'Watermark plugin', link: '/en/plugins/watermark' },
             { text: 'TouchEvent plugin', link: '/en/plugins/touchEvent' },
             { text: 'NodeImgAdjust plugin', link: '/en/plugins/nodeImgAdjust' },

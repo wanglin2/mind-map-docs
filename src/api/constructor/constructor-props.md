@@ -89,3 +89,9 @@
 ### themeConfig
 
 当前主题配置。
+
+### cssTextMap 
+
+> v0.12.0+
+
+必要的css样式。该样式在实例化时会动态添加到页面，同时导出为svg时也会添加到svg源码中。库默认定义了一些，可以从这里查看：[constant.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/constants/constant.js#L186)。同时插件也可以使用`appendCss`方法追加样式。

@@ -35,7 +35,7 @@ Node tree rendering is an asynchronous operation, so it is not possible to immed
 | viewData   | View data can be used to restore the position and zoom of the canvas. This data can be obtained through method `mindMap.view.getTransformData()` | Object 、 null  |   |
 | layout       | Layout type, options: logicalStructure (logical structure diagram), logicalStructureLeft(v0.10.2+, Leftward logical structure diagram), mindMap (mind map), catalogOrganization (catalog organization diagram), organizationStructure (organization structure diagram)、timeline（v0.5.4+, timeline）、timeline2（v0.5.4+, up down alternating timeline）、fishbone（v0.5.4+, fishbone diagram） | String  | logicalStructure |
 | fishboneDeg（v0.5.4+）     | Set the diagonal angle of the fishbone structure diagram        |  Number |  45    | 
-| theme  | Theme, options: default, classic, minions, pinkGrape, mint, gold, vitalityOrange, greenLeaf, dark2, skyGreen, classic2, classic3, classic4(v0.2.0+), classicGreen, classicBlue, blueSky, brainImpairedPink, dark, earthYellow, freshGreen, freshRed, romanticPurple, simpleBlack(v0.5.4+), courseGreen(v0.5.4+), coffee(v0.5.4+), redSpirit(v0.5.4+), blackHumour(v0.5.4+), lateNightOffice(v0.5.4+), blackGold(v0.5.4+)、、avocado(v.5.10-fix.2+)、autumn(v.5.10-fix.2+)、orangeJuice(v.5.10-fix.2+) |  String  | default   |
+| theme  | Theme, v0.12.0+ extract the built-in themes from the library into separate plugins(simple-mind-map-plugin-themes, Please refer to the plugin documentation for details), The library only has default themes(default), Version libraries below v0.12.0 have built-in optional theme lists: default, classic, minions, pinkGrape, mint, gold, vitalityOrange, greenLeaf, dark2, skyGreen, classic2, classic3, classic4(v0.2.0+), classicGreen, classicBlue, blueSky, brainImpairedPink, dark, earthYellow, freshGreen, freshRed, romanticPurple, simpleBlack(v0.5.4+), courseGreen(v0.5.4+), coffee(v0.5.4+), redSpirit(v0.5.4+), blackHumour(v0.5.4+), lateNightOffice(v0.5.4+), blackGold(v0.5.4+)、、avocado(v.5.10-fix.2+)、autumn(v.5.10-fix.2+)、orangeJuice(v.5.10-fix.2+) |  String  | default   |
 | themeConfig  | Theme configuration, will be merged with the selected theme, available fields refer to: [default.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/themes/default.js) | Object  | \{\}  |
 | scaleRatio  | The incremental scaling ratio   | Number  | 0.1  |
 | translateRatio（v0.11.2+）       | The step size ratio of translation is only applied in the translation triggered by the mouse wheel and touchpad      | Number  |      1         |
@@ -114,6 +114,10 @@ Node tree rendering is an asynchronous operation, so it is not possible to immed
 | emptyTextMeasureHeightText（v0.11.1+）     | If the node text is empty, in order to avoid the collapse of the height of the blank node, a height will be measured using the text specified in this field | String | abc123我和你 |
 | openRealtimeRenderOnNodeTextEdit（v0.11.1+）     | Is the node size and position updated in real-time during node text editing? Enabling it may cause lag when there are a large number of nodes | Boolean | false |
 | mousedownEventPreventDefault（v0.11.2+）     | By default, the container element el will be bound with a mousedown event and its default event will be blocked, which can cause certain problems. For example, if you focus on other input boxes outside the mind map and click on the canvas, it will not trigger defocusing. This option can be used to turn off the blocking. Closing it may also bring certain problems, such as when selecting nodes with the mouse box, the node text may be selected. It depends on how you choose | Boolean | true |
+| onlyPasteTextWhenHasImgAndText（v0.12.0+）     | When pasting data from the user clipboard on an activated node, if both text and images exist, only the text will be pasted and the images will be ignored | Boolean | true |
+| enableDragModifyNodeWidth（v0.12.0+）     |  Is it allowed to drag and drop to adjust the width of nodes? In fact, it compresses the width of the text content inside the node. When the width of the text content in the node is compressed to its minimum, it cannot be further compressed. If there is an image in the node, the minimum value is based on the maximum value of the image width and the minimum width of the text content (currently, this feature is only available in two situations: 1. Rich Text mode is enabled, that is, the RichText plugin is registered; 2. Custom node content) | Boolean | true |
+| minNodeTextModifyWidth（v0.12.0+）     | When allowing drag and drop adjustment of node width, this option can be used to set the minimum compression width allowed for node text content  | Number | 20 |
+| maxNodeTextModifyWidth（v0.12.0+）     |  Same as minNodeTextModifierWidth, maximum value, passing -1 represents no restriction | Number | -1 |
 
 #### 1.1 Data structure
 
@@ -277,6 +281,7 @@ new MindMap({
 | associativeLineInitPointsPosition（v0.9.5+）     | null / \{ from, to \} | \{ from: '', to: '' \}  | By default, the position of the two endpoints of a newly created association line is calculated based on the relative position of the center points of the two nodes. If you want to fix the position, you can configure it through this option. If neither from nor to is transmitted, they will be automatically calculated. If only one is transmitted, the other will be automatically calculated. from and to optional values
 ：left、top、bottom、right |
 | enableAdjustAssociativeLinePoints（v0.9.5+）     | Boolean | true  | Is it allowed to adjust the position of the two endpoints of the associated line |
+| beforeAssociativeLineConnection（v0.12.0+）     | Function | null  | You can pass a function that is called when the association line creation is about to be completed. If you want to block this connection, you can return true. The function takes a parameter: node(Target Node Instance) |
 
 ### 7.RichText plugin
 
@@ -362,3 +367,9 @@ new MindMap({
 | Field Name         | Type    | Default Value    | Description       |
 | -------------------------------- | ------- | ---------------- | ------ |
 | beforeDeleteNodeImg（v0.11.1+）     | Function  | null | Intercept the deletion of node images. Clicking the delete button on the node image will call this function before deleting the image. If the function returns true, the deletion will be canceled, can be an asynchronous function that returns a Promise instance |
+| minImgResizeWidth（v0.12.0+）     |  Number | 50 | The minimum width allowed for scaling, please pass in a number >=0 |
+| minImgResizeHeight（v0.12.0+）     |  Number | 50 | The minimum height allowed for scaling, please pass in a number >=0 |
+| imgResizeBtnSize（v0.12.0+）     | Number  | 25 | Delete and resize the two buttons |
+| maxImgResizeWidthInheritTheme（v0.12.0+）     |  Boolean | false | Is the maximum size allowed for scaling based on the theme's configuration, which uses the theme's imgMaxWidth and imgMaxHeight settings? If set to false, use the maxImgResizeWidth and maxImgResizeHeight options |
+| maxImgResizeWidth（v0.12.0+）     |  Number | Infinity | The maximum width allowed for scaling, which takes effect when the maxImgResizeWidthInheritTheme option is set to false, does not limit the maximum value that can be passed through Infinity |
+| maxImgResizeHeight（v0.12.0+）     | Number  | Infinity | The maximum height allowed for scaling, which takes effect when the maxImgResizeWidthInheritTheme option is set to false, does not limit the maximum value that can be passed through Infinity |

@@ -30,6 +30,14 @@ mindMap.setTheme('主题名称')
 
 主题的所有配置可以参考[默认主题](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/themes/default.js)。`defineTheme`方法会把你传入的配置和默认配置做合并。大部分主题其实需要自定义的部分不是很多，一个典型的自定义主题配置可以参考[blueSky](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/themes/blueSky.js)。
 
+### removeTheme(name)
+
+> v0.12.0+
+
+- `name`：主题名称
+
+移除注册的主题。
+
 ### usePlugin(plugin, opt = {})
 
 > v0.3.0+
@@ -376,3 +384,21 @@ mindMap.updateConfig({
 > v0.4.0+
 
 移除注册的插件，无论是通过`usePlugin`还是`addPlugin`方法注册的插件都可以移除。
+
+### appendCss(key, str)
+
+> v0.12.0+
+
+- `key`：唯一的标识，移除需要使用该标识。
+
+- `str`：css样式字符串。
+
+追加必要的css样式。该样式在实例化时会动态添加到页面，同时导出为svg时也会添加到svg源码中。
+
+### removeAppendCss(key)
+
+> v0.12.0+
+
+- `key`：唯一的标识。
+
+移除追加的css样式。

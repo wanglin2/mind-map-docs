@@ -12,7 +12,7 @@
   paddingX: 15,
   paddingY: 5,
   // 图片显示的最大宽度
-  imgMaxWidth: 100,
+  imgMaxWidth: 200,
   // 图片显示的最大高度
   imgMaxHeight: 100,
   // icon的大小
@@ -197,14 +197,7 @@
 
 ## 使用和切换主题
 
-`simple-mind-map`内置了很多主题，可以通过如下方式获取到所有的内置主题列表：
-
-```js
-import { themeList } from 'simple-mind-map/src/constants/constant'
-// import { themeList } from 'simple-mind-map/src/utils/constant' v0.6.0以下版本使用该路径
-```
-
-> v0.6.8+，主题列表增加了代表是否是暗黑主题的字段dark，你可以根据这个字段来将界面切换为暗黑模式。
+v0.12.0+将库内置的主题都抽离到了单独的[主题插件](../plugins/themes.md)中，内置只有一个默认主题`default`，你可以通过安装该插件来支持更多主题。
 
 可以在实例化`simple-mind-map`时指定使用的主题：
 
@@ -225,6 +218,15 @@ mindMap.setTheme('classic')
 ```js
 const theme = mindMap.getTheme()
 ```
+
+v0.12.0以下版本的`simple-mind-map`内置了一些主题，可以通过如下方式获取到所有的内置主题列表：
+
+```js
+import { themeList } from 'simple-mind-map/src/constants/constant'
+// import { themeList } from 'simple-mind-map/src/utils/constant' v0.6.0以下版本使用该路径
+```
+
+> v0.6.8+，主题列表增加了代表是否是暗黑主题的字段dark，你可以根据这个字段来将界面切换为暗黑模式。
 
 ## 修改主题的部分配置
 

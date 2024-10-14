@@ -30,6 +30,14 @@ mindMap.setTheme('Theme name')
 
 For all configurations of theme, please refer to [Default Topic](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/themes/default.js). The `defineTheme`method will merge the configuration you passed in with the default configuration. Most of the themes  do not need custom many parts. For a typical customized theme configuration, please refer to [blueSky](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/themes/blueSky.js).
 
+### removeTheme(name)
+
+> v0.12.0+
+
+- `name`：Theme name
+
+Remove the registered theme.
+
 ### usePlugin(plugin, opt = {})
 
 > v0.3.0+
@@ -386,3 +394,21 @@ Register plugin, Use `MindMap.usePlugin` to register plugin only before instanti
 > v0.4.0+
 
 Remove registered plugin, Plugins registered through the `usePlugin` or `addPlugin` methods can be removed.
+
+### appendCss(key, str)
+
+> v0.12.0+
+
+- `key`: The unique identifier is required for removal.
+
+- `str`: CSS style string.
+
+Add necessary CSS styles. This style will be dynamically added to the page during instantiation, and will also be added to the SVG source code when exported as SVG.
+
+### removeAppendCss(key)
+
+> v0.12.0+
+
+- `key`: The unique identifier.
+
+Remove the added CSS styles.

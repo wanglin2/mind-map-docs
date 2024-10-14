@@ -89,3 +89,9 @@ The height of the container element 'el'.
 ### themeConfig
 
 Current Theme Configuration.
+
+### cssTextMap 
+
+> v0.12.0+
+
+Necessary CSS styles. This style will be dynamically added to the page during instantiation, and will also be added to the SVG source code when exported as SVG. The library has some default definitions, which can be viewed here: [constant.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/constants/constant.js#L186). At the same time, plugins can also use the 'appendCss' method to append styles.

@@ -127,16 +127,17 @@ export const zh = defineConfig({
         {
           text: '免费',
           items: [
-            { text: 'AssociativeLine 插件', link: '/plugins/associativeLine' },
+            { text: 'Themes 插件', link: '/plugins/themes' },
+            { text: 'RichText插件', link: '/plugins/richText' },
             { text: 'Export 插件', link: '/plugins/doExport' },
             { text: 'Drag插件', link: '/plugins/drag' },
+            { text: 'Select 插件 ', link: '/plugins/select' },
+            { text: 'AssociativeLine 插件', link: '/plugins/associativeLine' },
             {
               text: 'KeyboardNavigation插件',
               link: '/plugins/keyboardNavigation'
             },
             { text: 'MiniMap插件', link: '/plugins/miniMap' },
-            { text: 'RichText插件', link: '/plugins/richText' },
-            { text: 'Select 插件 ', link: '/plugins/select' },
             { text: 'Watermark插件', link: '/plugins/watermark' },
             { text: 'TouchEvent插件', link: '/plugins/touchEvent' },
             { text: 'NodeImgAdjust插件', link: '/plugins/nodeImgAdjust' },
