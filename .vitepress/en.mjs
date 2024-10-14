@@ -23,7 +23,7 @@ export const en = defineConfig({
       },
       {
         text: 'Plugins',
-        link: '/en/plugins/associativeLine',
+        link: '/en/plugins/themes',
         activeMatch: '/en/plugins/'
       },
       { text: 'Help', link: '/help/help1', activeMatch: '/help/' },

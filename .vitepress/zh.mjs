@@ -19,7 +19,7 @@ export const zh = defineConfig({
       },
       {
         text: '插件',
-        link: '/plugins/associativeLine',
+        link: '/plugins/themes',
         activeMatch: '/plugins/'
       },
       { text: '使用帮助', link: '/help/help1', activeMatch: '/help/' },
