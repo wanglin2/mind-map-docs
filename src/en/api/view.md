@@ -33,6 +33,10 @@ Translate the `x` direction to a specific position
 
 Translate the `y` direction to a specific position
 
+### translateXY(x, y)
+
+Simultaneously translate in the x and y directions
+
 ### reset()
 
 Revert to the default transformation
