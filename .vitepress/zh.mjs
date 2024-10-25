@@ -165,7 +165,8 @@ export const zh = defineConfig({
             { text: 'Notation插件', link: '/plugins/notation' },
             { text: 'Numbers插件', link: '/plugins/numbers' },
             { text: 'Freemind插件', link: '/plugins/freemind' },
-            { text: 'Excel插件', link: '/plugins/excel' }
+            { text: 'Excel插件', link: '/plugins/excel' },
+            { text: 'Checkbox插件', link: '/plugins/checkbox' }
           ]
         }
       ],

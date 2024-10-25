@@ -58,3 +58,72 @@ The current Node environment does not support the use of JS syntax and requires 
 If you are a 'webpack' project, you need to modify the configuration of 'babel-loader' by adding 'quill' to the 'include' option.
 
 If you are a 'vue-cli' project, you need to add 'quill' to the 'transpileDependencies' option in 'vue.config.js'.
+
+## 7.Creating a mind map in a single application page or pop-up scenario, exiting the page or closing the pop-up before reopening the page or pop-up, the delete key does not take effect when editing node text.
+
+If mind map is closed in node text editing, you need to call the instance destruction method before closing:
+
+```js
+mindMap.destroy()
+```
+
+## 8.In rich text mode, the node text is noticeably lower, but the text being edited is normal.
+
+The reason for the obvious downward bias of node text is generally due to the mind map container element, or any ancestor element of the container explicitly setting the 'font-size' style. Therefore, the 'font-size' style set for the container element or any ancestor element can be removed. If the ancestor element cannot be removed for some reason, the following style can be added to the container element:
+
+```css
+#mindMapContainer {
+    font-size: initial;
+}
+```
+
+As for the inconsistency between the text in editing and the displayed text, it is because the text editing box element is inserted under the 'body' element of the page by default, so the 'font-size' does not affect the text editing element, resulting in inconsistency. There are two solutions:
+
+1.Set the same 'font-size' style for text editing box elements:
+
+```css
+.smm-richtext-node-edit-wrap {
+    font-size: 20px;
+}
+```
+
+2.Insert text editing box elements into the mind map container or other elements that can be influenced by the 'font-size' style:
+
+```js
+new MindMap({
+    el: document.querySelector('#mindMapContainer'),
+    customInnerElsAppendTo: document.querySelector('#mindMapContainer')
+})
+```
+
+If there are any other styles that may affect the text, please handle them as above.
+
+## 9.There is no style when exporting custom node content to images or SVG.
+
+`v0.10.1+` can insert your additional styles through the 'appendCss' method:
+
+```js
+mindMap.appendCss(`
+    font-size: 18px;
+    background: red;
+`)
+```
+
+`v0.10.1+` can use `handleBeingExportSvg` option：
+
+```js
+new MindMap({
+    handleBeingExportSvg: (svg) => {
+        const el = document.createElement('style')
+        el.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml')
+        el.innerHTML = `
+            font-size: 18px;
+            background: red;
+        `
+        svg.add(el)
+        return svg
+    }
+})
+```
+
+Earlier versions currently do not have a convenient way to dynamically insert styles, it is recommended to upgrade the version.

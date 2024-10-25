@@ -1,5 +1,13 @@
 # Numbers chargeable plugin
 
+> Current Latest Version:v2.0.0
+>
+> Version adaptation instructions:
+> 
+> Version v2.0.0 is compatible with simple-mind-map of v0.12.1 and above.
+>
+> Version v1.0.0 is compatible with simple-mind-map of v0.12.0 and below.
+
 The Numbers plugin provides the function of one click numbering of child nodes of a node, supports multiple numbering forms, and specifies the hierarchy of numbering:
 
 <p style="display:flex;align-items: flex-end;">
@@ -74,7 +82,7 @@ mindMap.execCommand('SET_NUMBER', appointNodes, number)
 
 This command can pass two parameters:
 
-- `appointNodes`：Assign a number to a specified node instance, which can be passed as a single node instance or as an array of node instances. If an empty array is passed, a tag will be added to the currently activated node;
+- `appointNodes`：Assign a number to a specified node instance, which can be passed as a single node instance or as an array of node instances. If an empty array is passed, a number will be added to the currently activated node;
 
 - `number`：If the number data to be set is passed as' null ', it means the number will be deleted. Otherwise, please pass an object with the following detailed fields:
 

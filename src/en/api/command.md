@@ -55,3 +55,13 @@ Get a copy of the rendering tree data. That is, the data of the current canvas.
 ### clearHistory()
 
 Clear the history stack data
+
+### addHistory()
+
+Trigger a historical stack data addition operation. Note that this method will delay execution, and the delay time can be set through the instantiation option 'addHistoryTime'.
+
+### originAddHistory ()
+
+> v0.12.1+
+
+The function is the same as the 'addHistory' method, but this method will execute immediately without delay.

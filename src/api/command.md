@@ -51,3 +51,13 @@
 ### clearHistory()
 
 清空历史堆栈数据
+
+### addHistory()
+
+触发一次历史堆栈数据添加操作。注意，该方法会延迟执行，延迟时间可通过实例化选项`addHistoryTime`来设置。
+
+### originAddHistory ()
+
+> v0.12.1+
+
+功能同`addHistory`方法，不过该方法会立即执行，不会延迟。

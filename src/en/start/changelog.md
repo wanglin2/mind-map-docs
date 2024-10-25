@@ -1,6 +1,60 @@
 # Changelog
 
+## 0.12.1
+
+> 2024.10.25
+
+Fix:
+
+> 1.Fixed the issue where the font size set for Text did not include units, which caused it to not work on some browsers;
+>
+> 2.Fixed the issue where the input box would shake left and right when editing text in non rich text mode after enabling the openRealtimeRenderOnNodeTextEdit option;
+>
+> 3.Fixed the issue where dragging an image to its maximum value during the first upload after enabling the maxImgResizeWidthInheritTheme option would cause subsequent adjustment buttons to not display;
+>
+> 4.Fixed the problem that the setBackgroundStyle method reported an error when calling the destroy method in node text editing;
+>
+> 5.Fixed the issue where the readonly edit box was not closed when in editing mode;
+>
+> 6.Fixed the issue where edge nodes cannot be displayed properly in presentation mode when there is a scrollbar plugin and the mind map is limited to the canvas;
+>
+> 7.Fixed the issue where the node width was not rolled back during the rollback operation after dragging and dropping to adjust the node width;
+
+New:
+
+> 1.Add a to-do plugin;
+>
+> 2.Remove the row height configuration of the theme;
+>
+> 3.Optimize the text editing experience in non rich text mode;
+>
+> 4.Add the return parameter of the previous configuration to the after_update_config event;
+>
+> 5.When the openRealtimeRenderOnNodeTextEdit option is enabled, the background and shadows of the text editing box will be removed, achieving a similar effect to in place editing;
+>
+> 6.Synchronize node styles for non rich text mode text editing boxes;
+>
+> 7.Remove the hard coding of numbered plugins in the code and add logic for creating pre content in the node library;
+
+Demo:
+
+> 1.Add to Do button in the right-click menu of the node;
+>
+> 2.Move the configuration of the settings class from the basic style to a separate settings bar;
+> 
+> 3.Remove the row height configuration of node styles;
+>
+> 4.Support setting whether node text editing updates node size in real-time, enabled by default;
+>
+> 5.Add configuration for displaying the position of node labels;
+>
+> 6.Add the configuration of whether to always display the expand and collapse buttons;
+>
+> 7.Add the configuration of whether to automatically enter text editing;
+
 ## 0.12.0
+
+> 2024.10.14
 
 Fix:
 

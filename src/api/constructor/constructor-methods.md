@@ -200,7 +200,7 @@ mindMap.setTheme('主题名称')
 | node_attachmentClick（v0.9.10+）    | 节点附件图标的点击事件 | this(当前节点实例)、e（事件对象）、node（图标节点）  |
 | node_attachmentContextmenu（v0.9.10+）    | 节点附件图标的右键点击事件 | this(当前节点实例)、e（事件对象）、node（图标节点）  |
 | before_update_config（v0.10.4+）    | 更新配置前触发，即当调用了`mindMap.updateConfig`方法更新配置时触发 | opt（未更新前的配置对象，引用对象，而非拷贝，所以当after_update_config事件触发后，该对象也会同步变化，所以需要缓存你需要的某个配置字段）  |
-| after_update_config（v0.10.4+）    | 更新配置后触发 |  opt（更新后的配置对象） |
+| after_update_config（v0.10.4+）    | 更新配置后触发 |  opt（更新后的配置对象）、lastOpt（v0.12.1+，上一次的配置对象，可以用于和opt进行比对某个配置是否发生了改变，不过需要注意的是值为简单类型的选项字段才可以比对） |
 | node_note_click（v0.10.6+）    | 节点备注图标的点击事件 | this(当前节点实例)、e（事件对象）、node（图标节点）  |
 | search_match_node_list_change（v0.11.0+）    | 搜索插件：当搜索匹配的节点列表改变时触发 | list（匹配的节点列表，请注意，数组项里的数据可能是节点实例也可能是节点数据，需要做好判断）  |
 | node_text_edit_change（v0.11.1+）    | 节点文本编辑中当输入的文本改变时触发 | { node, text, richText } 字段含义依次为：当前正在编辑的节点实例、当前最新的文本、是否是富文本 |

@@ -1,5 +1,13 @@
 # Numbers 收费插件
 
+> 当前最新版本：v2.0.0
+>
+> 版本适配说明：
+> 
+> v2.0.0版本适配v0.12.1及以上版本的simple-mind-map。
+>
+> v1.0.0版本适配v0.12.0及以下版本的simple-mind-map。
+
 Numbers插件提供一键编号某个节点的子节点的功能，支持多种编号形式，支持编号指定层级：
 
 <p style="display:flex;align-items: flex-end;">

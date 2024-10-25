@@ -51,3 +51,72 @@ resolve: { alias: { stream: "stream-browserify" } }
 如果你是`webpack`项目，那么需要修改`babel-loader`的配置，将`quill`加到`include`选项里。
 
 如果你是`vue-cli`项目，那么需要将`quill`加到`vue.config.js`的`transpileDependencies`选项里。
+
+## 7.在单应用页面或弹窗场景下创建思维导图，退出页面或关闭弹窗后再打开页面或弹窗，节点文本编辑时删除键不生效。
+
+如果在节点文本编辑中关闭思维导图，需要在关闭前调用实例的销毁方法：
+
+```js
+mindMap.destroy()
+```
+
+## 8.富文本模式下，节点文本明显偏下，但是编辑中的文本是正常的。
+
+节点文本明显偏下的原因一般是思维导图容器元素，或容器的任何一个祖先元素显式设置了`font-size`的样式，所以可以去除给容器元素或任何一个祖先元素设置的`font-size`样式，如果祖先元素因为一些原因无法去除，那么可以给容器元素添加如下样式：
+
+```css
+#mindMapContainer {
+    font-size: initial;
+}
+```
+
+至于编辑中的文本和显示文本不一致，是因为文本编辑框元素默认是插入到页面的`body`元素下，所以`font-size`没有影响到文本编辑元素，导致出现不一致，解决方法有两个：
+
+1.给文本编辑框元素也设置同样的`font-size`样式：
+
+```css
+.smm-richtext-node-edit-wrap {
+    font-size: 20px;
+}
+```
+
+2.将文本编辑框元素插入到思维导图容器下，或其他可以受`font-size`样式影响的元素下：
+
+```js
+new MindMap({
+    el: document.querySelector('#mindMapContainer'),
+    customInnerElsAppendTo: document.querySelector('#mindMapContainer')
+})
+```
+
+如果有其他会影响文本的样式处理同上。
+
+## 9.自定义的节点内容导出图片或svg时没有样式。
+
+`v0.12.0+`版本可以通过`appendCss`方法来插入你附加的样式：
+
+```js
+mindMap.appendCss(`
+    font-size: 18px;
+    background: red;
+`)
+```
+
+`v0.10.1+`版本可以使用`handleBeingExportSvg`选项：
+
+```js
+new MindMap({
+    handleBeingExportSvg: (svg) => {
+        const el = document.createElement('style')
+        el.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml')
+        el.innerHTML = `
+            font-size: 18px;
+            background: red;
+        `
+        svg.add(el)
+        return svg
+    }
+})
+```
+
+更早的版本暂时没有方便的方法来动态插入样式，建议升级版本。

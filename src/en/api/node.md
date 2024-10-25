@@ -56,6 +56,22 @@ Whether the node is currently being dragged
 
 ## Methods
 
+## getSvgObjects()
+
+> v0.12.1+
+
+Return value:
+
+```js
+{
+    SVG,
+    G,
+    Rect
+}
+```
+
+Get some objects from `@svgdotjs/svg.js` library.
+
 ### active()
 
 Manually activating this node will cause other activated nodes to lose their activation.
