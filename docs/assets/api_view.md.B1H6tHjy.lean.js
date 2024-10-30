@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as t,a4 as o}from"./chunks/framework.B358x4hV.js";const b=JSON.parse('{"title":"View实例","description":"","frontmatter":{},"headers":[],"relativePath":"api/view.md","filePath":"api/view.md"}'),c={name:"api/view.md"},r=o("",35),l=[r];function d(s,i,n,p,h,u){return t(),a("div",null,l)}const q=e(c,[["render",d]]);export{b as __pageData,q as default};

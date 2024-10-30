@@ -2,7 +2,7 @@
 
 The Checkbox plugin provides a to-do function, which means adding a checkbox to a node. Clicking on the checkbox can switch between completed and incomplete states.
 
-<img src="../assets/img/待办.png" style="width: 800px" />
+<img src="../../assets/img/待办.png" style="width: 800px" />
 
 You can experience it in the online version by right clicking on the node and clicking on 'Add ToDo'.
 
@@ -14,8 +14,8 @@ Price: ￥ 29.9, including unpackaged source code and packaged files.
 
 <p style="display:flex;align-items: flex-end;">
 
-<img src="../assets/img/alipay.jpg" style="width: 300px" />
-<img src="../assets/img/wechat.jpg" style="width: 300px" />
+<img src="../../assets/img/alipay.jpg" style="width: 300px" />
+<img src="../../assets/img/wechat.jpg" style="width: 300px" />
 
 </p>
 
