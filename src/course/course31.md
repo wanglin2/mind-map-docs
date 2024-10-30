@@ -14,7 +14,7 @@ new MindMap({
 })
 ```
 
-所有字段可以从默认主题[default.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/themes/default.js)文件里查看。
+所有字段可以从默认主题[default.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/theme/default.js)文件里查看。
 
 主题将节点按层级分为三种：
 

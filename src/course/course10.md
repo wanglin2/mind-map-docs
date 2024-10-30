@@ -2,7 +2,7 @@
 
 ## 主题配置属性一览
 
-此处的配置可能未及时更新，完整的主题配置可以参考：[default.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/themes/default.js)。
+此处的配置可能未及时更新，完整的主题配置可以参考：[default.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/theme/default.js)。
 
 如果某个属性的值你不知道如何传，可以去在线demo中设置一下，然后导出json或smm文件查看对应的值。也可以参考demo项目中的配置[zh.js](https://github.com/wanglin2/mind-map/blob/main/web/src/config/zh.js)。
 
@@ -276,7 +276,7 @@ mindMap.setTheme('主题名称')
 
 最好在实例化之前进行注册，这样在实例化时可以直接使用新注册的主题。
 
-一个主题其实就是一个普通的对象，完整配置可以参考[默认主题](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/themes/default.js)，`defineTheme`方法会把你传入的配置和默认配置做合并。大部分主题其实需要自定义的部分不是很多，一个典型的自定义主题配置可以参考[blueSky](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/themes/blueSky.js)。
+一个主题其实就是一个普通的对象，完整配置可以参考[默认主题](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/theme/default.js)，`defineTheme`方法会把你传入的配置和默认配置做合并。大部分主题其实需要自定义的部分不是很多，一个典型的自定义主题配置可以参考[blueSky](https://github.com/wanglin2/simple-mind-map-plugin-themes/blob/main/src/light/blueSky.js)。
 
 ```js
 MindMap.defineTheme('redSpirit', {
