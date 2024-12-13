@@ -1,5 +1,89 @@
 # Changelog
 
+## 0.12.2
+
+Fix:
+
+> 1.Fixed the issue where the node text and editing text positions were offset in some cases when using rich text mode;
+>
+> 2.Fixed the issue where nodes with some custom styles would not respond to new theme styles for styles not set after switching themes;
+>
+> 3.Fixed the issue where clicking "Replace All" continuously would result in abnormal search results when the search content is a substring of the replacement content;
+>
+> 4.Fixed the issue where unnecessary bulges would appear in certain scenarios when the corner radius of straight-line style connectors is not zero;
+>
+> 5.Fixed the issue where sub-nodes could be pasted on summary nodes under the HTTP protocol;
+>
+> 6.Fixed the issue where the current data was not pushed to the stack when switching from read-only mode to edit mode after instantiation;
+>
+> 7.Fixed the issue where real-time rendering of text editing would be abnormal in some structures when not using rich text mode;
+>
+> 8.Fixed the issue where the text editing box position would be incorrect when entering text editing mode with icons present on nodes in non-rich text mode;
+>
+> 9.Fixed the issue where multiple consecutive spaces input in rich text mode would be compressed into one;
+>
+> 10.Fixed the issue where the editing box would render abnormally when there are empty lines in the associated line text.
+
+新增：
+
+> 1.Added a plugin to change the layout structure of [Mind Maps], making it more in line with the practices of current mainstream mind mapping tools;
+>
+> 2.Support for defining the style of each association line individually;
+> 
+> 3.Adjusted the paste logic, if clipboard data is supported, it takes precedence over the canvas data; otherwise, it takes the canvas data as the standard;
+>
+> 4.The move up and move down commands now support specifying the operation node;
+>
+> 5.Non-rich text mode supports input and rendering of empty lines;
+>
+> 6.Added a method to extend the internal key mapping object of shortcut keys;
+>
+> 7.Increased the size of the node width drag handle;
+> 
+> 8.Restricted the formats allowed for input in rich text editing of nodes;
+>
+> 9.Added a double-click event for node note icons;
+> 
+> 10.Added an instantiation option for whether to automatically clear the original text when entering text editing mode via key press;
+>
+> 11.Only allow automatic entry into node text editing mode when the key event's target is the body;
+>
+> 12.Only respond to shortcut key events when the key event's target is the body or an internal text editing box element of the library;
+>
+> 13.Added a custom instantiation option to determine whether to respond to shortcut key events;
+>
+> 14.The default value of the mousedownEventPreventDefault option is changed to false;
+>
+> 15.Prohibited selection of text in rich text mode nodes;
+>
+> 16.Added a custom instantiation option for handling node connection elements;
+>
+> 17.Optimized node style settings, if the setting is for the connection line style, it does not trigger node re-creation;
+>
+> 18.Optimized the issue of slow performance when calling the setStyle method to modify the text style of a large number of nodes simultaneously in rich text mode;
+>
+> 19.Removed the logic for removing the last empty line in the rich text plugin;
+>
+> 20.Added an option for whether to perform a historical data stack operation during instantiation;
+>
+> 21.The updateData and setData methods have added an event that is thrown before updating the data;
+>
+> 22.Added an event that is thrown after the command is executed;
+>
+> 23.Added an event to cancel the activation of association lines.
+
+Demo：
+
+> 1.Support for configuring the flow effect of node connections;
+>
+> 2.Added a button in the node right-click menu to collapse all subordinate nodes;
+>
+> 3.Support for double-clicking the node note icon to enter note editing;
+>
+> 4.Support for setting the style of each association line individually;
+>
+> 5.When exporting node data containing mathematical formulas to Excel, only retain the source code of the formulas.
+
 ## 0.12.1
 
 > 2024.10.25

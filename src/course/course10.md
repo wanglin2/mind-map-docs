@@ -23,6 +23,12 @@
   lineColor: '#549688',
   // 连线样式
   lineDasharray: 'none',
+  // 连线是否开启流动效果，仅在虚线时有效（需要注册LineFlow插件）
+  lineFlow: false,
+  // 流动效果一个周期的时间，单位：s
+  lineFlowDuration: 1,
+  // 流动方向是否是从父节点到子节点
+  lineFlowForward: true,
   // 连线风格，支持三种
   // 1.曲线（curve）。仅logicalStructure、mindMap、verticalTimeline三种结构支持。
   // 2.直线（straight）。
@@ -101,9 +107,16 @@
     hoverRectColor: '',
     // 点鼠标hover和激活时显示的矩形边框的圆角大小
     hoverRectRadius: 5,
-    // 默认使用外层的
-    // paddingX: 15,
-    // paddingY: 5
+    // 下列样式也支持给节点设置，用于覆盖最外层的设置
+    // paddingX,
+    // paddingY,
+    // lineWidth,
+    // lineColor,
+    // lineDasharray,
+    // lineFlow,
+    // lineFlowDuration,
+    // lineFlowForward
+    // 关联线的所有样式
   },
   // 二级节点样式
   second: {
@@ -131,9 +144,7 @@
     lineMarkerDir: 'end',
     hoverRectColor: '',
     hoverRectColor: '',
-    hoverRectRadius: 5,
-    // paddingX: 15,
-    // paddingY: 5
+    hoverRectRadius: 5
   },
   // 三级及以下节点样式
   node: {
@@ -160,9 +171,7 @@
     lineMarkerDir: 'end',
     hoverRectColor: '',
     hoverRectColor: '',
-    hoverRectRadius: 5,
-    // paddingX: 15,
-    // paddingY: 5
+    hoverRectRadius: 5
   },
   // 概要节点样式
   generalization: {
@@ -188,9 +197,7 @@
     endDir: [1, 0],
     hoverRectColor: '',
     hoverRectColor: '',
-    hoverRectRadius: 5,
-    // paddingX: 15,
-    // paddingY: 5
+    hoverRectRadius: 5
   }
 }
 ```

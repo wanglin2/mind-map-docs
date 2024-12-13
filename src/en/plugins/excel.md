@@ -1,5 +1,13 @@
 # Excel chargeable plugin
 
+> Current Latest Version: v1.0.1
+>
+> Changelog:
+>
+> v1.0.1:
+>
+> 1.When exporting a node to Excel with mathematical formulas, only the formula source code is retained;
+
 This plugin can be used to import and export Excel software in .xlsx file format.
 
 You can experience it in the online version.

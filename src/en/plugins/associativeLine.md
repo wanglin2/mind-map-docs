@@ -34,7 +34,17 @@ Support for modifying the thickness and color of associated lines, divided into 
 
 - `associativeLineActiveColor`: The color of the active state of the associated line. The default value is `rgba(2, 167, 240, 1)`
 
-The configuration is provided as a theme, so if you want to modify these four properties, you can modify them using the `mindMap.setThemeConfig(config)` method.
+- `associativeLineDasharray`: Line style of associated lines. The default value is `[6, 4]`
+
+- `associativeLineTextColor`: Color of associated line text. The default value is `rgb(51, 51, 51)`
+
+- `associativeLineTextFontSize`: Related line text size. The default value is `14`
+
+- `associativeLineTextLineHeight`: Related line text line height. The default value is `1.2`
+
+- `associativeLineTextFontFamily`: Font of associated line text. The default value is `微软雅黑, Microsoft YaHei`
+
+The configuration is provided as a theme, The above default values are for the default theme, and may vary for different themes, so if you want to modify these four properties, you can modify them using the `mindMap.setThemeConfig(config)` method.
 
 ## Props
 
@@ -46,6 +56,7 @@ Currently, all connection line data, array types, and each item of the array are
 [
     path, // Connector node
     clickPath, // Invisible click line node
+    text, // Text object
     node, // Start node
     toNode // Target node
 ]
@@ -53,9 +64,46 @@ Currently, all connection line data, array types, and each item of the array are
 
 ### mindMap.associativeLine.activeLine
 
-The currently active connection line and array type are the same as the structure of each item in the `lineList` array.
+The currently active connection line, The structure is as follows:
+
+```js
+[
+    path, // Connector node
+    clickPath, // Invisible click line node
+    text, // Text object
+    node, // Start node
+    toNode, // Target node
+    markerPath// v0.12.2+，Arrow object
+]
+```
 
 ## Methods
+
+### getStyleConfig(node, toNode)
+
+> v0.12.2+
+
+- `node`：Instance of the starting node of the correlation line
+
+- `toNode`：Associated Line Target Node Instance
+
+Return value: The style data object of the associated line.
+
+Retrieve the style data of a certain associated line.
+
+Priority: Custom styles for associated lines, custom styles for nodes, node hierarchy styles for themes, and outermost styles for themes.
+
+If you have developed a view that sets the style of a certain associated line and generally need to display the current style of the associated line, you can use this method to obtain it. Official demo code implementation reference: [AssociativeLineStyle.vue](https://github.com/wanglin2/mind-map/blob/main/web/src/pages/Edit/components/AssociativeLineStyle.vue).
+
+### updateActiveLineStyle()
+
+> v0.12.2+
+
+Update the style of the current active line. It is usually called after the style of node associated line is customized.
+
+Directly calling the node.setStyle method to update the style will also trigger the style update of the associated lines, but the activation status of the associated lines will be lost.
+ So if you want to keep the activation status, you can call the node.setData method to update the data, and then call the method to update the style, so that the activation status of the associated line will not be lost.
+ Official demo code implementation reference: [AssociativeLineStyle.vue](https://github.com/wanglin2/mind-map/blob/main/web/src/pages/Edit/components/AssociativeLineStyle.vue).
 
 ### cancelCreateLine()
 

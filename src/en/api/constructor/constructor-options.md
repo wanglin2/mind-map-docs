@@ -60,6 +60,7 @@ Node tree rendering is an asynchronous operation, so it is not possible to immed
 | expandBtnNumHandler（v0.7.0+）     | Used to customize the display of the number of nodes when collapsed, a function can be passed. Versions before v0.11.1 receive a parameter representing the total number of all descendant nodes of the collapsed node, while versions v0.11.1+receive two parameters. The first parameter still has the total number of descendant nodes, and the second parameter is the instance of the node. Need return a number or string that represents the final displayed content. For example, when the number is greater than 99, 99 can be displayed+  | Function  |  |
 | isShowExpandNum（v0.7.0+）     | Display the number of folded nodes when they are folded up  | Boolean  | true |
 | enableShortcutOnlyWhenMouseInSvg（v0.5.1+）     | Only respond to shortcut key events when the mouse is inside the canvas  | Boolean  | true |
+| customCheckEnableShortcut（v0.12.2+）     | Customize whether to respond to shortcut key events, with higher priority than the enableShortcutOnlyWhenMouseInSvg option. You can pass a function that takes the event object e as an argument and needs to return true or false. Returning true means that it is allowed to respond to shortcut key events, while not allowed. The library defaults to responding to shortcut keys when the event target is the body or a text editing box element, and not to others  | Function、null  | null |
 | enableNodeTransitionMove（v0.5.1+）（v0.6.7+ is remove this feature）     | Whether to enable node animation transition  | Boolean  | true |
 | nodeTransitionMoveDuration（v0.5.1+）（v0.6.7+ is remove this feature）     | If node animation transition is enabled, the transition time can be set using this attribute, in milliseconds  |  Number  | 300 |
 | initRootNodePosition（v0.5.3+）     | The position of the initial root node can be passed as an array, default is `['center', 'center']`, Represents the root node at the center of the canvas, In addition to `center`, keywords can also be set to `left`, `top`, `right`, and `bottom`, In addition to passing keywords, each item in the array can also pass a number representing a specific pixel, Can pass a percentage string, such as `['40%', '60%']`, Represents a horizontal position at `40%` of the canvas width, and a vertical position at `60%` of the canvas height   | Array  | null |
@@ -80,6 +81,7 @@ Node tree rendering is an asynchronous operation, so it is not possible to immed
 | customInnerElsAppendTo（v0.6.12+）     |Specify the location where some internal elements (node text editing element, node note display element, associated line text editing element, node image adjustment button element) are added, and default to document.body | null/HTMLElement  | null | 
 | enableCreateHiddenInput（v0.6.13+）（v0.6.14+ remove this feature）     | Is it allowed to create a hidden input box that will be focused when the node is activated for pasting data and automatically entering the text editing state |  Boolean  | true |
 | enableAutoEnterTextEditWhenKeydown（v0.6.13+）     | Does it automatically enter text editing mode when pressing the Chinese, English, or numeric buttons when there is an activation node? | Boolean  | true |
+| autoEmptyTextWhenKeydownEnterEdit（v0.12.2+）     | When the enableAutoEnterTextEditWhenKeydown option is enabled, does it automatically clear the original text when entering text editing through a key  | Boolean | false |
 | customHandleClipboardText（v0.6.14+）     | Customize the processing of clipboard text. When pressing ctrl+v to paste, it will read the text and images from the user's clipboard. By default, it will only determine whether the text is regular text and node data in simple mind map format. If you want to process data from other mind maps, such as process, zhixi, etc., you can pass a function that takes the text from the current clipboard as a parameter and returns the processed data, which can be of two types: 1.If a pure text is returned, a child node will be directly created with that text; 2.Returns a node object in the following format: \{ simpleMindMap: true, data: \{ data: \{ text: '' \}, children: [] \} \}, The representative is data in simple bind map format, and the node data is in the same format as the simple bind map node data. If your processing logic has asynchronous logic, you can also return a promise | Function  | null |
 | errorHandler（v0.6.15+）     | Custom error handling functions currently only throw some asynchronous logic errors. Can pass a function that takes two parameters, the first being the wrong type and the second being the wrong object | Function  |  |
 | disableMouseWheelZoom（v0.6.15+）     | Prohibit mouse wheel scaling, you can still use the API for scaling | Boolean  | false |
@@ -113,11 +115,13 @@ Node tree rendering is an asynchronous operation, so it is not possible to immed
 | notShowExpandBtn（v0.10.6+）     | Is not display the expand/collapse button, higher priority than the 'alwaysShowExpandBtn' configuration |  Boolean | false |
 | emptyTextMeasureHeightText（v0.11.1+）     | If the node text is empty, in order to avoid the collapse of the height of the blank node, a height will be measured using the text specified in this field | String | abc123我和你 |
 | openRealtimeRenderOnNodeTextEdit（v0.11.1+）     | Is the node size and position updated in real-time during node text editing? Enabling it may cause lag when there are a large number of nodes | Boolean | false |
-| mousedownEventPreventDefault（v0.11.2+）     | By default, the container element el will be bound with a mousedown event and its default event will be blocked, which can cause certain problems. For example, if you focus on other input boxes outside the mind map and click on the canvas, it will not trigger defocusing. This option can be used to turn off the blocking. Closing it may also bring certain problems, such as when selecting nodes with the mouse box, the node text may be selected. It depends on how you choose | Boolean | true |
+| mousedownEventPreventDefault（v0.11.2+）     | By default, the container element el will be bound with a mousedown event, which can be used to set whether to block its default event. If set to true, it may cause certain problems, such as focusing on other input boxes outside the mind map, and clicking on the canvas will not trigger it to lose focus | Boolean | false (versions before v0.12.2 are true) |
 | onlyPasteTextWhenHasImgAndText（v0.12.0+）     | When pasting data from the user clipboard on an activated node, if both text and images exist, only the text will be pasted and the images will be ignored | Boolean | true |
 | enableDragModifyNodeWidth（v0.12.0+）     |  Is it allowed to drag and drop to adjust the width of nodes? In fact, it compresses the width of the text content inside the node. When the width of the text content in the node is compressed to its minimum, it cannot be further compressed. If there is an image in the node, the minimum value is based on the maximum value of the image width and the minimum width of the text content (currently, this feature is only available in two situations: 1. Rich Text mode is enabled, that is, the RichText plugin is registered; 2. Custom node content) | Boolean | true |
 | minNodeTextModifyWidth（v0.12.0+）     | When allowing drag and drop adjustment of node width, this option can be used to set the minimum compression width allowed for node text content  | Number | 20 |
 | maxNodeTextModifyWidth（v0.12.0+）     |  Same as minNodeTextModifierWidth, maximum value, passing -1 represents no restriction | Number | -1 |
+| customHandleLine（v0.12.2+）     | Customize the connection method for processing nodes, which can pass a function that takes three parameters: node(Node instance)、line(A connection of a node, the path object of the @svgjs library), { width, color, dasharray }，dasharray(The dashed line style of this line represents a solid line with 'none'), You can modify the line object to achieve the effect of modifying node connection styles, such as adding flow effects | Function、null | null |
+| addHistoryOnInit（v0.12.2+）     |  Do you immediately perform a historical data stack operation after instantiation (i.e. call the mindMap.command.addHistory method) | Boolean | true |
 
 #### 1.1 Data structure
 
@@ -129,6 +133,7 @@ The basic data structure is as follows:
     text: '', // The text of the node can be rich text, which is in HTML format. In this case, richText should be set to true
     richText: false, // Is the text of the node in rich text mode
     expand: true, // Whether the node is expanded
+    isActive: false,// Whether is the activated state
     uid: '',// The unique ID of the node, which may not be passed, will be generated internally
     icon: [], // The format of the icon can be found in the "插入和扩展节点图标" section of the tutorial
     image: '', // URL of the image
@@ -148,8 +153,16 @@ The basic data structure is as follows:
       // ...The fields of other ordinary nodes are supported, But it does not support children
     }],
     associativeLineTargets: [''],// If there are associated lines, then it is the uid list of the target node
-    associativeLineText: '',// Association Line Text
+    associativeLineText: {},// Association Line Text
+    associativeLinePoint: [],// Coordinate data of associated lines
+    associativeLineTargetControlOffsets: [],// Coordinate offset data of associated lines
+    associativeLineStyle: {},// v0.12.2+, Style of associated lines
+    customLeft: 0,// Custom position, this value will be set after enabling free drag and drop
+    customTop: 0,// Custom position, this value will be set after enabling free drag and drop
+    customTextWidth: 0,// v0.12.0+，Custom text width, available in rich text mode. This property will be set after dragging and adjusting the node width
+    dir: '',// v0.12.2+，When [Mind Map] layout structure is used, it represents the arrangement position of secondary nodes
     // ...For other style fields, please refer to the topic
+    // Some plugins also have corresponding fields
   },
   children [// Child nodes, with consistent structure and root nodes
     {

@@ -524,6 +524,12 @@ Return：Filtered HTML string
 
 Defend against XSS attacks, filter malicious HTML tags and attributes. You can recursively traverse the tree data before passing the node data to SimpleMindMap, using this method to process the rich text content of nodes and avoid XSS attacks.
 
+### addXmlns(el)
+
+- `el`: DOM node
+
+Add namespace attributes to DOM nodes: `xmlns='http://www.w3.org/1999/xhtml'`.
+
 ## Simulate CSS background in Canvas
 
 Import:

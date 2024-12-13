@@ -120,3 +120,7 @@ new MindMap({
 ```
 
 更早的版本暂时没有方便的方法来动态插入样式，建议升级版本。
+
+## 10.跨浏览器窗口无法复制粘贴，或无法粘贴剪贴板中的数据。
+
+在单个思维导图页面内复制和粘贴仅需要拦截Ctrl+c或Ctrl+v按键即可，复制和粘贴的数据可以简单的通过一个变量来保存，而其他情况需要读写用户剪贴板的数据，需要使用[clipboard](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/clipboard)API，该特性仅在https协议下可用。

@@ -134,6 +134,45 @@ import { createRoot } from 'react-dom/client'
 
 > 感谢[h5chenhang](https://github.com/h5chenhang)贡献的[示例代码](https://github.com/wanglin2/mind-map/issues/192)。
 
+## 关于导出png、svg、pdf时的样式丢失问题
+
+如果可以的话建议直接将样式内联到你创建的元素里：
+
+```js
+{
+    customCreateNodeContent: (node) => {
+        let div = document.createElement('div')
+        div.style.cssText = `xxx`
+        return div
+    }
+}
+```
+
+此外也可以通过`handleBeingExportSvg`实例化选项来传递：
+
+```js
+new MindMap({
+    customCreateNodeContent: (node) => {
+        let div = document.createElement('div')
+        div.style.className = `test`
+        return div
+    },
+    handleBeingExportSvg(svg) {
+        const style = document.createElement('style')
+        style.innerHTML = `
+            .test {
+                width: 203px;
+                height: 78px;
+                color: red;
+                font-size: 20px;
+            }
+        `
+        svg.add(style)
+        return svg
+    }
+})
+```
+
 ## 常见问题
 
 1.点击自定义内容中的输入框无法获取焦点和输入

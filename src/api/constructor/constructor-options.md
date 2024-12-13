@@ -60,6 +60,7 @@ const mindMap = new MindMap({
 | expandBtnNumHandler（v0.7.0+）     | 用于自定义收起时显示节点数量的内容，可以传递一个函数，v0.11.1之前的版本接收一个参数，代表收起的节点所有子孙节点的总数量，v0.11.1+版本接收两个参数，第一个还是有子孙节点的总数量，第二个为该节点实例。需要返回一个数字或字符串，代表最终显示的内容，比如你可以当数量大于99时，显示99+  | Function  |  |
 | isShowExpandNum（v0.7.0+）     | 节点收起时是否显示收起的数量  | Boolean  | true |
 | enableShortcutOnlyWhenMouseInSvg（v0.5.1+）     | 是否只有当鼠标在画布内才响应快捷键事件  | Boolean  | true |
+| customCheckEnableShortcut（v0.12.2+）     | 自定义判断是否响应快捷键事件，优先级比enableShortcutOnlyWhenMouseInSvg选项高。可以传递一个函数，接收事件对象e为参数，需要返回true或false，返回true代表允许响应快捷键事件，反之不允许，库默认当事件目标为body，或为文本编辑框元素时响应快捷键，其他不响应  | Function、null  | null |
 | enableNodeTransitionMove（v0.5.1+）（v0.6.7+已去除该特性）     | 是否开启节点动画过渡  | Boolean  | true |
 | nodeTransitionMoveDuration（v0.5.1+）（v0.6.7+已去除该特性）     | 如果开启节点动画过渡，可以通过该属性设置过渡的时间，单位ms  | Number  | 300 |
 | initRootNodePosition（v0.5.3+）     | 初始根节点的位置，可传一个数组，默认为`['center', 'center']`，代表根节点处于画布中心位置，除了`center`，关键词还可以设置`left`、`top`、`right`、`bottom`，除了可以传关键词，数组的每项还可以传递一个数字，代表具体的像素，可以传递一个百分比字符串，比如`['40%', '60%']`，代表水平位置在画布宽度的`40%`的位置，垂直位置在画布高度的`60%`的位置  | Array  | null |
@@ -80,6 +81,7 @@ const mindMap = new MindMap({
 | customInnerElsAppendTo（v0.6.12+）     | 指定内部一些元素（节点文本编辑元素、节点备注显示元素、关联线文本编辑元素、节点图片调整按钮元素）添加到的位置，默认添加到document.body下 | null/HTMLElement  | null |
 | enableCreateHiddenInput（v0.6.13+）（v0.6.14+版本已去除该特性）     | 是否允许创建一个隐藏的输入框，该输入框会在节点激活时聚焦，用于粘贴数据和自动进入文本编辑状态 | Boolean  | true |
 | enableAutoEnterTextEditWhenKeydown（v0.6.13+）     | 是否在存在一个激活节点时，当按下中文、英文、数字按键时自动进入文本编辑模式 | Boolean  | true |
+| autoEmptyTextWhenKeydownEnterEdit（v0.12.2+）     |  当enableAutoEnterTextEditWhenKeydown选项开启时生效，当通过按键进入文本编辑时是否自动清空原有文本 | Boolean | false |
 | customHandleClipboardText（v0.6.14+）     | 自定义对剪贴板文本的处理。当按ctrl+v粘贴时会读取用户剪贴板中的文本和图片，默认只会判断文本是否是普通文本和simple-mind-map格式的节点数据，如果你想处理其他思维导图的数据，比如processon、zhixi等，那么可以传递一个函数，接受当前剪贴板中的文本为参数，返回处理后的数据，可以返回两种类型：1.返回一个纯文本，那么会直接以该文本创建一个子节点；2.返回一个节点对象，格式如下：{ simpleMindMap: true, data: { data: { text: '' }, children: [] } }，代表是simple-mind-map格式的数据，节点数据同simple-mind-map节点数据格式，如果你的处理逻辑存在异步逻辑，也可以返回一个promise | Function  | null |
 | errorHandler（v0.6.15+）     | 自定义错误处理函数，目前只会抛出一些异步逻辑出错的情况。可以传递一个函数，会接收两个参数，第一个为错误的类型，第二个为错误对象 | Function  |  |
 | disableMouseWheelZoom（v0.6.15+）     | 禁止鼠标滚轮缩放，你仍旧可以使用api进行缩放 | Boolean  | false |
@@ -113,11 +115,13 @@ const mindMap = new MindMap({
 | notShowExpandBtn（v0.10.6+）     | 不显示展开收起按钮，优先级比alwaysShowExpandBtn配置高 | Boolean | false |
 | emptyTextMeasureHeightText（v0.11.1+）     | 如果节点文本为空，那么为了避免空白节点高度塌陷，会用该字段指定的文本测量一个高度 | String | abc123我和你 |
 | openRealtimeRenderOnNodeTextEdit（v0.11.1+）     | 是否在进行节点文本编辑时实时更新节点大小和节点位置，开启后当节点数量比较多时可能会造成卡顿 | Boolean | false |
-| mousedownEventPreventDefault（v0.11.2+）     | 默认会给容器元素el绑定mousedown事件，并且会阻止其默认事件，这会带来一定问题，比如你聚焦在思维导图外的其他输入框，点击画布就不会触发其失焦，可以通过该选项关闭阻止。关闭后也会带来一定问题，比如鼠标框选节点时可能会选中节点文字，看你如何取舍 | Boolean | true |
+| mousedownEventPreventDefault（v0.11.2+）     | 默认会给容器元素el绑定mousedown事件，可通过该选项设置是否阻止其默认事件。如果设置为true，会带来一定问题，比如你聚焦在思维导图外的其他输入框，点击画布就不会触发其失焦 | Boolean | false（v0.12.2之前的版本为true） |
 | onlyPasteTextWhenHasImgAndText（v0.12.0+）     |  在激活的节点上粘贴用户剪贴板中的数据时，如果同时存在文本和图片，那么只粘贴文本，忽略图片 | Boolean | true |
 | enableDragModifyNodeWidth（v0.12.0+）     | 是否允许拖拽调整节点的宽度，实际上压缩的是节点里面文本内容的宽度，当节点文本内容宽度压缩到最小时无法继续压缩。如果节点存在图片，那么最小值以图片宽度和文本内容最小宽度的最大值为准（目前该特性仅在两种情况下可用：1.开启了富文本模式，即注册了RichText插件；2.自定义节点内容）  | Boolean | true |
 | minNodeTextModifyWidth（v0.12.0+）     |  当允许拖拽调整节点的宽度时，可以通过该选项设置节点文本内容允许压缩的最小宽度 | Number | 20 |
 | maxNodeTextModifyWidth（v0.12.0+）     |  同minNodeTextModifyWidth，最大值，传-1代表不限制 | Number | -1 |
+| customHandleLine（v0.12.2+）     |  自定义处理节点的连线方法，可以传递一个函数，函数接收三个参数：node（节点实例）、line（节点的某条连线，@svgjs库的path对象）, { width, color, dasharray }，dasharray（该条连线的虚线样式，为none代表实线），你可以修改line对象来达到修改节点连线样式的效果，比如增加流动效果 | Function、null | null |
+| addHistoryOnInit（v0.12.2+）     |  实例化完后是否立刻进行一次历史数据入栈操作（即调用mindMap.command.addHistory方法） | Boolean | true |
 
 #### 1.1数据结构
 
@@ -129,6 +133,7 @@ const mindMap = new MindMap({
     text: '', // 节点的文本，可以是富文本，也就是html格式的，此时richText要设为true
     richText: false, // 节点的文本是否是富文本模式
     expand: true, // 节点是否展开
+    isActive: false,// 是否是激活状态
     uid: '',// 节点唯一的id，可不传，内部会生成
     icon: [], // 图标，格式可参考教程里的【插入和扩展节点图标】章节
     image: '', // 图片的url
@@ -150,8 +155,16 @@ const mindMap = new MindMap({
       // ...其他普通节点的字段都支持，但是不支持children
     }],
     associativeLineTargets: [''],// 如果存在关联线，那么为目标节点的uid列表
-    associativeLineText: '',// 关联线文本
+    associativeLineText: {},// 关联线文本
+    associativeLinePoint: [],// 关联线的坐标数据
+    associativeLineTargetControlOffsets: [],// 关联线的坐标偏移数据
+    associativeLineStyle: {},// v0.12.2+，关联线的样式
+    customLeft: 0,// 自定义位置，开启了自由拖拽后会设置此值
+    customTop: 0,// 自定义位置，开启了自由拖拽后会设置此值
+    customTextWidth: 0,// v0.12.0+，自定义文本的宽度，富文本模式下可用，在拖拽调整节点宽度后会设置此属性
+    dir: '',// v0.12.2+，[思维导图]布局结构时代表二级节点的排列位置
     // ...其他样式字段，可以参考主题
+    // 某些插件也会有对应的字段
   },
   children [// 子节点，结构和根节点一致
     {

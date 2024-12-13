@@ -24,7 +24,7 @@ simpleMindMap.xmind
 
 ### xmind.parseXmindFile(file, handleMultiCanvas)
 
-解析`.xmind`文件，返回解析后的数据，可以使用`mindMap.setData(data)`来将返回的数据渲染到画布上
+解析`.xmind`文件，返回解析后的数据，可以使用`mindMap.setData(data)`来将返回的数据渲染到画布上。该函数返回一个Promise实例。
 
 `file`：`File`对象
 

@@ -13,6 +13,8 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
 如果本项目有帮助到你的话，可以考虑请作者喝杯咖啡~
 
 > 推荐使用支付宝，微信获取不到头像。转账请备注【思维导图】。
+>
+> 赞助等级：最强王者（￥500+）、星耀赞助（￥300+）、钻石赞助（￥150+）、黄金赞助（￥50+）、青铜赞助
 
 <p style="display:flex;align-items: flex-end;">
 
@@ -20,6 +22,106 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
 <img src="./assets/img/wechat.jpg" style="width: 300px" />
 
 </p>
+
+### 钻石赞助
+
+<div style="display: flex;">
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;flex-shrink: 0;">
+        <img src="./assets/avatar/黄智彪@一米一栗科技.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>黄智彪@一米一栗科技</p>
+    </div>
+</div>
+
+### 黄金赞助
+
+<div style="display: flex;">
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/小土渣的宇宙.jpeg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>小土渣的宇宙</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/Chris.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>Chris</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/仓鼠.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>仓鼠</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/风格.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>风格</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/default.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>LiuJL</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/Kyle.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>Kyle</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/秀树因馨雨.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>秀树因馨雨</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/default.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>黄泳</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/ccccs.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>ccccs</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/炫.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>炫</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/default.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>晏江</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/梁辉.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>梁辉</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/千帆.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>千帆</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/布林.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>布林</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/达仁科技.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>达仁科技</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/沐风牧草.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>沐风牧草</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/俊奇.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>俊奇</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/庆国.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>庆国</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/default.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>Matt</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/雨馨.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>雨馨</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/峰.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>峰</p>
+    </div>
+</div>
+
+### 青铜赞助
 
 <div style="display: flex;">
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;flex-shrink: 0;">
@@ -29,10 +131,6 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;flex-shrink: 0;">
         <img src="./assets/avatar/志斌.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>志斌</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/小土渣的宇宙.jpeg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>小土渣的宇宙</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/qp.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
@@ -51,20 +149,8 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
         <p>suka</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/Chris.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>Chris</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/水车.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>水车</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/仓鼠.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>仓鼠</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/千帆.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>千帆</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/才镇.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
@@ -86,10 +172,6 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
         <p>Luke</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/布林.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>布林</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/南风.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>南风</p>
     </div>
@@ -106,20 +188,12 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
         <p>敏</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/沐风牧草.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>沐风牧草</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/有希.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>有希</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/樊笼.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>樊笼</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/达仁科技.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>达仁科技</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/小逗比.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
@@ -202,10 +276,6 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
         <p>旭东</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/俊奇.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>俊奇</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/橘半.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>橘半</p>
     </div>
@@ -218,20 +288,12 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
         <p>皇登攀</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/风格.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>风格</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/default.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>SR</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/逆水行舟.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>逆水行舟</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/default.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>LiuJL</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/L.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
@@ -260,10 +322,6 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
         <p>铁</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/庆国.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>庆国</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/Alex.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>Alex</p>
     </div>
@@ -280,16 +338,8 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
         <p>最多5个字</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/雨馨.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>雨馨</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/ZX.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>ZX</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/峰.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>峰</p>
     </div>
 </div>
 <div style="display: flex;">
@@ -306,16 +356,8 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
         <p>好名字</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/Kyle.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>Kyle</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/lsytyrt.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>lsytyrt</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/秀树因馨雨.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>秀树因馨雨</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/buddy.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
@@ -337,14 +379,6 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
         <img src="./assets/avatar/晴空.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>晴空</p>
     </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/default.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>黄泳</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/ccccs.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>ccccs</p>
-    </div>
 </div>
 <div style="display: flex;">
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
@@ -360,20 +394,12 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
         <p>张文建</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/炫.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>炫</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/Lawliet.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>Lawliet</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/一叶孤舟.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>一叶孤舟</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/default.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>晏江</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/default.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
@@ -388,10 +414,6 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
         <p>中文网字计划-江夏尧</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/梁辉.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>梁辉</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/海云.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>海云</p>
     </div>
@@ -402,10 +424,6 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/h.r.w.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>h.r.w</p>
-    </div>
-    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/default.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
-        <p>Matt</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/时光匆匆.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
@@ -419,4 +437,16 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
         <img src="./assets/avatar/一亩三.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>一亩三</p>
     </div>
+    <span>
+        <img src="./assets/avatar/xbkkjbs0246658.png" style="width: 50px;height: 50px;" />
+        <span>xbkkjbs0246658</span>
+    </span>
+    <span>
+        <img src="./assets/avatar/4399行星元帅.jpg" style="width: 50px;height: 50px;" />
+        <span>4399行星元帅</span>
+    </span>
+    <span>
+        <img src="./assets/avatar/Xavier.png" style="width: 50px;height: 50px;" />
+        <span>Xavier</span>
+    </span>
 </div>

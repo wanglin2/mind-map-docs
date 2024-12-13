@@ -24,8 +24,7 @@ simpleMindMap.xmind
 
 ### xmind.parseXmindFile(file, handleMultiCanvas)
 
-Parsing the `.xmind` file and returning the parsed data. You can use
-`mindMap.setData(data)` to render the returned data to the canvas.
+Parsing the `.xmind` file and returning the parsed data. You can use `mindMap.setData(data)` to render the returned data to the canvas. This function returns a Promise instance.
 
 `file`: `File` object
 

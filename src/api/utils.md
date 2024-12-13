@@ -527,6 +527,12 @@ document.addEventListener(fullscrrenEvent, () => {
 
 防御 XSS 攻击，过滤恶意 HTML 标签和属性。你可以在将节点数据传递给SimpleMindMap前递归遍历树数据，通过该方法处理节点富文本内容，避免 XSS 攻击。
 
+### addXmlns(el)
+
+- `el`：DOM节点
+
+给DOM节点添加命名空间属性：`xmlns='http://www.w3.org/1999/xhtml'`。
+
 ## 在 canvas 中模拟 css 的背景属性
 
 引入：

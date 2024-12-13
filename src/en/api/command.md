@@ -65,3 +65,26 @@ Trigger a historical stack data addition operation. Note that this method will d
 > v0.12.1+
 
 The function is the same as the 'addHistory' method, but this method will execute immediately without delay.
+
+### extendKeyMap(key, code)
+
+> v0.12.2+
+
+`key`：The key identifier to be extended, for example, there may be multiple `/` keys on the keyboard, and the library has already defined one by default. You can define a new one and choose the name you want, for example: `/2`
+
+`code`：The key value of this button
+
+Expand key mapping.
+
+Usage example:
+
+```js
+mindMap.keyCommand.extendKeyMap('/2', 111)
+mindMap.keyCommand.addShortcut('/2', mindMap.renderer.toggleActiveExpand)
+```
+
+### removeKeyMap(key)
+
+> v0.12.2+
+
+Remove a key from the key mapping.

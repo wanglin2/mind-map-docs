@@ -127,3 +127,7 @@ new MindMap({
 ```
 
 Earlier versions currently do not have a convenient way to dynamically insert styles, it is recommended to upgrade the version.
+
+## 10.Cross browser window cannot copy and paste, or cannot paste data from the clipboard.
+
+Copying and pasting within a single mind map page only requires intercepting the Ctrl+c or Ctrl+v keys. The copied and pasted data can be easily saved through a variable, while in other cases, reading and writing data from the user's clipboard requires the use of the [clipboard](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/clipboard) API, which is only available under the HTTPS protocol.

@@ -183,7 +183,10 @@ mindMap.setTheme('主题名称')
 | node_icon_mouseenter（v0.9.9+）    |  鼠标移入节点内的图标时触发  | this（节点实例）、item（点击的图标名称）、e（事件对象）、node(图标节点)  |
 | node_icon_mouseleave（v0.9.9+）    |  鼠标移出节点内的图标时触发  | this（节点实例）、item（点击的图标名称）、e（事件对象）、node(图标节点)  |
 | view_theme_change（v0.6.12+）    | 调用了setTheme方法设置主题后触发   | theme（设置的新主题名称）  |
+| before_set_data（v0.12.2+）    | 调用setData方法动态设置思维导图数据前触发   | data（新的思维导图数据）  |
 | set_data（v0.7.3+）    | 调用了setData方法动态设置思维导图数据时触发   | data（新的思维导图数据）  |
+| before_update_data（v0.12.2+）    | 调用updateData方法动态设置思维导图数据前触发   | data（新的思维导图数据）  |
+| update_data（v0.12.2+）    | 调用updateData方法动态设置思维导图数据后触发   | data（新的思维导图数据）  |
 | resize（v0.8.0+）    |  容器尺寸改变后触发，实际上是当思维导图实例的`resize`方法被调用后触发  |   |
 | beforeDestroy（v0.9.0+）    |  思维导图销毁前触发，即调用了destroy方法触发  |   |
 | body_mousedown（v0.9.2+）    | document.body的鼠标按下事件                      | e（事件对象）      |
@@ -202,8 +205,10 @@ mindMap.setTheme('主题名称')
 | before_update_config（v0.10.4+）    | 更新配置前触发，即当调用了`mindMap.updateConfig`方法更新配置时触发 | opt（未更新前的配置对象，引用对象，而非拷贝，所以当after_update_config事件触发后，该对象也会同步变化，所以需要缓存你需要的某个配置字段）  |
 | after_update_config（v0.10.4+）    | 更新配置后触发 |  opt（更新后的配置对象）、lastOpt（v0.12.1+，上一次的配置对象，可以用于和opt进行比对某个配置是否发生了改变，不过需要注意的是值为简单类型的选项字段才可以比对） |
 | node_note_click（v0.10.6+）    | 节点备注图标的点击事件 | this(当前节点实例)、e（事件对象）、node（图标节点）  |
+| node_note_dblclick（v0.12.2+）    | 节点备注图标的双击事件 | this(当前节点实例)、e（事件对象）、node（图标节点）  |
 | search_match_node_list_change（v0.11.0+）    | 搜索插件：当搜索匹配的节点列表改变时触发 | list（匹配的节点列表，请注意，数组项里的数据可能是节点实例也可能是节点数据，需要做好判断）  |
 | node_text_edit_change（v0.11.1+）    | 节点文本编辑中当输入的文本改变时触发 | { node, text, richText } 字段含义依次为：当前正在编辑的节点实例、当前最新的文本、是否是富文本 |
+| afterExecCommand（v0.12.2+）    | 命令对应的方法执行后的事件，此时还没有将新的数据添加到历史记录堆栈中 | name（执行的命令）、...（该命令的参数） |
 
 ### emit(event, ...args)
 
@@ -275,15 +280,15 @@ mindMap.updateConfig({
 
 执行命令，每执行一个命令就会在历史堆栈里添加一条记录用于回退或前进。所有命令如下：
 
-| 命令名称                            | 描述                                                         | 参数                                                         |
-| ----------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| SELECT_ALL                          | 全选                                                         |                                                              |
+| 命令名称   | 描述    | 参数     |
+| ------------- | -------------- | -------------------- |
+| SELECT_ALL                          | 全选    |       |
 | BACK                                | 回退指定的步数                                               | step（要回退的步数，默认为1）                                |
 | FORWARD                             | 前进指定的步数                                               | step（要前进的步数，默认为1）                                |
 | INSERT_NODE                         | 插入同级节点，操作节点为当前激活的节点或指定节点，如果有多个激活节点，只会对第一个有效（v0.7.2+支持对多个激活节点同时插入兄弟节点） | openEdit（v0.4.6+，是否激活新插入的节点并进入编辑模式，默认为`true`）、 appointNodes（v0.4.7+，可选，指定要插入兄弟节点的节点，指定多个节点可以传一个数组）、 appointData（可选，指定新创建节点的数据，比如{text: 'xxx', ...}，详细结构可以参考[exampleData.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/example/exampleData.js)）、 appointChildren（v0.6.14+，可选，指定新创建节点的子节点，数组类型）     |
 | INSERT_CHILD_NODE                   | 插入子节点，操作节点为当前激活的节点或指定节点                         |   openEdit（v0.4.6+，是否激活新插入的节点并进入编辑模式，默认为`true`）、 appointNodes（v0.4.7+，可选，指定节点，指定多个节点可以传一个数组）、 appointData（可选，指定新创建节点的数据，比如{text: 'xxx', ...}，详细结构可以参考[exampleData.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/example/exampleData.js)）、 appointChildren（v0.6.14+，可选，指定新创建节点的子节点，数组类型）                                                          |
-| UP_NODE                             | 上移节点，操作节点为当前激活的节点，如果有多个激活节点，只会对第一个有效，对根节点或在列表里的第一个节点使用无效 |                                                              |
-| DOWN_NODE                           | 操作节点为当前激活的节点，如果有多个激活节点，只会对第一个有效，对根节点或在列表里的最后一个节点使用无效 |                                                              |
+| UP_NODE                             | 上移节点，操作节点为当前激活的节点或指定节点，如果有多个激活节点，只会对第一个有效，对根节点或在列表里的第一个节点使用无效 | appointNode（v0.12.2+，指定移动的节点，不传则会使用激活的节点）      |
+| DOWN_NODE                           | 操作节点为当前激活的节点或指定节点，如果有多个激活节点，只会对第一个有效，对根节点或在列表里的最后一个节点使用无效 | appointNode（v0.12.2+，指定移动的节点，不传则会使用激活的节点）  |
 | REMOVE_NODE                         | 删除节点，操作节点为当前激活的节点或指定节点                         |   appointNodes（v0.4.7+，可选，指定节点，指定多个节点可以传一个数组）                                                           |
 | PASTE_NODE                          | 粘贴节点到节点，操作节点为当前激活的节点                     | data（要粘贴的节点数据，一般通过`renderer.copyNode()`方法和`renderer.cutNode()`方法获取） |
 | CUT_NODE                            | 剪切节点，操作节点为当前激活的节点，如果有多个激活节点，只会对第一个有效，对根节点使用无效 | callback(回调函数，剪切的节点数据会通过调用该函数并通过参数返回) |

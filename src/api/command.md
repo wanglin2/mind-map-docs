@@ -61,3 +61,26 @@
 > v0.12.1+
 
 功能同`addHistory`方法，不过该方法会立即执行，不会延迟。
+
+### extendKeyMap(key, code)
+
+> v0.12.2+
+
+`key`：要扩展的按键标识，比如键盘上可能存在多个`/`按键，库默认已经定义了一个，那么你可以新定义一个，名字可以自己随便取，比如：`/2`
+
+`code`：该按键的键值
+
+扩展按键映射。
+
+使用示例：
+
+```js
+mindMap.keyCommand.extendKeyMap('/2', 111)
+mindMap.keyCommand.addShortcut('/2', mindMap.renderer.toggleActiveExpand)
+```
+
+### removeKeyMap(key)
+
+> v0.12.2+
+
+从按键映射中删除某个键。
