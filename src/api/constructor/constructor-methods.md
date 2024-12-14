@@ -58,83 +58,6 @@ mindMap.setTheme('主题名称')
 
 ## 实例方法
 
-### getElRectInfo()
-
-更新容器元素的位置和大小信息。当容器元素在页面中的位置发生了改变之后务必调用该方法更新信息。如果容器元素大小也发生了改变，那么请调用`resize`方法。
-
-### updateData(data)
-
-> v0.9.9+
-
-更新画布数据，如果新的数据是在当前画布节点数据基础上增删改查后形成的，那么可以使用该方法来更新画布数据。性能会更好，不会重新创建所有节点，而是会尽可能的复用。
-
-### clearDraw()
-
-> v0.8.0+
-
-清空`lineDraw`、`associativeLineDraw`、`nodeDraw`、`otherDraw`容器。
-
-### destroy()
-
-> v0.6.0+
-
-销毁思维导图。会移除注册的插件、移除监听的事件、删除画布的所有节点。
-
-### getSvgData({ paddingX = 0, paddingY = 0, ignoreWatermark = false, addContentToHeader, addContentToFooter, node })
-
-> v0.3.0+
-
-`paddingX`：水平内边距
-
-`paddingY`：垂直内边距
-
-`ignoreWatermark`：v0.8.0+，不要绘制水印，如果不需要绘制水印的场景可以传`true`，因为绘制水印非常慢
-
-`addContentToHeader`：v0.9.9+，Function，可以返回要追加到头部的自定义内容，详细介绍见【实例化选项】中的该配置
-
-`addContentToFooter`：v0.9.9+，Function，可以返回要追加到尾部的自定义内容，详细介绍见【实例化选项】中的该配置
-
-`node`: v0.9.11+, 节点实例，如果传了，那么仅导出该节点的内容
-
-获取`svg`数据，返回一个对象，详细结构如下：
-
-```js
-{
-  svg, // Element，思维导图图形的整体svg元素，包括：svg（画布容器）、g（实际的思维导图组）
-  svgHTML, // String，svg字符串，即html字符串，可以直接渲染到你准备的小地图容器内
-  rect: // Object，思维导图图形未缩放时的位置尺寸等信息
-  origWidth, // Number，画布宽度
-  origHeight, // Number，画布高度
-  scaleX, // Number，思维导图图形的水平缩放值
-  scaleY, // Number，思维导图图形的垂直缩放值
-  clipData// v0.9.11+，如果传了node，即导出指定节点的内容，那么会返回该字段，代表从完整的图片中裁剪出该节点区域的位置坐标数据
-}
-```
-
-### render(callback)
-
-- `callback`：`v0.3.2+`，`Function`，当重新渲染完成时调用
-
-触发整体渲染，会进行节点复用，性能较`reRender`会更好一点，如果只是节点位置变化了可以调用该方法进行渲染
-
-### reRender(callback)
-
-- `callback`：`v0.3.2+`，`Function`，当重新渲染完成时调用
-
-整体重新渲染，会清空画布，节点也会重新创建，性能不好，慎重使用
-
-### resize()
-
-容器尺寸变化后，需要调用该方法进行适应
-
-### setMode(mode)
-
-> v0.1.7+
-
-切换模式为只读或编辑。
-
-`mode`：readonly、edit
-
 ### on(event, fn)
 
 监听事件，事件列表：
@@ -218,6 +141,133 @@ mindMap.setTheme('主题名称')
 
 解绑事件
 
+### execCommand(name, ...args)
+
+执行命令，每执行一个命令就会在历史堆栈里添加一条记录用于回退或前进。所有命令如下：
+
+| 命令名称   | 描述    | 参数     |
+| ------------- | -------------- | -------------------- |
+| SELECT_ALL                          | 全选    |       |
+| BACK                                | 回退指定的步数                                               | step（要回退的步数，默认为1）                                |
+| FORWARD                             | 前进指定的步数                                               | step（要前进的步数，默认为1）                                |
+| INSERT_NODE                         | 插入同级节点，操作节点为当前激活的节点或指定节点，如果有多个激活节点，只会对第一个有效（v0.7.2+支持对多个激活节点同时插入兄弟节点） | openEdit（v0.4.6+，是否激活新插入的节点并进入编辑模式，默认为`true`）、 appointNodes（v0.4.7+，可选，指定要插入兄弟节点的节点，指定多个节点可以传一个数组）、 appointData（可选，指定新创建节点的数据，比如{text: 'xxx', ...}，详细结构可以参考[exampleData.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/example/exampleData.js)）、 appointChildren（v0.6.14+，可选，指定新创建节点的子节点，数组类型）     |
+| INSERT_CHILD_NODE                   | 插入子节点，操作节点为当前激活的节点或指定节点                         |   openEdit（v0.4.6+，是否激活新插入的节点并进入编辑模式，默认为`true`）、 appointNodes（v0.4.7+，可选，指定节点，指定多个节点可以传一个数组）、 appointData（可选，指定新创建节点的数据，比如{text: 'xxx', ...}，详细结构可以参考[exampleData.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/example/exampleData.js)）、 appointChildren（v0.6.14+，可选，指定新创建节点的子节点，数组类型）                                                          |
+| UP_NODE                             | 上移节点，操作节点为当前激活的节点或指定节点，如果有多个激活节点，只会对第一个有效，对根节点或在列表里的第一个节点使用无效 | appointNode（v0.12.2+，指定移动的节点，不传则会使用激活的节点）      |
+| DOWN_NODE                           | 操作节点为当前激活的节点或指定节点，如果有多个激活节点，只会对第一个有效，对根节点或在列表里的最后一个节点使用无效 | appointNode（v0.12.2+，指定移动的节点，不传则会使用激活的节点）  |
+| REMOVE_NODE                         | 删除节点，操作节点为当前激活的节点或指定节点                         |   appointNodes（v0.4.7+，可选，指定节点，指定多个节点可以传一个数组）                                                           |
+| PASTE_NODE                          | 粘贴节点到节点，操作节点为当前激活的节点                     | data（要粘贴的节点数据，一般通过`renderer.copyNode()`方法和`renderer.cutNode()`方法获取） |
+| CUT_NODE                            | 剪切节点，操作节点为当前激活的节点，如果有多个激活节点，只会对第一个有效，对根节点使用无效 | callback(回调函数，剪切的节点数据会通过调用该函数并通过参数返回) |
+| SET_NODE_STYLE                      | 修改节点单个样式                                                 | node（要设置样式的节点）、style（样式属性）、value（样式属性值）、isActive（v0.7.0+已废弃，布尔值，是否设置的是激活状态的样式） |
+| SET_NODE_STYLES（v0.6.12+）                      | 修改节点多个样式                                                 | node（要设置样式的节点）、style（样式对象，key为样式属性，value为样式值）、isActive（v0.7.0+已废弃，布尔值，是否设置的是激活状态的样式） |
+| SET_NODE_ACTIVE                     | 设置节点是否激活（该命令仅更新节点数据中的激活字段和节点激活样式，如果你想实现和鼠标点击节点激活的效果，请直接使用节点实例的`active()`方法）   | node（要设置的节点）、active（布尔值，是否激活）             |
+| CLEAR_ACTIVE_NODE                   | 清除当前已激活节点的激活状态，操作节点为当前激活的节点       |                                                              |
+| SET_NODE_EXPAND                     | 设置节点是否展开                                             | node（要设置的节点）、expand（布尔值，是否展开）             |
+| EXPAND_ALL     | 展开所有节点      |   uid（v0.11.1+，只展开指定uid节点下的所有子孙节点）           |
+| UNEXPAND_ALL     | 收起所有节点       | isSetRootNodeCenter（v0.9.11+，默认为true，收起所有节点后是否将根节点移至中心）、uid（v0.11.1+，只收起指定uid节点的所有子孙节点） |
+| UNEXPAND_TO_LEVEL（v0.2.8+）        | 展开到指定层级                                               | level（要展开到的层级，1、2、3...）                          |
+| SET_NODE_DATA                       | 更新节点数据，即更新节点数据对象里`data`对象的数据，注意这个命令不会触发视图的更新           | node（要设置的节点）、data（对象，要更新的数据，如`{expand: true}`） |
+| SET_NODE_TEXT                       | 设置节点文本                                                 | node（要设置的节点）、text（要设置的文本字符串，换行可以使用`\n`）、richText（v0.4.0+，如果要设置的是富文本字符，需要设为`true`）、resetRichText（v0.6.10+是否要复位富文本，默认为false，如果传true那么会重置富文本节点的样式） |
+| SET_NODE_IMAGE                      | 设置节点图片                                                 | node（要设置的节点）、imgData（对象，图片信息，结构为：`{url, title, width, height}`，图片的宽高必须要传） |
+| SET_NODE_ICON                       | 设置节点图标                                                 | node（要设置的节点）、icons（数组，预定义的图片名称组成的数组，可用图标可在[icons.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/svg/icons.js)文件里的`nodeIconList`列表里获取到，图标名称为`type_name`，如`['priority_1']`） |
+| SET_NODE_HYPERLINK                  | 设置节点超链接                                               | node（要设置的节点）、link（超链接地址）、title（超链接名称，可选） |
+| SET_NODE_NOTE                       | 设置节点备注                                                 | node（要设置的节点）、note（备注文字）                       |
+| SET_NODE_ATTACHMENT（v0.9.10+）                       | 设置节点附件                                                 | node（要设置的节点）、url（附件url）、name（附件名称，可选）                       |
+| SET_NODE_TAG                        | 设置节点标签                                                 | node（要设置的节点）、tag（v0.10.3以前的版本只支持字符串数组，即['标签']，v0.10.3+版本支持对象数组，即[{ text: '标签', style: {} }]） |
+| INSERT_AFTER（v0.1.5+）             | 将节点移动到另一个节点的后面    | node（要移动的节点，（v0.7.2+支持传递节点数组实现同时移动多个节点））、 exist（目标节点）                     |
+| INSERT_BEFORE（v0.1.5+）            | 将节点移动到另一个节点的前面，（v0.7.2+支持传递节点数组实现同时移动多个节点）   | node（要移动的节点）、 exist（目标节点）                     |
+| MOVE_NODE_TO（v0.1.5+）             | 移动节点作为另一个节点的子节点，（v0.7.2+支持传递节点数组实现同时移动多个节点）   | node（要移动的节点）、 toNode（目标节点）                    |
+| ADD_GENERALIZATION（v0.2.0+）       | 添加节点概要                                                 | data（概要的数据，对象格式，节点的数字段都支持，默认为{text: '概要'}）、openEdit（v0.9.11+，默认为true，是否默认进入文本编辑状态） |
+| REMOVE_GENERALIZATION（v0.2.0+）    | 删除节点概要                                                 |                                                              |
+| SET_NODE_CUSTOM_POSITION（v0.2.0+） | 设置节点自定义位置                                           | node（要设置的节点）、 left（自定义的x坐标，默认为undefined）、 top（自定义的y坐标，默认为undefined） |
+| RESET_LAYOUT（v0.2.0+）             | 一键整理布局                                                 |                                                              |
+| SET_NODE_SHAPE（v0.2.4+）           | 设置节点形状                                                 | node（要设置的节点）、shape（形状，全部形状：[Shape.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/core/render/node/Shape.js)） |
+| GO_TARGET_NODE（v0.6.7+）           |  定位到某个节点，如果该节点被收起，那么会自动展开到该节点   | node（要定位到的节点实例或节点uid）、callback（v0.6.9+，定位完成后的回调函数，v0.9.8+接收一个参数，代表目标节点实例） |
+| INSERT_MULTI_NODE（v0.7.2+）           |  给指定的节点同时插入多个同级节点，操作节点为当前激活的节点或指定节点   | appointNodes（可选，指定节点，指定多个节点可以传一个数组）, nodeList（新插入节点的数据列表，数组类型） |
+| INSERT_MULTI_CHILD_NODE（v0.7.2+）           |  给指定的节点同时插入多个子节点，操作节点为当前激活的节点或指定节点   | appointNodes（可选，指定节点，指定多个节点可以传一个数组）, childList（新插入节点的数据列表，数组类型） |
+| INSERT_FORMULA（v0.7.2+）           |  给节点插入数学公式，操作节点为当前激活的节点或指定节点   | formula（要插入的数学公式，LaTeX 语法）, appointNodes（可选，指定要插入公式的节点，多个节点可以传数组，否则默认为当前激活的节点） |
+| INSERT_PARENT_NODE（v0.8.0+）           |  给指定的节点插入父节点，操作节点为当前激活的节点或指定节点   | openEdit（是否激活新插入的节点并进入编辑模式，默认为`true`）、 appointNodes（可选，指定要插入父节点的节点，指定多个节点可以传一个数组）、 appointData（可选，指定新创建节点的数据，比如{text: 'xxx', ...}，详细结构可以参考[exampleData.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/example/exampleData.js)） |
+| REMOVE_CURRENT_NODE（v0.8.0+）           |   仅删除当前节点，操作节点为当前激活的节点或指定节点   | appointNodes（可选，指定要删除的节点，指定多个节点可以传一个数组） |
+| MOVE_UP_ONE_LEVEL（v0.9.6+）           |  将指定节点上移一个层级    | node（可选，指定要上移层级的节点，不传则为当前激活节点中的第一个） |
+| REMOVE_CUSTOM_STYLES（v0.9.7+）           |  一键去除某个节点的自定义样式    | node（可选，指定要清除自定义样式的节点，不传则为当前激活节点中的第一个） |
+| REMOVE_ALL_NODE_CUSTOM_STYLES（v0.9.7+）           |  一键去除多个节点或所有节点的自定义样式    | appointNodes（可选，节点实例数组，指定要去除自定义样式的多个节点，如果不传则会去除当前画布所有节点的自定义样式） |
+
+### getElRectInfo()
+
+更新容器元素的位置和大小信息。当容器元素在页面中的位置发生了改变之后务必调用该方法更新信息。如果容器元素大小也发生了改变，那么请调用`resize`方法。
+
+### updateData(data)
+
+> v0.9.9+
+
+更新画布数据，如果新的数据是在当前画布节点数据基础上增删改查后形成的，那么可以使用该方法来更新画布数据。性能会更好，不会重新创建所有节点，而是会尽可能的复用。
+
+### clearDraw()
+
+> v0.8.0+
+
+清空`lineDraw`、`associativeLineDraw`、`nodeDraw`、`otherDraw`容器。
+
+### destroy()
+
+> v0.6.0+
+
+销毁思维导图。会移除注册的插件、移除监听的事件、删除画布的所有节点。
+
+### getSvgData({ paddingX = 0, paddingY = 0, ignoreWatermark = false, addContentToHeader, addContentToFooter, node })
+
+> v0.3.0+
+
+`paddingX`：水平内边距
+
+`paddingY`：垂直内边距
+
+`ignoreWatermark`：v0.8.0+，不要绘制水印，如果不需要绘制水印的场景可以传`true`，因为绘制水印非常慢
+
+`addContentToHeader`：v0.9.9+，Function，可以返回要追加到头部的自定义内容，详细介绍见【实例化选项】中的该配置
+
+`addContentToFooter`：v0.9.9+，Function，可以返回要追加到尾部的自定义内容，详细介绍见【实例化选项】中的该配置
+
+`node`: v0.9.11+, 节点实例，如果传了，那么仅导出该节点的内容
+
+获取`svg`数据，返回一个对象，详细结构如下：
+
+```js
+{
+  svg, // Element，思维导图图形的整体svg元素，包括：svg（画布容器）、g（实际的思维导图组）
+  svgHTML, // String，svg字符串，即html字符串，可以直接渲染到你准备的小地图容器内
+  rect: // Object，思维导图图形未缩放时的位置尺寸等信息
+  origWidth, // Number，画布宽度
+  origHeight, // Number，画布高度
+  scaleX, // Number，思维导图图形的水平缩放值
+  scaleY, // Number，思维导图图形的垂直缩放值
+  clipData// v0.9.11+，如果传了node，即导出指定节点的内容，那么会返回该字段，代表从完整的图片中裁剪出该节点区域的位置坐标数据
+}
+```
+
+### render(callback)
+
+- `callback`：`v0.3.2+`，`Function`，当重新渲染完成时调用
+
+触发整体渲染，会进行节点复用，性能较`reRender`会更好一点，如果只是节点位置变化了可以调用该方法进行渲染
+
+### reRender(callback)
+
+- `callback`：`v0.3.2+`，`Function`，当重新渲染完成时调用
+
+整体重新渲染，会清空画布，节点也会重新创建，性能不好，慎重使用
+
+### resize()
+
+容器尺寸变化后，需要调用该方法进行适应
+
+### setMode(mode)
+
+> v0.1.7+
+
+切换模式为只读或编辑。
+
+`mode`：readonly、edit
+
 ### setTheme(theme, notRender = false)
 
 - `notRender`：v0.8.0+，是否不要调用render方法更新画布。
@@ -275,56 +325,6 @@ mindMap.updateConfig({
 - `notRender`：v0.8.0+，是否不要调用render方法更新画布。
 
 设置布局结构，可选值见上面选项表格的`layout`字段
-
-### execCommand(name, ...args)
-
-执行命令，每执行一个命令就会在历史堆栈里添加一条记录用于回退或前进。所有命令如下：
-
-| 命令名称   | 描述    | 参数     |
-| ------------- | -------------- | -------------------- |
-| SELECT_ALL                          | 全选    |       |
-| BACK                                | 回退指定的步数                                               | step（要回退的步数，默认为1）                                |
-| FORWARD                             | 前进指定的步数                                               | step（要前进的步数，默认为1）                                |
-| INSERT_NODE                         | 插入同级节点，操作节点为当前激活的节点或指定节点，如果有多个激活节点，只会对第一个有效（v0.7.2+支持对多个激活节点同时插入兄弟节点） | openEdit（v0.4.6+，是否激活新插入的节点并进入编辑模式，默认为`true`）、 appointNodes（v0.4.7+，可选，指定要插入兄弟节点的节点，指定多个节点可以传一个数组）、 appointData（可选，指定新创建节点的数据，比如{text: 'xxx', ...}，详细结构可以参考[exampleData.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/example/exampleData.js)）、 appointChildren（v0.6.14+，可选，指定新创建节点的子节点，数组类型）     |
-| INSERT_CHILD_NODE                   | 插入子节点，操作节点为当前激活的节点或指定节点                         |   openEdit（v0.4.6+，是否激活新插入的节点并进入编辑模式，默认为`true`）、 appointNodes（v0.4.7+，可选，指定节点，指定多个节点可以传一个数组）、 appointData（可选，指定新创建节点的数据，比如{text: 'xxx', ...}，详细结构可以参考[exampleData.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/example/exampleData.js)）、 appointChildren（v0.6.14+，可选，指定新创建节点的子节点，数组类型）                                                          |
-| UP_NODE                             | 上移节点，操作节点为当前激活的节点或指定节点，如果有多个激活节点，只会对第一个有效，对根节点或在列表里的第一个节点使用无效 | appointNode（v0.12.2+，指定移动的节点，不传则会使用激活的节点）      |
-| DOWN_NODE                           | 操作节点为当前激活的节点或指定节点，如果有多个激活节点，只会对第一个有效，对根节点或在列表里的最后一个节点使用无效 | appointNode（v0.12.2+，指定移动的节点，不传则会使用激活的节点）  |
-| REMOVE_NODE                         | 删除节点，操作节点为当前激活的节点或指定节点                         |   appointNodes（v0.4.7+，可选，指定节点，指定多个节点可以传一个数组）                                                           |
-| PASTE_NODE                          | 粘贴节点到节点，操作节点为当前激活的节点                     | data（要粘贴的节点数据，一般通过`renderer.copyNode()`方法和`renderer.cutNode()`方法获取） |
-| CUT_NODE                            | 剪切节点，操作节点为当前激活的节点，如果有多个激活节点，只会对第一个有效，对根节点使用无效 | callback(回调函数，剪切的节点数据会通过调用该函数并通过参数返回) |
-| SET_NODE_STYLE                      | 修改节点单个样式                                                 | node（要设置样式的节点）、style（样式属性）、value（样式属性值）、isActive（v0.7.0+已废弃，布尔值，是否设置的是激活状态的样式） |
-| SET_NODE_STYLES（v0.6.12+）                      | 修改节点多个样式                                                 | node（要设置样式的节点）、style（样式对象，key为样式属性，value为样式值）、isActive（v0.7.0+已废弃，布尔值，是否设置的是激活状态的样式） |
-| SET_NODE_ACTIVE                     | 设置节点是否激活（该命令仅更新节点数据中的激活字段和节点激活样式，如果你想实现和鼠标点击节点激活的效果，请直接使用节点实例的`active()`方法）   | node（要设置的节点）、active（布尔值，是否激活）             |
-| CLEAR_ACTIVE_NODE                   | 清除当前已激活节点的激活状态，操作节点为当前激活的节点       |                                                              |
-| SET_NODE_EXPAND                     | 设置节点是否展开                                             | node（要设置的节点）、expand（布尔值，是否展开）             |
-| EXPAND_ALL     | 展开所有节点      |   uid（v0.11.1+，只展开指定uid节点下的所有子孙节点）           |
-| UNEXPAND_ALL     | 收起所有节点       | isSetRootNodeCenter（v0.9.11+，默认为true，收起所有节点后是否将根节点移至中心）、uid（v0.11.1+，只收起指定uid节点的所有子孙节点） |
-| UNEXPAND_TO_LEVEL（v0.2.8+）        | 展开到指定层级                                               | level（要展开到的层级，1、2、3...）                          |
-| SET_NODE_DATA                       | 更新节点数据，即更新节点数据对象里`data`对象的数据，注意这个命令不会触发视图的更新           | node（要设置的节点）、data（对象，要更新的数据，如`{expand: true}`） |
-| SET_NODE_TEXT                       | 设置节点文本                                                 | node（要设置的节点）、text（要设置的文本字符串，换行可以使用`\n`）、richText（v0.4.0+，如果要设置的是富文本字符，需要设为`true`）、resetRichText（v0.6.10+是否要复位富文本，默认为false，如果传true那么会重置富文本节点的样式） |
-| SET_NODE_IMAGE                      | 设置节点图片                                                 | node（要设置的节点）、imgData（对象，图片信息，结构为：`{url, title, width, height}`，图片的宽高必须要传） |
-| SET_NODE_ICON                       | 设置节点图标                                                 | node（要设置的节点）、icons（数组，预定义的图片名称组成的数组，可用图标可在[icons.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/svg/icons.js)文件里的`nodeIconList`列表里获取到，图标名称为`type_name`，如`['priority_1']`） |
-| SET_NODE_HYPERLINK                  | 设置节点超链接                                               | node（要设置的节点）、link（超链接地址）、title（超链接名称，可选） |
-| SET_NODE_NOTE                       | 设置节点备注                                                 | node（要设置的节点）、note（备注文字）                       |
-| SET_NODE_ATTACHMENT（v0.9.10+）                       | 设置节点附件                                                 | node（要设置的节点）、url（附件url）、name（附件名称，可选）                       |
-| SET_NODE_TAG                        | 设置节点标签                                                 | node（要设置的节点）、tag（v0.10.3以前的版本只支持字符串数组，即['标签']，v0.10.3+版本支持对象数组，即[{ text: '标签', style: {} }]） |
-| INSERT_AFTER（v0.1.5+）             | 将节点移动到另一个节点的后面    | node（要移动的节点，（v0.7.2+支持传递节点数组实现同时移动多个节点））、 exist（目标节点）                     |
-| INSERT_BEFORE（v0.1.5+）            | 将节点移动到另一个节点的前面，（v0.7.2+支持传递节点数组实现同时移动多个节点）   | node（要移动的节点）、 exist（目标节点）                     |
-| MOVE_NODE_TO（v0.1.5+）             | 移动节点作为另一个节点的子节点，（v0.7.2+支持传递节点数组实现同时移动多个节点）   | node（要移动的节点）、 toNode（目标节点）                    |
-| ADD_GENERALIZATION（v0.2.0+）       | 添加节点概要                                                 | data（概要的数据，对象格式，节点的数字段都支持，默认为{text: '概要'}）、openEdit（v0.9.11+，默认为true，是否默认进入文本编辑状态） |
-| REMOVE_GENERALIZATION（v0.2.0+）    | 删除节点概要                                                 |                                                              |
-| SET_NODE_CUSTOM_POSITION（v0.2.0+） | 设置节点自定义位置                                           | node（要设置的节点）、 left（自定义的x坐标，默认为undefined）、 top（自定义的y坐标，默认为undefined） |
-| RESET_LAYOUT（v0.2.0+）             | 一键整理布局                                                 |                                                              |
-| SET_NODE_SHAPE（v0.2.4+）           | 设置节点形状                                                 | node（要设置的节点）、shape（形状，全部形状：[Shape.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/core/render/node/Shape.js)） |
-| GO_TARGET_NODE（v0.6.7+）           |  定位到某个节点，如果该节点被收起，那么会自动展开到该节点   | node（要定位到的节点实例或节点uid）、callback（v0.6.9+，定位完成后的回调函数，v0.9.8+接收一个参数，代表目标节点实例） |
-| INSERT_MULTI_NODE（v0.7.2+）           |  给指定的节点同时插入多个同级节点，操作节点为当前激活的节点或指定节点   | appointNodes（可选，指定节点，指定多个节点可以传一个数组）, nodeList（新插入节点的数据列表，数组类型） |
-| INSERT_MULTI_CHILD_NODE（v0.7.2+）           |  给指定的节点同时插入多个子节点，操作节点为当前激活的节点或指定节点   | appointNodes（可选，指定节点，指定多个节点可以传一个数组）, childList（新插入节点的数据列表，数组类型） |
-| INSERT_FORMULA（v0.7.2+）           |  给节点插入数学公式，操作节点为当前激活的节点或指定节点   | formula（要插入的数学公式，LaTeX 语法）, appointNodes（可选，指定要插入公式的节点，多个节点可以传数组，否则默认为当前激活的节点） |
-| INSERT_PARENT_NODE（v0.8.0+）           |  给指定的节点插入父节点，操作节点为当前激活的节点或指定节点   | openEdit（是否激活新插入的节点并进入编辑模式，默认为`true`）、 appointNodes（可选，指定要插入父节点的节点，指定多个节点可以传一个数组）、 appointData（可选，指定新创建节点的数据，比如{text: 'xxx', ...}，详细结构可以参考[exampleData.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/example/exampleData.js)） |
-| REMOVE_CURRENT_NODE（v0.8.0+）           |   仅删除当前节点，操作节点为当前激活的节点或指定节点   | appointNodes（可选，指定要删除的节点，指定多个节点可以传一个数组） |
-| MOVE_UP_ONE_LEVEL（v0.9.6+）           |  将指定节点上移一个层级    | node（可选，指定要上移层级的节点，不传则为当前激活节点中的第一个） |
-| REMOVE_CUSTOM_STYLES（v0.9.7+）           |  一键去除某个节点的自定义样式    | node（可选，指定要清除自定义样式的节点，不传则为当前激活节点中的第一个） |
-| REMOVE_ALL_NODE_CUSTOM_STYLES（v0.9.7+）           |  一键去除多个节点或所有节点的自定义样式    | appointNodes（可选，节点实例数组，指定要去除自定义样式的多个节点，如果不传则会去除当前画布所有节点的自定义样式） |
 
 ### setData(data)
 

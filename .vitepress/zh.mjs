@@ -8,8 +8,6 @@ export const zh = defineConfig({
 
     nav: [
       { text: '在线使用', link: 'https://wanglin2.github.io/mind-map/' },
-      { text: '客户端', link: '/client' },
-      { text: '云存储版', link: '/cloudStorage' },
       { text: '开始', link: '/start/introduction', activeMatch: '/start/' },
       { text: '教程', link: '/course/course1', activeMatch: '/course/' },
       {
@@ -24,6 +22,8 @@ export const zh = defineConfig({
       },
       { text: '使用帮助', link: '/help/help1', activeMatch: '/help/' },
       { text: '赞助', link: '/sponsor' },
+      { text: '客户端', link: '/client' },
+      { text: '云存储版', link: '/cloudStorage' },
       {
         text: '更多',
         items: [
@@ -86,7 +86,8 @@ export const zh = defineConfig({
           text: '局域网docker部署解决HTTPS问题的一种方法',
           link: '/course/course29'
         },
-        { text: '如何通过代码激活节点', link: '/course/course30' }
+        { text: '如何通过代码激活节点', link: '/course/course30' },
+        { text: '如何实现单独设置某条关联线的样式', link: '/course/course32' }
       ],
       '/api/': [
         {
@@ -148,7 +149,8 @@ export const zh = defineConfig({
             { text: 'Cooperate插件', link: '/plugins/cooperate' },
             { text: 'RainbowLines插件', link: '/plugins/rainbowLines' },
             { text: 'Demonstrate插件', link: '/plugins/demonstrate' },
-            { text: 'OuterFrame插件', link: '/plugins/outerFrame' }
+            { text: 'OuterFrame插件', link: '/plugins/outerFrame' },
+            { text: 'MindMapLayoutPro插件', link: '/plugins/mindMapLayoutPro' }
           ]
         },
         {
@@ -166,7 +168,8 @@ export const zh = defineConfig({
             { text: 'Numbers插件', link: '/plugins/numbers' },
             { text: 'Freemind插件', link: '/plugins/freemind' },
             { text: 'Excel插件', link: '/plugins/excel' },
-            { text: 'Checkbox插件', link: '/plugins/checkbox' }
+            { text: 'Checkbox插件', link: '/plugins/checkbox' },
+            { text: 'Lineflow插件', link: '/plugins/lineflow' }
           ]
         }
       ],

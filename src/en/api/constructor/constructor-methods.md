@@ -56,85 +56,6 @@ Get whether a plugin is registered, The index of the plugin in the registered pl
 
 ## Instance methods
 
-### getElRectInfo()
-
-Update the position and size information of container elements. Be sure to call this method to update information when the position of container elements on the page changes. If the size of container elements has also changed, please call the 'resize' method.
-
-### updateData(data)
-
-> v0.9.9+
-
-Update canvas data. If the new data is formed by adding, deleting, modifying, and querying based on the current canvas node data, this method can be used to update the canvas data. The performance will be better, and not all nodes will be recreated, but rather reused as much as possible.
-
-### clearDraw()
-
-> v0.8.0+
-
-Clear `lineDraw`、`associativeLineDraw`、`nodeDraw`、`otherDraw` containers.
-
-### destroy()
-
-> v0.6.0+
-
-Destroy mind maps. It will remove registered plugins, remove listening events, and delete all nodes on the canvas.
-
-### getSvgData({ paddingX = 0, paddingY = 0, ignoreWatermark = false, addContentToHeader, addContentToFooter, node })
-
-> v0.3.0+
-
-`paddingX`: Padding x
-
-`paddingY`: Padding y
-
-`ignoreWatermark`：v0.8.0+, Do not draw watermarks. If you do not need to draw watermarks, you can pass 'true' because drawing watermarks is very slow
-
-`addContentToHeader`：v0.9.9+, Function, You can return the custom content to be added to the header, as detailed in the configuration in 【Instantiation options】
-
-`addContentToFooter`：v0.9.9+, Function, You can return the custom content to be added to the tail, as detailed in the configuration in 【Instantiation options】
-
-`node`: v0.9.11+, Node instance, if passed, only export the content of that node
-
-Get the `svg` data and return an object. The detailed structure is as follows:
-
-```js
-{
-  svg, // Element, the overall svg element of the mind map graphics, including: svg (canvas container), g (actual mind map group)
-  svgHTML, // String, svg string, i.e. html string, can be directly rendered to the small map container you prepared
-  rect: // Object, position, size, etc. of mind map graphics before zoom
-  origWidth, // Number, canvas width
-  origHeight, // Number, canvas height
-  scaleX, // Number, horizontal zoom value of mind map graphics
-  scaleY, // Number, vertical zoom value of mind map graphics
-  clipData// v0.9.11+，If node is passed, that is, the content of the specified node is exported, then this field will be returned, Represents the position coordinate data of the node region cropped from the complete image
-}
-```
-
-### render(callback)
-
-- `callback`: `v0.3.2+`, `Function`, Called when the re-rendering is complete
-
-Triggers a full rendering, which will reuse nodes for better performance. If
-only the node positions have changed, this method can be called to `reRender`.
-
-### reRender(callback)
-
-- `callback`: `v0.3.2+`, `Function`, Called when the re-rendering is complete
-
-Performs a full re-render, clearing the canvas and creating new nodes. This has
-poor performance and should be used sparingly.
-
-### resize()
-
-After the container size has changed, this method should be called to adjust.
-
-### setMode(mode)
-
-> v0.1.7+
-
-Switches between readonly and edit mode.
-
-`mode`：readonly、edit
-
 ### on(event, fn)
 
 Listen to an event. Event list:
@@ -219,6 +140,135 @@ Trigger an event, which can be one of the events listed above or a custom event.
 
 Unbind an event.
 
+### execCommand(name, ...args)
+
+Executes a command, which will add a record to the history stack for undo or
+redo. All commands are as follows:
+
+| Command name                       | Description                                                  | Parameters                                                   |
+| ---------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| SELECT_ALL                         | Select all                                                   |                                                              |
+| BACK                               | Go back a specified number of steps                          | step (the number of steps to go back, default is 1)          |
+| FORWARD                            | Go forward a specified number of steps                       | step (the number of steps to go forward, default is 1)       |
+| INSERT_NODE                        | Insert a sibling node, the active node or appoint node will be the operation node. If there are multiple active nodes, only the first one will be effective（v0.7.2+Supports simultaneous insertion of sibling nodes into multiple active nodes） | openEdit（v0.4.6+, Whether to activate the newly inserted node and enter editing mode, default is `true`） 、 appointNodes（v0.4.7+, Optional, appoint node, Specifying multiple nodes can pass an array）、 appointData（Optional, Specify the data for the newly created node, Such as {text: 'xxx', ...}, Detailed structure can be referred to [exampleData.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/example/exampleData.js) ）、 appointChildren（v0.6.14+, Optional, Specify the child nodes of the newly created node, array type）                                                           |
+| INSERT_CHILD_NODE                  | Insert a child node, the active node or appoint node will be the operation node |  openEdit（v0.4.6+, Whether to activate the newly inserted node and enter editing mode, default is `true`）、 appointNodes（v0.4.7+, Optional, appoint node, Specifying multiple nodes can pass an array）、 appointData（Optional, Specify the data for the newly created node, Such as {text: 'xxx', ...}, Detailed structure can be referred to [exampleData.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/example/exampleData.js) ）、 appointChildren（v0.6.14+, Optional, Specify the child nodes of the newly created node, array type）                                                            |
+| UP_NODE                            | Move node up, the active node or appoint node will be the operation node. If there are multiple active nodes, only the first one will be effective. Using this command on the root node or the first node in the list will be invalid |  appointNode（v0.12.2+，Specify the moving node, if not transmitted, the activated node will be used） |
+| DOWN_NODE                          | Move node down, the active node or appoint node will be the operation node. If there are multiple active nodes, only the first one will be effective. Using this command on the root node or the last node in the list will be invalid |  appointNode（v0.12.2+，Specify the moving node, if not transmitted, the activated node will be used） |
+| REMOVE_NODE                        | Remove node, the active node or appoint node will be the operation node      |  appointNodes（v0.4.7+, Optional, appoint node, Specifying multiple nodes can pass an array）                                                            |
+| PASTE_NODE                         | Paste node to a node, the active node will be the operation node | data (the node data to paste, usually obtained through the renderer.copyNode() and renderer.cutNode() methods) |
+| SET_NODE_STYLE                     | Modify node single style                                            | node (the node to set the style of), prop (style property), value (style property value), isActive (v0.7.0+has been abandoned, boolean, whether the style being set is for the active state) |
+| SET_NODE_STYLES（v0.6.12+）       |  Modify multiple styles of nodes   | node（the node to set the style of）、style（Style object，key is style prop，value is style value）、isActive（v0.7.0+has been abandoned, boolean, whether the style being set is for the active state） |
+| SET_NODE_ACTIVE                    | Set whether the node is active(This command only updates the activation fields and node activation styles in the node data. If you want to achieve the same effect as clicking on a node with the mouse, please use the 'active()' method of the node instance directly.)   | node (the node to set), active (boolean, whether to activate) |
+| CLEAR_ACTIVE_NODE                  | Clear the active state of the currently active node(s), the active node will be the operation node |                                                              |
+| SET_NODE_EXPAND                    | Set whether the node is expanded                             | node (the node to set), expand (boolean, whether to expand)  |
+| EXPAND_ALL    | Expand all nodes   |  uid（v0.11.1+，Expand only all descendant nodes under the specified UID node）        |
+| UNEXPAND_ALL      | Collapse all nodes  | isSetRootNodeCenter（v0.9.11+，default is true，Will the root node be moved to the center after retracting all nodes）、uid（v0.11.1+，Only retract all descendant nodes of the specified UID node）  |
+| UNEXPAND_TO_LEVEL (v0.2.8+)        | Expand to a specified level                                  | level (the level to expand to, 1, 2, 3...)                   |
+| SET_NODE_DATA                      | Update node data, that is, update the data in the data object of the node data object. Note that this command will not trigger view updates | node (the node to set), data (object, the data to update, e.g. `{expand: true}`) |
+| SET_NODE_TEXT                      | Set node text                                                | node (the node to set), text (the new text for the node), richText（v0.4.0+, If you want to set a rich text character, you need to set it to `true`）、resetRichText（v0.6.10+Do you want to reset rich text? The default is false. If true is passed, the style of the rich text node will be reset） |
+| SET_NODE_IMAGE                     | Set Node Image                                               | node (node to set), imgData (object, image information, structured as: `{url, title, width, height}`, the width and height of the image must be passed) |
+| SET_NODE_ICON                      | Set Node Icon                                                | node (node to set), icons (array, predefined image names array, available icons can be obtained in the nodeIconList list in the [icons.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/svg/icons.js) file, icon name is type_name, such as ['priority_1']) |
+| SET_NODE_HYPERLINK                 | Set Node Hyperlink                                           | node (node to set), link (hyperlink address), title (hyperlink name, optional) |
+| SET_NODE_NOTE                      | Set Node Note                                                | node (node to set), note (note text)                         |
+| SET_NODE_ATTACHMENT（v0.9.10+）                       |   Set node attachment               | node（node to set）、url（attachment url）、name（attachment name, optional）                       |
+| SET_NODE_TAG                       | Set Node Tag                                                 | node (node to set), tag (Previous versions before v0.10.3 only support string arrays, i.e. ['tag'], while v0.10.3+versions support object arrays, i.e. [{text: 'tag', style: {} }]) |
+| INSERT_AFTER (v0.1.5+)             | Move Node to After Another Node | node (node to move, (v0.7.2+supports passing node arrays to move multiple nodes simultaneously)), exist (target node)                     |
+| INSERT_BEFORE (v0.1.5+)            | Move Node to Before Another Node | node (node to move, (v0.7.2+supports passing node arrays to move multiple nodes simultaneously)), exist (target node)                     |
+| MOVE_NODE_TO (v0.1.5+)             | Move a node as a child of another node       | node (the node to move, (v0.7.2+supports passing node arrays to move multiple nodes simultaneously)), toNode (the target node)            |
+| ADD_GENERALIZATION (v0.2.0+)       | Add a node summary                                           | data (the data for the summary, in object format, all numerical fields of the node are supported, default is `{text: 'summary'}`)、openEdit（v0.9.11+，Default is true，Whether to enter text editing status by default） |
+| REMOVE_GENERALIZATION (v0.2.0+)    | Remove a node summary                                        |                                                              |
+| SET_NODE_CUSTOM_POSITION (v0.2.0+) | Set a custom position for a node                             | node (the node to set), left (custom x coordinate, default is undefined), top (custom y coordinate, default is undefined) |
+| RESET_LAYOUT (v0.2.0+)             | Arrange layout with one click                                |                                                              |
+| SET_NODE_SHAPE (v0.2.4+)           | Set the shape of a node                                      | node (the node to set), shape (the shape, all shapes: [Shape.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/core/render/node/Shape.js)) |
+| GO_TARGET_NODE（v0.6.7+）           |  Navigate to a node, and if the node is collapsed, it will automatically expand to that node   | node（Node instance or node uid to locate）、callback（v0.6.9+, Callback function after positioning completion, v0.9.8+receives a parameter representing the target node instance） |
+| INSERT_MULTI_NODE（v0.7.2+）           |  Insert multiple sibling nodes into the specified node at the same time, with the operating node being the currently active node or the specified node   | appointNodes（Optional, specify nodes, specify multiple nodes to pass an array）, nodeList（Data list of newly inserted nodes, array type） |
+| INSERT_MULTI_CHILD_NODE（v0.7.2+）           |  Insert multiple child nodes into the specified node simultaneously, with the operation node being the currently active node or the specified node   | appointNodes（Optional, specify nodes, specify multiple nodes to pass an array）, childList（Data list of newly inserted nodes, array type） |
+| INSERT_FORMULA（v0.7.2+）           |  Insert mathematical formulas into nodes, operate on the currently active node or specified node   | formula（Mathematical formula to insert, LaTeX syntax）, appointNodes（Optional, specify the node to insert the formula into. Multiple nodes can be passed as arrays, otherwise it defaults to the currently active node） |
+| INSERT_PARENT_NODE（v0.8.0+）           |  Insert a parent node into the specified node, with the operation node being the currently active node or the specified node   | openEdit（Activate the newly inserted node and enter editing mode, default to 'true'`）、 appointNodes（Optional, specify the node to insert into the parent node, and specify that multiple nodes can pass an array）、 appointData（Optional, specify the data for the newly created node, such as {text: 'xxx', ...}, Detailed structure can be referenced [exampleData.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/example/exampleData.js)） |
+| REMOVE_CURRENT_NODE（v0.8.0+）           |  Delete only the current node, operate on the currently active node or specified node    | appointNodes（Optional, specify the nodes to be deleted, and multiple nodes can be passed as an array） |
+| MOVE_UP_ONE_LEVEL（v0.9.6+）           | Move the specified node up one level     | node（Optional, specify the node to move up the hierarchy, if not passed, it will be the first node in the current active node） |
+| REMOVE_CUSTOM_STYLES（v0.9.7+）           |  One click removal of custom styles for a node    | node（Optional, specify the node to clear the custom style, otherwise it will be the first one in the current active node） |
+| REMOVE_ALL_NODE_CUSTOM_STYLES（v0.9.7+）           |   One click removal of multiple nodes or custom styles for all nodes   | appointNodes（Optional, node instance array, specifying multiple nodes to remove custom styles from. If not passed, the custom styles of all nodes on the current canvas will be removed） |
+
+### getElRectInfo()
+
+Update the position and size information of container elements. Be sure to call this method to update information when the position of container elements on the page changes. If the size of container elements has also changed, please call the 'resize' method.
+
+### updateData(data)
+
+> v0.9.9+
+
+Update canvas data. If the new data is formed by adding, deleting, modifying, and querying based on the current canvas node data, this method can be used to update the canvas data. The performance will be better, and not all nodes will be recreated, but rather reused as much as possible.
+
+### clearDraw()
+
+> v0.8.0+
+
+Clear `lineDraw`、`associativeLineDraw`、`nodeDraw`、`otherDraw` containers.
+
+### destroy()
+
+> v0.6.0+
+
+Destroy mind maps. It will remove registered plugins, remove listening events, and delete all nodes on the canvas.
+
+### getSvgData({ paddingX = 0, paddingY = 0, ignoreWatermark = false, addContentToHeader, addContentToFooter, node })
+
+> v0.3.0+
+
+`paddingX`: Padding x
+
+`paddingY`: Padding y
+
+`ignoreWatermark`：v0.8.0+, Do not draw watermarks. If you do not need to draw watermarks, you can pass 'true' because drawing watermarks is very slow
+
+`addContentToHeader`：v0.9.9+, Function, You can return the custom content to be added to the header, as detailed in the configuration in 【Instantiation options】
+
+`addContentToFooter`：v0.9.9+, Function, You can return the custom content to be added to the tail, as detailed in the configuration in 【Instantiation options】
+
+`node`: v0.9.11+, Node instance, if passed, only export the content of that node
+
+Get the `svg` data and return an object. The detailed structure is as follows:
+
+```js
+{
+  svg, // Element, the overall svg element of the mind map graphics, including: svg (canvas container), g (actual mind map group)
+  svgHTML, // String, svg string, i.e. html string, can be directly rendered to the small map container you prepared
+  rect: // Object, position, size, etc. of mind map graphics before zoom
+  origWidth, // Number, canvas width
+  origHeight, // Number, canvas height
+  scaleX, // Number, horizontal zoom value of mind map graphics
+  scaleY, // Number, vertical zoom value of mind map graphics
+  clipData// v0.9.11+，If node is passed, that is, the content of the specified node is exported, then this field will be returned, Represents the position coordinate data of the node region cropped from the complete image
+}
+```
+
+### render(callback)
+
+- `callback`: `v0.3.2+`, `Function`, Called when the re-rendering is complete
+
+Triggers a full rendering, which will reuse nodes for better performance. If
+only the node positions have changed, this method can be called to `reRender`.
+
+### reRender(callback)
+
+- `callback`: `v0.3.2+`, `Function`, Called when the re-rendering is complete
+
+Performs a full re-render, clearing the canvas and creating new nodes. This has
+poor performance and should be used sparingly.
+
+### resize()
+
+After the container size has changed, this method should be called to adjust.
+
+### setMode(mode)
+
+> v0.1.7+
+
+Switches between readonly and edit mode.
+
+`mode`：readonly、edit
+
 ### setTheme(theme, notRender = false)
 
 - `notRender`: v0.8.0+, Is not call the render method to update the canvas.
@@ -278,56 +328,6 @@ Gets the current layout structure.
 
 Sets the layout structure. Available values can be found in the `layout` field
 in the options table above.
-
-### execCommand(name, ...args)
-
-Executes a command, which will add a record to the history stack for undo or
-redo. All commands are as follows:
-
-| Command name                       | Description                                                  | Parameters                                                   |
-| ---------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| SELECT_ALL                         | Select all                                                   |                                                              |
-| BACK                               | Go back a specified number of steps                          | step (the number of steps to go back, default is 1)          |
-| FORWARD                            | Go forward a specified number of steps                       | step (the number of steps to go forward, default is 1)       |
-| INSERT_NODE                        | Insert a sibling node, the active node or appoint node will be the operation node. If there are multiple active nodes, only the first one will be effective（v0.7.2+Supports simultaneous insertion of sibling nodes into multiple active nodes） | openEdit（v0.4.6+, Whether to activate the newly inserted node and enter editing mode, default is `true`） 、 appointNodes（v0.4.7+, Optional, appoint node, Specifying multiple nodes can pass an array）、 appointData（Optional, Specify the data for the newly created node, Such as {text: 'xxx', ...}, Detailed structure can be referred to [exampleData.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/example/exampleData.js) ）、 appointChildren（v0.6.14+, Optional, Specify the child nodes of the newly created node, array type）                                                           |
-| INSERT_CHILD_NODE                  | Insert a child node, the active node or appoint node will be the operation node |  openEdit（v0.4.6+, Whether to activate the newly inserted node and enter editing mode, default is `true`）、 appointNodes（v0.4.7+, Optional, appoint node, Specifying multiple nodes can pass an array）、 appointData（Optional, Specify the data for the newly created node, Such as {text: 'xxx', ...}, Detailed structure can be referred to [exampleData.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/example/exampleData.js) ）、 appointChildren（v0.6.14+, Optional, Specify the child nodes of the newly created node, array type）                                                            |
-| UP_NODE                            | Move node up, the active node or appoint node will be the operation node. If there are multiple active nodes, only the first one will be effective. Using this command on the root node or the first node in the list will be invalid |  appointNode（v0.12.2+，Specify the moving node, if not transmitted, the activated node will be used） |
-| DOWN_NODE                          | Move node down, the active node or appoint node will be the operation node. If there are multiple active nodes, only the first one will be effective. Using this command on the root node or the last node in the list will be invalid |  appointNode（v0.12.2+，Specify the moving node, if not transmitted, the activated node will be used） |
-| REMOVE_NODE                        | Remove node, the active node or appoint node will be the operation node      |  appointNodes（v0.4.7+, Optional, appoint node, Specifying multiple nodes can pass an array）                                                            |
-| PASTE_NODE                         | Paste node to a node, the active node will be the operation node | data (the node data to paste, usually obtained through the renderer.copyNode() and renderer.cutNode() methods) |
-| SET_NODE_STYLE                     | Modify node single style                                            | node (the node to set the style of), prop (style property), value (style property value), isActive (v0.7.0+has been abandoned, boolean, whether the style being set is for the active state) |
-| SET_NODE_STYLES（v0.6.12+）       |  Modify multiple styles of nodes   | node（the node to set the style of）、style（Style object，key is style prop，value is style value）、isActive（v0.7.0+has been abandoned, boolean, whether the style being set is for the active state） |
-| SET_NODE_ACTIVE                    | Set whether the node is active(This command only updates the activation fields and node activation styles in the node data. If you want to achieve the same effect as clicking on a node with the mouse, please use the 'active()' method of the node instance directly.)   | node (the node to set), active (boolean, whether to activate) |
-| CLEAR_ACTIVE_NODE                  | Clear the active state of the currently active node(s), the active node will be the operation node |                                                              |
-| SET_NODE_EXPAND                    | Set whether the node is expanded                             | node (the node to set), expand (boolean, whether to expand)  |
-| EXPAND_ALL    | Expand all nodes   |  uid（v0.11.1+，Expand only all descendant nodes under the specified UID node）        |
-| UNEXPAND_ALL      | Collapse all nodes  | isSetRootNodeCenter（v0.9.11+，default is true，Will the root node be moved to the center after retracting all nodes）、uid（v0.11.1+，Only retract all descendant nodes of the specified UID node）  |
-| UNEXPAND_TO_LEVEL (v0.2.8+)        | Expand to a specified level                                  | level (the level to expand to, 1, 2, 3...)                   |
-| SET_NODE_DATA                      | Update node data, that is, update the data in the data object of the node data object. Note that this command will not trigger view updates | node (the node to set), data (object, the data to update, e.g. `{expand: true}`) |
-| SET_NODE_TEXT                      | Set node text                                                | node (the node to set), text (the new text for the node), richText（v0.4.0+, If you want to set a rich text character, you need to set it to `true`）、resetRichText（v0.6.10+Do you want to reset rich text? The default is false. If true is passed, the style of the rich text node will be reset） |
-| SET_NODE_IMAGE                     | Set Node Image                                               | node (node to set), imgData (object, image information, structured as: `{url, title, width, height}`, the width and height of the image must be passed) |
-| SET_NODE_ICON                      | Set Node Icon                                                | node (node to set), icons (array, predefined image names array, available icons can be obtained in the nodeIconList list in the [icons.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/svg/icons.js) file, icon name is type_name, such as ['priority_1']) |
-| SET_NODE_HYPERLINK                 | Set Node Hyperlink                                           | node (node to set), link (hyperlink address), title (hyperlink name, optional) |
-| SET_NODE_NOTE                      | Set Node Note                                                | node (node to set), note (note text)                         |
-| SET_NODE_ATTACHMENT（v0.9.10+）                       |   Set node attachment               | node（node to set）、url（attachment url）、name（attachment name, optional）                       |
-| SET_NODE_TAG                       | Set Node Tag                                                 | node (node to set), tag (Previous versions before v0.10.3 only support string arrays, i.e. ['tag'], while v0.10.3+versions support object arrays, i.e. [{text: 'tag', style: {} }]) |
-| INSERT_AFTER (v0.1.5+)             | Move Node to After Another Node | node (node to move, (v0.7.2+supports passing node arrays to move multiple nodes simultaneously)), exist (target node)                     |
-| INSERT_BEFORE (v0.1.5+)            | Move Node to Before Another Node | node (node to move, (v0.7.2+supports passing node arrays to move multiple nodes simultaneously)), exist (target node)                     |
-| MOVE_NODE_TO (v0.1.5+)             | Move a node as a child of another node       | node (the node to move, (v0.7.2+supports passing node arrays to move multiple nodes simultaneously)), toNode (the target node)            |
-| ADD_GENERALIZATION (v0.2.0+)       | Add a node summary                                           | data (the data for the summary, in object format, all numerical fields of the node are supported, default is `{text: 'summary'}`)、openEdit（v0.9.11+，Default is true，Whether to enter text editing status by default） |
-| REMOVE_GENERALIZATION (v0.2.0+)    | Remove a node summary                                        |                                                              |
-| SET_NODE_CUSTOM_POSITION (v0.2.0+) | Set a custom position for a node                             | node (the node to set), left (custom x coordinate, default is undefined), top (custom y coordinate, default is undefined) |
-| RESET_LAYOUT (v0.2.0+)             | Arrange layout with one click                                |                                                              |
-| SET_NODE_SHAPE (v0.2.4+)           | Set the shape of a node                                      | node (the node to set), shape (the shape, all shapes: [Shape.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/core/render/node/Shape.js)) |
-| GO_TARGET_NODE（v0.6.7+）           |  Navigate to a node, and if the node is collapsed, it will automatically expand to that node   | node（Node instance or node uid to locate）、callback（v0.6.9+, Callback function after positioning completion, v0.9.8+receives a parameter representing the target node instance） |
-| INSERT_MULTI_NODE（v0.7.2+）           |  Insert multiple sibling nodes into the specified node at the same time, with the operating node being the currently active node or the specified node   | appointNodes（Optional, specify nodes, specify multiple nodes to pass an array）, nodeList（Data list of newly inserted nodes, array type） |
-| INSERT_MULTI_CHILD_NODE（v0.7.2+）           |  Insert multiple child nodes into the specified node simultaneously, with the operation node being the currently active node or the specified node   | appointNodes（Optional, specify nodes, specify multiple nodes to pass an array）, childList（Data list of newly inserted nodes, array type） |
-| INSERT_FORMULA（v0.7.2+）           |  Insert mathematical formulas into nodes, operate on the currently active node or specified node   | formula（Mathematical formula to insert, LaTeX syntax）, appointNodes（Optional, specify the node to insert the formula into. Multiple nodes can be passed as arrays, otherwise it defaults to the currently active node） |
-| INSERT_PARENT_NODE（v0.8.0+）           |  Insert a parent node into the specified node, with the operation node being the currently active node or the specified node   | openEdit（Activate the newly inserted node and enter editing mode, default to 'true'`）、 appointNodes（Optional, specify the node to insert into the parent node, and specify that multiple nodes can pass an array）、 appointData（Optional, specify the data for the newly created node, such as {text: 'xxx', ...}, Detailed structure can be referenced [exampleData.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/example/exampleData.js)） |
-| REMOVE_CURRENT_NODE（v0.8.0+）           |  Delete only the current node, operate on the currently active node or specified node    | appointNodes（Optional, specify the nodes to be deleted, and multiple nodes can be passed as an array） |
-| MOVE_UP_ONE_LEVEL（v0.9.6+）           | Move the specified node up one level     | node（Optional, specify the node to move up the hierarchy, if not passed, it will be the first node in the current active node） |
-| REMOVE_CUSTOM_STYLES（v0.9.7+）           |  One click removal of custom styles for a node    | node（Optional, specify the node to clear the custom style, otherwise it will be the first one in the current active node） |
-| REMOVE_ALL_NODE_CUSTOM_STYLES（v0.9.7+）           |   One click removal of multiple nodes or custom styles for all nodes   | appointNodes（Optional, node instance array, specifying multiple nodes to remove custom styles from. If not passed, the custom styles of all nodes on the current canvas will be removed） |
 
 ### setData(data)
 

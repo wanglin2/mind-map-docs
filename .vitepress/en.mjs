@@ -8,8 +8,6 @@ export const en = defineConfig({
 
     nav: [
       { text: 'Online use', link: 'https://wanglin2.github.io/mind-map/' },
-      { text: 'Client', link: '/en/client' },
-      { text: 'Cloud storage', link: '/cloudStorage' },
       {
         text: 'Start',
         link: '/en/start/introduction',
@@ -28,6 +26,8 @@ export const en = defineConfig({
       },
       { text: 'Help', link: '/help/help1', activeMatch: '/help/' },
       { text: 'Sponsor', link: '/sponsor' },
+      { text: 'Client', link: '/en/client' },
+      { text: 'Cloud storage', link: '/cloudStorage' },
       {
         text: 'More',
         items: [
@@ -87,7 +87,8 @@ export const en = defineConfig({
           text: '局域网docker部署解决HTTPS问题的一种方法',
           link: '/course/course29'
         },
-        { text: '如何通过代码激活节点', link: '/course/course30' }
+        { text: '如何通过代码激活节点', link: '/course/course30' },
+        { text: '如何实现单独设置某条关联线的样式', link: '/course/course32' }
       ],
       '/en/api/': [
         {
@@ -152,7 +153,8 @@ export const en = defineConfig({
             { text: 'Cooperate plugin', link: '/en/plugins/cooperate' },
             { text: 'RainbowLines plugin', link: '/en/plugins/rainbowLines' },
             { text: 'Demonstrate plugin', link: '/en/plugins/demonstrate' },
-            { text: 'OuterFrame plugin', link: '/en/plugins/outerFrame' }
+            { text: 'OuterFrame plugin', link: '/en/plugins/outerFrame' },
+            { text: 'MindMapLayoutPro plugin', link: '/en/plugins/mindMapLayoutPro' }
           ]
         },
         {
@@ -170,7 +172,8 @@ export const en = defineConfig({
             { text: 'Numbers plugin', link: '/en/plugins/numbers' },
             { text: 'Freemind plugin', link: '/en/plugins/freemind' },
             { text: 'Excel plugin', link: '/en/plugins/excel' },
-            { text: 'Checkbox plugin', link: '/en/plugins/checkbox' }
+            { text: 'Checkbox plugin', link: '/en/plugins/checkbox' },
+            { text: 'Lineflow plugin', link: '/en/plugins/lineflow' }
           ]
         }
       ],
