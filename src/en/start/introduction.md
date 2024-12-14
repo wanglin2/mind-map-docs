@@ -21,9 +21,7 @@
 - Support collaborative editing
 - Support demonstration mode
 
-The official provides the following plugins, which can be introduced as needed (a certain function may not be effective because you did not introduce the corresponding plugin). Please refer to the documentation for specific usage methods:
-
-> RichText（Node Rich Text Plugin）、Select（Mouse Multiple Selection Node Plugin）、Drag（Node drag plugin）、AssociativeLine（Associate Line Plugin）、Export（Export plugin）、KeyboardNavigation（Keyboard navigation plugin）、MiniMap（Mini Map Plugin）、Watermark（Watermark plugin）、TouchEvent（Mobile touch event support plugin）、NodeImgAdjust（Drag and adjust node image size plugin）、Search（Search plugin）、Painter（Node Format Brush Plugin）、Scrollbar（Scroll bar plugin）、Formula（Mathematical Formula Plugin）、Cooperate（Collaborative editing plugin）、RainbowLines（Rainbow Line Plugin）、Demonstrate（Demonstration mode plugin）、OuterFrame（Outer frame plugin）、HandDrawnLikeStyle（Hand drawn style plugin）[charge]、Notation（Node marker plugin）[charge]、Numbers（Node Number Plugin）[charge]、Freemind（Freemind format import and export plugin）[charge]、Excel（Excel format import and export plugin）[charge]、Checkbox（To Do Plugin）[charge]
+The official provides the many plugins, which can be introduced as needed (a certain function may not be effective because you did not introduce the corresponding plugin). 
 
 Features that will not be implemented in this project:
 
