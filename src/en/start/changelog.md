@@ -71,6 +71,8 @@ Fix:
 > 22.Added an event that is thrown after the command is executed;
 >
 > 23.Added an event to cancel the activation of association lines.
+>
+> 24.Support adjusting the position of the associated line control points to maintain the activation status and improve the user experience;
 
 Demo：
 

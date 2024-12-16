@@ -444,15 +444,19 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
 
 <div style="display: flex;">
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/xbkkjbs0246658.png" style="width: 50px;height: 50px;" />
-        <span>xbkkjbs0246658</span>
+        <img src="./assets/avatar/xbkkjbs0246658.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>xbkkjbs0246658</p>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/4399行星元帅.jpg" style="width: 50px;height: 50px;" />
-        <span>4399行星元帅</span>
+        <img src="./assets/avatar/4399行星元帅.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>4399行星元帅</p>
     </div>
    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
-        <img src="./assets/avatar/Xavier.png" style="width: 50px;height: 50px;" />
-        <span>Xavier</span>
+        <img src="./assets/avatar/Xavier.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>Xavier</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/冒号括号.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>:)</p>
     </div>
 </div>

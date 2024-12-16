@@ -15,3 +15,5 @@
 [How does the dom-to-image library convert HTML into images](https://juejin.cn/post/7287913415803764747)
 
 [Two days to achieve collaborative editing of mind maps? It's really possible to use Yjs](https://juejin.cn/post/7295669711533998117)
+
+[How to make the endpoints of mind map correlation lines follow the mouse movement](https://juejin.cn/post/7443736271645720626)

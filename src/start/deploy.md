@@ -79,6 +79,38 @@ mind-map在容器中启动了8080端口作为web服务入口，通过docker运�
 
 [在群晖上以 Docker 方式安装](https://laosu.gq/2023/09/02/%E5%BC%BA%E5%A4%A7%E7%9A%84%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E5%BA%93SimpleMindMap/)
 
+## 使用宝塔面板Docker的部署说明
+
+> 本小节文档由[bestlaw66](https://github.com/bestlaw66)编写。
+
+### 拥有自己的宝塔
+
+当你需要通过 宝塔面板 部署本项目之前，需要在服务器上先安装好 宝塔面板工具。 接下来的 部署流程 都建立在已有宝塔面板的前提下。宝塔安装请参考 ([宝塔官网](https://www.bt.cn/new/download.html?r=dk_simple))。
+
+> 注意：本项目需要宝塔面板版本 9.2.0 及以上
+
+### 一键安装
+
+![install1](https://github.com/user-attachments/assets/34994767-4662-46f4-bde7-3bb421165765)
+
+1. 在 宝塔面板 -> Docker -> 应用商店 页面，搜索 Simple 找到本项目的docker应用；
+
+2. 点击 安装 开始部署本项目；
+
+![install2](https://github.com/user-attachments/assets/5b6e1863-1dac-40ae-9395-3ea25abe2b8d)
+
+1. 在项目配置页，根据要求开始配置环境变量；
+
+2. 如勾选 允许外部访问 配置，请注意为配置的 web端口 开放安全组端口访问权限；
+
+3. 点击 确认 开始自动部署；
+
+### 如何访问
+
+通过根据 服务器IP地址 和配置的 web端口 http://$(host):$(port)，在浏览器中打开 Simple mind map。
+
+![install3](https://github.com/user-attachments/assets/451872fe-4a51-4712-ba82-efa98b0bd6ad)
+
 ## 对接自己的存储服务
 
 应用数据默认存储在浏览器本地，浏览器本地存储容量是比较小的，所以当在思维导图中插入更多图片后很容易触发限制，所以更好的选择是对接你自己的存储服务，这通常有两种方式：

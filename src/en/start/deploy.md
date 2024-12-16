@@ -79,6 +79,40 @@ Open 127.0.0.1:8081 in the browser to use the Web mind map function.
 
 [在群晖上以 Docker 方式安装](https://laosu.gq/2023/09/02/%E5%BC%BA%E5%A4%A7%E7%9A%84%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E5%BA%93SimpleMindMap/)
 
+## Deployment instructions for using Baota Panel Docker
+
+> This section of the document was written by [bestlaw66](https://github.com/bestlaw66).
+
+### Having one's own pagoda
+
+Before deploying this project through the Pagoda Panel, you need to install the Pagoda Panel tool on the server first.
+ The next deployment process is built on the premise of the existing pagoda panel.
+ Please refer to the installation of the pagoda ([宝塔官网](https://www.bt.cn/new/download.html?r=dk_simple))。
+
+> Attention: This project requires Pagoda panel version 9.2.0 and above
+
+### One click installation
+
+![install1](https://github.com/user-attachments/assets/34994767-4662-46f4-bde7-3bb421165765)
+
+1. On the Baota panel ->Docker ->App Store page, search for Simple to find the Docker application for this project;
+
+2. Click Install to start deploying this project;
+
+![install2](https://github.com/user-attachments/assets/5b6e1863-1dac-40ae-9395-3ea25abe2b8d)
+
+1. On the project configuration page, start configuring environment variables according to the requirements;
+
+2. If the option to allow external access to the configuration is checked, please note to grant security group port access permissions to the configured web port;
+
+3. Click confirm to start automatic deployment;
+
+### How to access
+
+By using the server IP address and configured web port http://$(host):$(port), open in browser Simple mind map.
+
+![install3](https://github.com/user-attachments/assets/451872fe-4a51-4712-ba82-efa98b0bd6ad)
+
 ## Docking with one's own storage services
 
 The application data is stored locally in the browser by default, and the local storage capacity of the browser is relatively small, so it is easy to trigger restrictions when inserting more images in the mind map. Therefore, a better choice is to dock with your own storage service, which usually has two ways:
