@@ -73,6 +73,8 @@ Fix:
 > 23.Added an event to cancel the activation of association lines.
 >
 > 24.Support adjusting the position of the associated line control points to maintain the activation status and improve the user experience;
+>
+> 25.Remove the richTextEditFakeInPlace instantiation option;
 
 Demo：
 

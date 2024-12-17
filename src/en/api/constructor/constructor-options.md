@@ -300,7 +300,7 @@ new MindMap({
 
 | Field Name | Type    | Default Value    | Description  |
 | ----------- | ------- | ---------------- | ----------- |
-| richTextEditFakeInPlace（v0.6.13+）     | Boolean  | false | Set the rich text node edit box to match the size of the node, creating a pseudo in place editing effect. It should be noted that only when there is only text within the node and the shape is rectangular, can the effect be better |
+| richTextEditFakeInPlace（v0.6.13+）（v0.12.2+ has been abandoned）     | Boolean  | false | Set the rich text node edit box to match the size of the node, creating a pseudo in place editing effect. It should be noted that only when there is only text within the node and the shape is rectangular, can the effect be better |
 | transformRichTextOnEnterEdit（v0.10.0+）     | null、Function  | null | To convert rich text content, you can pass a function that will be called when entering rich text editing. The function receives the rich text content that is about to be edited and needs to return the processed rich text content |
 | beforeHideRichTextEdit（v0.10.0+）     | null、Function  | null | You can pass a function that will be executed before the end of rich text editing. The function receives a richText instance, so you can update the kill document data at this time |
 
