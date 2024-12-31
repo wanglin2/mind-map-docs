@@ -46,7 +46,7 @@ const mindMap = new MindMap({
 | tagPosition（v0.10.3+）      | 标签显示的位置，相对于节点文本，bottom（下方）、right（右侧）  | String  | right      |
 | imgTextMargin                    | 节点里图片和文字的间距 | Number  | 5                |
 | textContentMargin                | 节点里各种文字信息的间距，如图标和文字的间距 | Number  | 2                |
-| customNoteContentShow（v0.1.6+） | 自定义节点备注内容显示，Object类型，结构为：{show: (noteContent, left, top, node) => {// 你的显示节点备注逻辑。node为v0.8.1+版本新增的回参，代表节点实例 }, hide: () => {// 你的隐藏节点备注逻辑 } } | Object  | null             |
+| customNoteContentShow（v0.1.6+） | 自定义节点备注内容显示，默认是监听图标的鼠标移入和移出事件来显示和隐藏，如果你要使用其他事件，该选项无法满足，你可以自行监听其他事件来实现该效果，Object类型，结构为：{show: (noteContent, left, top, node) => {// 你的显示节点备注逻辑。node为v0.8.1+版本新增的回参，代表节点实例 }, hide: () => {// 你的隐藏节点备注逻辑 } } | Object  | null             |
 | readonly（v0.1.7+）              | 是否是只读模式 | Boolean | false            |
 | textAutoWrapWidth（v0.3.4+）     |   节点内每行文本达到该宽度后自动换行               | Number  | 500 |
 | customHandleMousewheel（v0.4.3+）     | 自定义鼠标滚轮事件处理，可以传一个函数，回调参数为事件对象 | Function  | null |
@@ -122,6 +122,9 @@ const mindMap = new MindMap({
 | maxNodeTextModifyWidth（v0.12.0+）     |  同minNodeTextModifyWidth，最大值，传-1代表不限制 | Number | -1 |
 | customHandleLine（v0.12.2+）     |  自定义处理节点的连线方法，可以传递一个函数，函数接收三个参数：node（节点实例）、line（节点的某条连线，@svgjs库的path对象）, { width, color, dasharray }，dasharray（该条连线的虚线样式，为none代表实线），你可以修改line对象来达到修改节点连线样式的效果，比如增加流动效果 | Function、null | null |
 | addHistoryOnInit（v0.12.2+）     |  实例化完后是否立刻进行一次历史数据入栈操作（即调用mindMap.command.addHistory方法） | Boolean | true |
+| noteIcon（v0.13.0+）     |  自定义节点备注图标，对象类型，格式为：{ icon: '', style: { size: 20, color: '' } }，icon为自定义的备注图标，svg字符串，如果不是确定要使用svg自带的样式，请去除其中的fill等样式属性；size为图标的大小，不指定则会使用主题的iconSize配置；color为图标的颜色，不指定则会使用节点文本的颜色 | Object | { icon: '', style: {} } |
+| hyperlinkIcon（v0.13.0+）     | 自定义节点超链接图标，对象类型，格式同noteIcon选项  | Object | { icon: '', style: {} } |
+| attachmentIcon（v0.13.0+）     | 自定义节点附件图标，对象类型，格式同noteIcon选项  | Object | { icon: '', style: {} } |
 
 #### 1.1数据结构
 

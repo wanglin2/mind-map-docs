@@ -122,6 +122,10 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
         <img src="./assets/avatar/峰.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>峰</p>
     </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/御风.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>御风</p>
+    </div>
 </div>
 
 ### 青铜赞助

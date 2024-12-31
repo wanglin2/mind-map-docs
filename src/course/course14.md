@@ -21,6 +21,8 @@
 }
 ```
 
+> calculationMiniMap方法返回的getImgUrl方法依赖Export插件，所以如果要调用getImgUrl方法需要先注册导出插件，否则请使用svgHTML属性来渲染
+
 完整实现思路如下：
 
 1.准备一个宽高不为0的容器元素container，定位不为static

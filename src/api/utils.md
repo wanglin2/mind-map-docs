@@ -533,6 +533,34 @@ document.addEventListener(fullscrrenEvent, () => {
 
 给DOM节点添加命名空间属性：`xmlns='http://www.w3.org/1999/xhtml'`。
 
+### compareVersion(a, b)
+
+> v0.13.0+
+
+- `a`、`b`：要进行比较的两个版本号，字符串类型，比如：'0.1.0'、'1.0'、'1'等
+
+判断两个版本号的关系。
+
+```
+a > b 返回 >
+a < b 返回 <
+a = b 返回 =
+```
+
+### debounce(fn, wait = 300, ctx)
+
+> v0.13.0+
+
+- `fn`：需要防抖的函数
+
+- `wait`：延迟执行函数的时间，单位：ms
+
+- `ctx`：`fn`函数的上下文对象
+
+返回一个新函数。
+
+防抖函数。
+
 ## 在 canvas 中模拟 css 的背景属性
 
 引入：

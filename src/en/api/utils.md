@@ -530,6 +530,35 @@ Defend against XSS attacks, filter malicious HTML tags and attributes. You can r
 
 Add namespace attributes to DOM nodes: `xmlns='http://www.w3.org/1999/xhtml'`.
 
+### compareVersion(a, b)
+
+> v0.13.0+
+
+- `a`、`b`: Two version numbers to be compared, of string type, such as' 0.1.0 ',' 1.0 ',' 1 ', etc
+
+Determine the relationship between two version numbers.
+
+```
+a > b return >
+a < b return <
+a = b return =
+```
+
+### debounce(fn, wait = 300, ctx)
+
+> v0.13.0+
+
+- `fn`: Functions that require image stabilization
+
+- `wait`: Delay the execution time of the function, unit:
+ ms
+
+- `ctx`: Context object of `fn` function
+
+Return a new function.
+
+Anti shake function.
+
 ## Simulate CSS background in Canvas
 
 Import:

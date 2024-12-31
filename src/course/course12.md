@@ -5,31 +5,26 @@
 可以监听`data_change`事件来获取当前最新的思维导图数据：
 
 ```js
-mindMap.on('data_change', (data) => {
-    // data数据是不带节点对象的纯数据
-    // 如果你需要操作节点对象，可以使用mindMap.renderer.renderTree
-    console.log(data, mindMap.renderer.renderTree)
+mindMap.on('data_change', data => {
+  // 传递给树组件
 })
 ```
 
-通常点击了大纲的某个节点，会将画布定位到该节点并激活该节点，这可以这么做：
+通常点击了大纲的某个节点，会将画布定位到该节点并激活该节点，可以使用这个命令：
 
 ```js
-const node = data._node
-mindMap.renderer.moveNodeToCenter(node)
-node.active()
-
-// 在v0.6.7+版本可以这么做：
-mindMap.execCommand('GO_TARGET_NODE', node)// 或者传节点的uid
+mindMap.execCommand('GO_TARGET_NODE', data.uid)
 ```
 
 当在大纲树上编辑了某个节点的内容，需要同步到思维导图树上：
 
 ```js
-data._node.setText('xxx')
+// node为数据对应的节点实例
+// 可以通过mindMap.renderer.findNodeByUid(uid)方法来获取
+node.setText('xxx')
 ```
 
-要插入兄弟节点或子节点可以这么操作：
+要插入兄弟节点或子节点可以使用这两个命令：
 
 ```js
 mindMap.execCommand('INSERT_NODE', false)
@@ -40,12 +35,12 @@ mindMap.execCommand('INSERT_CHILD_NODE', false)
 
 要实现一个功能完善的大纲并不容易，下面介绍一下包含定位、编辑、拖拽、删除、单独编辑功能的大纲实现。
 
-以[ElementUI Tree组件](https://element.eleme.cn/#/zh-CN/component/tree)为例。
+以[ElementUI Tree 组件](https://element.eleme.cn/#/zh-CN/component/tree)为例。
 
 实现监听`data_change`事件来刷新树数据：
 
 ```js
-import { nodeRichTextToTextWithWrap } from 'simple-mind-map/src/utils'
+import { nodeRichTextToTextWithWrap, htmlEscape } from 'simple-mind-map/src/utils'
 
 this.mindMap.on('data_change', () => {
     this.refresh()
@@ -53,7 +48,7 @@ this.mindMap.on('data_change', () => {
 
 {
     refresh() {
-        let data = mindMap.getData()// 获取思维导图树数据
+        let data = this.mindMap.getData()// 获取思维导图树数据
         data.root = true // 标记根节点
         // 遍历树，添加一些属性
         let walk = root => {
@@ -62,9 +57,11 @@ this.mindMap.on('data_change', () => {
                 ? nodeRichTextToTextWithWrap(root.data.text)
                 : root.data.text
             ).replaceAll(/\n/g, '<br>')
+            text = htmlEscape(text)
+            text = text.replaceAll(/\n/g, '<br>')
             root.textCache = text // 保存一份修改前的数据，用于对比是否修改了
             root.label = text// 用于树组件渲染
-            root.uid = root.data.uid// 用于树组件渲染
+            root.uid = root.data.uid
             if (root.children && root.children.length > 0) {
                 root.children.forEach(item => {
                     walk(item)
@@ -81,36 +78,36 @@ this.mindMap.on('data_change', () => {
 
 ```html
 <el-tree
-    ref="tree"
-    node-key="uid"
-    draggable
-    default-expand-all
-    :data="data"
-    :highlight-current="true"
-    :expand-on-click-node="false"
-    :allow-drag="checkAllowDrag"
-    @node-drop="onNodeDrop"
-    @current-change="onCurrentChange"
-    @mouseenter.native="isInTreArea = true"
-    @mouseleave.native="isInTreArea = false"
+  ref="tree"
+  node-key="uid"
+  draggable
+  default-expand-all
+  :data="data"
+  :highlight-current="true"
+  :expand-on-click-node="false"
+  :allow-drag="checkAllowDrag"
+  @node-drop="onNodeDrop"
+  @current-change="onCurrentChange"
+  @mouseenter.native="isInTreArea = true"
+  @mouseleave.native="isInTreArea = false"
 >
+  <span
+    class="customNode"
+    slot-scope="{ node, data }"
+    :data-id="data.uid"
+    @click="onClick(data)"
+  >
     <span
-        class="customNode"
-        slot-scope="{ node, data }"
-        :data-id="data.uid"
-        @click="onClick(data)"
-    >
-        <span
-            class="nodeEdit"
-            contenteditable="true"
-            :key="getKey()"
-            @keydown.stop="onNodeInputKeydown($event, node)"
-            @keyup.stop
-            @blur="onBlur($event, node)"
-            @paste="onPaste($event, node)"
-            v-html="node.label"
-        ></span>
-    </span>
+      class="nodeEdit"
+      contenteditable="true"
+      :key="getKey()"
+      @keydown.stop="onNodeInputKeydown($event, node)"
+      @keyup.stop
+      @blur="onBlur($event, node)"
+      @paste="onPaste($event, node)"
+      v-html="node.label"
+    ></span>
+  </span>
 </el-tree>
 ```
 
@@ -125,13 +122,8 @@ onClick(data) {
     const targetNode = this.mindMap.renderer.findNodeByUid(data.uid)
     // 如果当前已经是激活状态，那么上面都不做
     if (targetNode && targetNode.nodeData.data.isActive) return
-    // 思维导图节点激活时默认会聚焦到内部创建的一个隐藏输入框中，`stopFocusOnNodeActive`方法是用于关闭这个特性，因为我们想把焦点留在大纲的输入框中
-    this.mindMap.renderer.textEdit.stopFocusOnNodeActive()
     // 定位到目标节点
-    this.mindMap.execCommand('GO_TARGET_NODE', data.uid, () => {
-        // 定位完成后再开启前面关闭的特性
-        this.mindMap.renderer.textEdit.openFocusOnNodeActive()
-    })
+    this.mindMap.execCommand('GO_TARGET_NODE', data.uid)
 }
 ```
 
@@ -245,17 +237,41 @@ onKeyDown(e) {
 import { createUid } from 'simple-mind-map/src/utils'
 
 // 节点输入区域按键事件
+// 新增了一个insertType变量来保存节点操作的类型，然后触发输入框的失焦，所以我们会在blur事件里执行具体的节点操作
 onNodeInputKeydown(e) {
     // 回车键添加同级节点
     if (e.keyCode === 13 && !e.shiftKey) {
         e.preventDefault()
-        this.insertNode()
+        this.insertType = 'insertNode'
+        e.target.blur()
     }
     // tab键添加子节点
     if (e.keyCode === 9) {
         e.preventDefault()
-        this.insertChildNode()
+        if (e.shiftKey) {
+          // 节点上升一级
+          this.insertType = 'moveUp'
+          e.target.blur()
+        } else {
+          // 插入子节点
+          this.insertType = 'insertChildNode'
+          e.target.blur()
+        }
     }
+}
+
+// 修改一下blur事件的处理方法
+onBlur(e, node) {
+    // 节点数据没有修改
+    if (node.data.textCache === e.target.innerHTML) {
+    // 如果存在未执行的插入新节点操作，那么直接执行
+    if (this.insertType) {
+        this[this.insertType]()
+        this.insertType = ''
+    }
+        return
+    }
+    // ...
 }
 
 // 插入兄弟节点
@@ -264,6 +280,12 @@ insertNode() {
         uid: createUid()
     })
 }
+
+// 节点上移一个层级
+moveUp() {
+    this.mindMap.execCommand('MOVE_UP_ONE_LEVEL')
+}
+
 
 // 插入下级节点
 insertChildNode() {
@@ -275,27 +297,15 @@ insertChildNode() {
 
 ### 拦截输入框的粘贴操作
 
-为什么要拦截输入框的粘贴操作，因为用户可能粘贴的是富文本内容，也就是带html标签的，但是一般我们都不希望用户粘贴这种内容，只允许粘贴纯文本，所以我们要拦截粘贴事件，处理一下用户粘贴的内容：
+为什么要拦截输入框的粘贴操作，因为用户可能粘贴的是富文本内容，也就是带 html 标签的，但是一般我们都不希望用户粘贴这种内容，只允许粘贴纯文本，所以我们要拦截粘贴事件，处理一下用户粘贴的内容：
 
 ```js
-import { getTextFromHtml } from 'simple-mind-map/src/utils'
+import { handleInputPasteText } from 'simple-mind-map/src/utils'
 
 // 拦截粘贴事件
 onPaste(e) {
     e.preventDefault()
-    const selection = window.getSelection()
-    if (!selection.rangeCount) return
-    selection.deleteFromDocument()// 删除当前选区，也就是如果当前用户在输入框中选择了一些文本，会被删除
-    // 从剪贴板里取出文本数据
-    let text = e.clipboardData.getData('text')
-    // 调用库提供的getTextFromHtml方法去除格式
-    text = getTextFromHtml(text)
-    // 去除换行
-    text = text.replaceAll(/\n/g, '')
-    // 创建文本节点添加到当前选区
-    const node = document.createTextNode(text)
-    selection.getRangeAt(0).insertNode(node)
-    selection.collapseToEnd()
+    handleInputPasteText(e)
 }
 ```
 

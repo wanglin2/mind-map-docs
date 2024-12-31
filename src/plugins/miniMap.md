@@ -39,6 +39,8 @@ MindMap.usePlugin(MiniMap)
 }
 ```
 
+> calculationMiniMap方法返回的getImgUrl方法依赖Export插件，所以如果要调用getImgUrl方法需要先注册导出插件，否则请使用svgHTML属性来渲染
+
 小地图思路：
 
 1.准备一个容器元素`container`，定位不为`static`

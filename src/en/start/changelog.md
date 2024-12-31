@@ -1,5 +1,83 @@
 # Changelog
 
+## 0.13.0
+
+Breaking change:
+
+Refactored the rich text rendering logic. When rendering text styles, they are added to the foreignObject label by default. When editing, styles are added to the edit box element, while the style of interval text remains on the corresponding label, and the style data of interval text does not reflect the data of nodes.
+
+It will bring some problems:
+
+> 1.The old version of rich text data import can be rendered, but selecting nodes to set text styles may not take effect because the style data of the old version is added to each label of the rich text content, so the priority is higher than the style of the foreignObject label. The RichText plugin has added processing for older version data, which will be re rendered during rendering;
+>
+> 2.Using different theme text styles for the same rich text data will change, except for manually set interval text styles;
+
+At the same time, this change also solved many problems:
+
+> 1.In rich text mode, when switching themes, the collapsed nodes will not lose their range text styles;
+>
+> 2.In rich text mode, copying and pasting nodes with range text styles will not result in the loss of range text styles;
+>
+> 3.In rich text mode, setting overall text styles for nodes with existing range text styles will not cause the loss of range text styles;
+>
+> 4.In rich text mode, searching and replacing text in nodes with range text styles will not result in the loss of range text styles;
+>
+> 5.In rich text mode, when clearing text and inputting Chinese characters, the text style may be lost;
+>
+> 6.The issue of having to roll back twice to delete a newly created rich text node during rollback operation;
+
+Fix:
+
+> 1.Fixed the issue where node text disappears when zooming the canvas with the mouse wheel while editing node text in rich text mode;
+>
+> 2.Fixed the issue where the node size does not adapt when entering text editing with mathematical formulas present in nodes, with real-time rendering enabled;
+>
+> 3.Fixed the issue where pasting text in < a format is not possible during text editing in non-rich text mode;
+>
+> 4.Fixed the issue where pasting < a formatted text generates nodes with text displaying as &lt;a;
+>
+> 5.Fixed the issue where continuous input of different text in read-only mode for search does not clear the highlight of the last searched node;
+>
+> 6.Fixed the issue where double-clicking to edit one node among multiple selected nodes and then double-clicking another node results in a blank display for that node;
+>
+> 7.Fixed the issue where adding icons or other content to a node while it is in the editing state causes the icons and edit box to overlap;
+>
+> 8.Fixed the issue where the text of the expand/collapse button can be selected;
+>
+> 9.Fixed the issue where the outline overlaps during initial rendering;
+>
+> 10.Modified the inconsistent paste behavior under HTTP and HTTPS protocols;
+>
+> 11.Fixed the issue where copying multiple nodes and pasting them consecutively results in layout chaos;
+>
+> 12.Optimized the issue where the input box positioning jitters when editing in place without using rich text text editing;
+>
+> 13.Fixed the issue where pasting text during editing in non-rich text mode does not trigger the node_text_edit_change event;
+>
+> 14.Fixed the issue where the editor height does not change when reducing text during editing in rich text mode;
+
+New:
+
+> 1.Removed the logic that adds a history record when switching themes and setting data in rich text mode within the render method;
+>
+> 2.After dynamically registering a rich text plugin, the current rendering tree data will be automatically converted;
+>
+> 3.In rich text mode, instantiating and dynamically registering a rich text plugin with node data that has an outline will no longer trigger an additional history record addition;
+>
+> 4.When activating a node with a Chinese input method and directly entering edit mode by typing, ignore the value of the first key press;
+>
+> 5.The copyRenderTree and copyNodeTree utility methods now support retaining additional fields in node data and children;
+>
+> 6.Added a field to the node data to save the current library version number;
+>
+> 7.Added debounce operation to real-time text editing updates to avoid unnecessary calculations during rapid input;
+>
+> 8.New instance options for custom node comments, hyperlink, and attachment icon styles have been added;
+
+Demo:
+
+> 1.Switch whether to enable rich text settings and add secondary prompts;
+
 ## 0.12.2
 
 Fix:

@@ -46,7 +46,7 @@ Node tree rendering is an asynchronous operation, so it is not possible to immed
 | tagPosition（v0.10.3+）      | The position of the tag display relative to the node text，bottom（Below the text）、right（On the right side of the text）   | String  | right      |
 | imgTextMargin  | The spacing between the image and text in the node | Number  | 5  |
 | textContentMargin | The spacing between various text information in the node, such as the spacing between the icon and text | Number  | 2 |
-| customNoteContentShow（v0.1.6+） | Custom node note content display, object type, structure: \{show: (noteContent, left, top, node) => {// your display node note logic. node is a new parameter added in v0.8.1+ version, representing node instances }, hide: () => \{// your hide node note logic \}\} |  Object  | null             |
+| customNoteContentShow（v0.1.6+） | Custom node note content display, The default is to listen to the mouse move in and out events of the icon to display and hide. If you want to use other events, this option cannot be met. You can listen to other events yourself to achieve this effect, object type, structure: \{show: (noteContent, left, top, node) => {// your display node note logic. node is a new parameter added in v0.8.1+ version, representing node instances }, hide: () => \{// your hide node note logic \}\} |  Object  | null             |
 | readonly（v0.1.7+）              | Whether it is read-only mode   | Boolean | false            |
 | textAutoWrapWidth（v0.3.4+）     |   Each line of text in the node will wrap automatically when it reaches the width | Number  | 500 |
 | customHandleMousewheel（v0.4.3+）     | User-defined mouse wheel event processing can pass a function, and the callback parameter is the event object | Function  | null |
@@ -122,6 +122,9 @@ Node tree rendering is an asynchronous operation, so it is not possible to immed
 | maxNodeTextModifyWidth（v0.12.0+）     |  Same as minNodeTextModifierWidth, maximum value, passing -1 represents no restriction | Number | -1 |
 | customHandleLine（v0.12.2+）     | Customize the connection method for processing nodes, which can pass a function that takes three parameters: node(Node instance)、line(A connection of a node, the path object of the @svgjs library), { width, color, dasharray }，dasharray(The dashed line style of this line represents a solid line with 'none'), You can modify the line object to achieve the effect of modifying node connection styles, such as adding flow effects | Function、null | null |
 | addHistoryOnInit（v0.12.2+）     |  Do you immediately perform a historical data stack operation after instantiation (i.e. call the mindMap.command.addHistory method) | Boolean | true |
+| noteIcon（v0.13.0+）     |  Custom node note icon, object type, format: { icon: '', style: { size: 20, color: '' } }, Icon is a custom comment icon and SVG string. If you are not sure about using the built-in style of SVG, please remove the fill and other style attributes from it; Size is the size of the icon. If not specified, the iconSize configuration of the theme will be used; Color is the color of the icon. If not specified, the color of the node text will be used | Object | { icon: '', style: {} } |
+| hyperlinkIcon（v0.13.0+）     | Customize node hyperlink icons, Object type, format same as noteIcon option | Object | { icon: '', style: {} } |
+| attachmentIcon（v0.13.0+）     | Customize node attachment icons, Object type, format same as noteIcon option  | Object | { icon: '', style: {} } |
 
 #### 1.1 Data structure
 

@@ -44,6 +44,8 @@ Function return content:
 }
 ```
 
+> The getImgURL method returned by the calculationMiniMap method depends on the Export plugin, so if you want to call the getImgURL method, you need to register the export plugin first. Otherwise, please use the svgHTML property to render
+
 Small map idea:
 
 1.Prepare a container element `container`, position is not `static`
