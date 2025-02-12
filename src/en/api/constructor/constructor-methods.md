@@ -87,9 +87,10 @@ Listen to an event. Event list:
 | before_show_text_edit            | Event before node text edit box opens                                    |                                                                                                                 |
 | hide_text_edit                   | Node text edit box close event【The end of text editing for the associated line will also trigger this event, and there are no callback parameters at this time, so defensive programming is necessary】    | textEditNode (text edit box DOM node), activeNodeList (current list of active nodes) 、node（v0.10.2+, Node instance for current text editing）                 |
 | scale                            | Canvas zoom event                                                               | scale (zoom ratio)                                            |
-| translate（v0.9.10+）         |   Canvas movement event           | x（translate x）、y（translate y）                     |
-| node_img_dblclick（v0.2.15+）    | Node image double-click event                                            | this (node instance), e (event object)                                                                          |
-| node_img_mouseenter（v0.6.5+）    |  Node image mouseenter event                    | this（node instance）、imgNode（img node）、e（event object）                              |
+| translate（v0.9.10+）         |   Canvas movement event           | x（translate x）、y（translate y）     |
+| node_img_click（v0.13.1+）    | Node image click event    | this（node instance）、imgNode（img node）、e（event object）   |
+| node_img_dblclick（v0.2.15+）    | Node image double-click event    | this (node instance), e (event object), imgNode（img node）    |
+| node_img_mouseenter（v0.6.5+）    |  Node image mouseenter event  | this（node instance）、imgNode（img node）、e（event object）    |
 | node_img_mouseleave（v0.6.5+）    |  Node image mouseleave event                    | this（node instance）、imgNode（img node）、e（event object）                              |
 | node_img_mousemove（v0.6.5+）    |  Node image mousemove event                      | this（node instance）、imgNode（img node）、e（event object）                              |
 | node_tree_render_end（v0.2.16+） | Node tree render end event              |          |

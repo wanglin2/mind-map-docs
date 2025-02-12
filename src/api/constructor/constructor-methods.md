@@ -89,7 +89,8 @@ mindMap.setTheme('主题名称')
 | hide_text_edit                   | 节点文本编辑框关闭事件【关联线的文本编辑结束也会触发该事件，此时没有回调参数，所以需要做好防御性编程】                     | textEditNode（文本编辑框DOM节点）、activeNodeList（当前激活的所有节点列表）、node（v0.10.2+，当前文本编辑的节点实例） |
 | scale                            | 画布放大缩小事件                               | scale（缩放比例）                                            |
 | translate（v0.9.10+）               | 画布移动事件              | x（水平位移）、y（垂直位移）                     |
-| node_img_dblclick（v0.2.15+）    | 节点内图片的双击事件                       | this（节点实例）、e（事件对象）                              |
+| node_img_click（v0.13.1+）    | 节点内图片的单击事件    | this（节点实例）、imgNode（图片节点）、e（事件对象）   |
+| node_img_dblclick（v0.2.15+）    | 节点内图片的双击事件     | this（节点实例）、e（事件对象）、imgNode（图片节点）   |
 | node_img_mouseenter（v0.6.5+）    |  节点内图片的鼠标移入事件                      | this（节点实例）、imgNode（图片节点）、e（事件对象）                              |
 | node_img_mouseleave（v0.6.5+）    |  节点内图片的鼠标移出事件                      | this（节点实例）、imgNode（图片节点）、e（事件对象）                              |
 | node_img_mousemove（v0.6.5+）    |  节点内图片的鼠标移动事件                      | this（节点实例）、imgNode（图片节点）、e（事件对象）                              |

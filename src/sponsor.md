@@ -30,6 +30,10 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
         <img src="./assets/avatar/黄智彪@一米一栗科技.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>黄智彪@一米一栗科技</p>
     </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;flex-shrink: 0;">
+        <img src="./assets/avatar/沨沄.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>沨沄</p>
+    </div>
 </div>
 
 ### 黄金赞助
@@ -125,6 +129,10 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/御风.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>御风</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/兔子快跑.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>兔子快跑</p>
     </div>
 </div>
 
@@ -474,5 +482,13 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/Sword.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>Sword</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/好好先生Ervin.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>好好先生Ervin</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/胡永刚.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>胡永刚</p>
     </div>
 </div>

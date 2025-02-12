@@ -56,6 +56,12 @@
 
 ## 方法
 
+## getChildrenLength()
+
+> v0.13.1+
+
+获取子节点的数量。
+
 ## getSvgObjects()
 
 > v0.12.1+

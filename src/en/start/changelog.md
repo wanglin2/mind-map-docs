@@ -1,5 +1,55 @@
 # Changelog
 
+## 0.13.1
+
+Fix:
+
+> 1.Fixed the issue of the expand/collapse button flick duringering editing in the real-time rendering mode of the text editor.
+>
+> 2.Fixed the issue where the exported XMind file could not be opened when the node label data was an array of objects.
+
+New:
+
+> 1.Support for setting text alignment in nodes.
+>
+> 2.New configuration for node image layout positions in themes.
+>
+> 3.Added a shortcut button for creating child nodes.
+>
+> 4.Introduced click events for node images.
+>
+> 5.Added instantiation options for deleting and adjusting buttons in the custom node image adjustment plugin.
+>
+> 6.Added instantiation options for adding custom content to nodes.
+>
+> 7.Removed the tagPosition instantiation option and replaced it with the tagPlacement theme configuration.
+>
+> 8.Automatically assign a uid to nodes that do not have one.
+> 
+> 9.Code optimization: Replaced all replaceAll methods with replace methods.
+>
+> 10.Code optimization: Fixed the logic error in the debounce method.
+
+Demo:
+
+> 1.Node text supports setting alignment.
+>
+> 2.Support for printing outlines.
+>
+> 3.Support for adjusting the layout of node images and labels.
+>
+> 4.Adjust the style of the export dialog.
+>
+> 5.The formula button in the toolbar automatically shows or hides based on whether the node rich text configuration is enabled.
+>
+> 6.Automatically enable rich text mode when importing rich text content.
+>
+> 7.Added settings to allow or disallow file drag-and-drop for importing.
+>
+> 8.Added settings for node content spacing.
+>
+> 9.Automatically hide the search box when importing data.
+
 ## 0.13.0
 
 Breaking change:

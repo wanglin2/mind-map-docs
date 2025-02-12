@@ -56,6 +56,12 @@ Whether the node is currently being dragged
 
 ## Methods
 
+## getChildrenLength()
+
+> v0.13.1+
+
+Get the number of child nodes.
+
 ## getSvgObjects()
 
 > v0.12.1+

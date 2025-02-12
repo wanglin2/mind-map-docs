@@ -107,6 +107,12 @@
     hoverRectColor: '',
     // 点鼠标hover和激活时显示的矩形边框的圆角大小
     hoverRectRadius: 5,
+    // 文本对齐，right、center、justify、left
+    textAlign: 'left',
+    // 图片放置位置，相对于整个文本内容
+    imgPlacement: 'top', // left、right、bottom、top
+    // 标签放置位置
+    tagPlacement: 'right' // right（文字右侧）、bottom（文本内容下方）
     // 下列样式也支持给节点设置，用于覆盖最外层的设置
     // paddingX,
     // paddingY,
@@ -144,7 +150,10 @@
     lineMarkerDir: 'end',
     hoverRectColor: '',
     hoverRectColor: '',
-    hoverRectRadius: 5
+    hoverRectRadius: 5,
+    textAlign: 'left',
+    imgPlacement: 'top',
+    tagPlacement: 'right'
   },
   // 三级及以下节点样式
   node: {
@@ -171,7 +180,10 @@
     lineMarkerDir: 'end',
     hoverRectColor: '',
     hoverRectColor: '',
-    hoverRectRadius: 5
+    hoverRectRadius: 5,
+    textAlign: 'left',
+    imgPlacement: 'top',
+    tagPlacement: 'right'
   },
   // 概要节点样式
   generalization: {
@@ -197,7 +209,10 @@
     endDir: [1, 0],
     hoverRectColor: '',
     hoverRectColor: '',
-    hoverRectRadius: 5
+    hoverRectRadius: 5,
+    textAlign: 'left',
+    imgPlacement: 'top',
+    tagPlacement: 'right'
   }
 }
 ```

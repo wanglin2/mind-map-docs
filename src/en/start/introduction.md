@@ -1,10 +1,28 @@
 # Introduction
 
-`simple-mind-map` 【Chinese name: 思绪 mind map】 is a simple and powerful web mind map library, not dependent on any specific framework. Can help you quickly develop mind mapping products.
+`simple-mind-map` 【Chinese name: 思绪思维导图】 is a simple and powerful web mind map library, not dependent on any specific framework. Can help you quickly develop mind mapping products.
 
-> If you just want to use mind mapping, you can also use the demo of this project as a regular online mind mapping tool. Click on the 【Online Demo】 in the upper right corner to start using it.
+`simple-mind-map`【Chinese name: 思绪思维导图】 is a simple and powerful web mind map library and mind map software.
+
+This project mainly includes the following contents:
+
+1.A JS mind map library that does not rely on any framework and can be used to quickly develop web mind map products.
+
+Development documentation: [Course](../course/course1.md).
+
+2.A web mind map developed based on the mind map library, Vue 2. x, and ElementUI. It can manipulate local files on the computer and can be used as an online mind map application, as well as self deployment and secondary development.
+
+Online address: [https://wanglin2.github.io/mind-map/](https://wanglin2.github.io/mind-map/).
+
+3.In addition, it also supports using it in a client-side manner. The [uTools](https://www.u.tools/) plugin application market has been launched, and it is strongly recommended to experience it through uTools.
+
+Plugin address: [](). [Click here to learn more](../client).
+
+> Independent client download: Github: [releases](https://github.com/wanglin2/mind-map/releases). Baidu Cloud Drive: [address](https://pan.baidu.com/s/1huasEbKsGNH2Af68dvWiOg?pwd=3bp3).
 >
-> Additionally, a client is provided for download, support `Windows`、`Mac` and `Linux`, [Click here to learn more](../client)。
+> I won't invest too much effort in the independent client in the future. It is recommended to use uTools for stronger functionality and better experience.
+
+4.【Cloud storage version】If you need to bring a cloud storage version with backend, you can try another project we have developed [lx-doc](https://github.com/wanglin2/lx-doc)。
 
 ## Features
 
@@ -105,3 +123,5 @@ Unsupported: `IE` browser.
 ## License
 
 [MIT](https://github.com/wanglin2/mind-map/blob/main/LICENSE). You can use it for commercial purposes without retaining the copyright statement of 'mind-map'. If you don't want to keep it, you can contact the author.
+
+If you are in Hangzhou, you are also welcome to come and see me.
