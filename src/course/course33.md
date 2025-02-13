@@ -1,8 +1,55 @@
-# 如何给节点添加一点自定义的内容
+# 如何自定义部分节点内容
+
+除了完全自定义整个节点内容外还支持自定义部分节点内容。
+
+## 添加附加的节点前置和后置内容
+
+前置内容指和文本同一行的区域中的前置内容，不包括节点图片部分。如果存在编号、任务勾选框内容，这里添加的前置内容会在这两者之后。
+
+后置内容指和文本同一行的区域中的后置内容，不包括节点图片部分。
+
+添加这两个内容主要是使用`createNodePrefixContent`和`createNodePostfixContent`实例化选项：
 
 ```js
-addCustomContentToNode: {
-    // 返回要添加的DOM元素详细
+new MindMap({
+  createNodePrefixContent: node => {
+    const el = document.createElement('div')
+    el.style.width = '50px'
+    el.style.height = '50px'
+    el.style.background = 'red'
+    return {
+      el, // 要添加的内容，DOM节点
+      width: 50, // 内容的宽高
+      height: 50
+    }
+  },
+  createNodePostfixContent: node => {
+    const domparser = new DOMParser()
+    const doc = domparser.parseFromString(
+      '<b style="background-color: rgb(214, 239, 214);">白日依山尽</b>',
+      'text/html'
+    )
+    const el = doc.querySelector('b')
+    return {
+      el,
+      width: 50,
+      height: 50
+    }
+  }
+})
+```
+
+<iframe style="width: 100%; height: 455px; border: none;" src="https://wanglin2.github.io/playground/#eNq1VUtv1EgQ/iulXq3srCb2JITDzk6ifbAr7SG7CI40B49dmWlod5t2Tx6K5gACDog7DwmJC3BAQnBCAcKvYRI48Reo9pswSAiJkcburvrq4a+qq/fZH1kWbE+RDdgwj43ILORop9kGVyLNtLGwDwa3eqDVpp4qi0kP8kkkpd45h1swgy2jU/DIg9dYbAqVbEZZqeIsJ7HE5ZSky2mUccYVAFcSLTiZQ66DmkrJFVdNGN9fgvUN2HfgDgx3avd+oQJAOYBEx9MUlQ3GaP+W6JZ/7v2b+F5l+ZdWNhIKjbfUK62SyEaD0rv7ceYEnHVETmhx1zohZ0cPD97funZ87YCzykOJmIrEAVZq2azRchZPhEwMKge40Bp1Inwl8Mng717dPn71ZEH8z3JY7crbPBbkcrHVdXE/KrFT35VYvaxktZ1Qwp7T2v6nEzyrc2GFVmTpSdyyXg+8mGpPdb5Yh4kNRhYLNPWx2HWtQJABKBI1HVYgtcottRO1WdNPpXXVUr6XiG1vqcajDHK7JzHYEYmdkJV3up/t0jE4oZ6gGE/s1/WjKL48NtT1icMYTBqIoZNoVLcAKHthCO8fXz16+Xp+6+Hx/evzmzfmzw4+vrl95v/NqhANukhsAKf7zqgEOotnhx+e3m1RZX4O1jTx55R3KNS5/QYOE51mkcnRVCeWUjtb7P2GvBoYF2xX8KB4/UNj47w1Qo39NklvOIKCrnXOWsKWYy21GYAZj/zVlbUerJ76lR4ra0u/cbZxfO/w6M6jd28fzF+8mD8/HIajDa/TfZ7r43BiU9kQfiK9uheCK1M0e+dRYmy18b1R2wQLS7SoAt/Ct3vNKHU1I//DsJzHNIlpY5GGKFWBdgBD6kOIZZTnxEY14s5gqumbS08FQCStthmABBmGpC39VKth2HFP24LoAvF7NdI5C8JyjlfTN8A8DeI854zSdeMcIOhkUhNSff9Kv/9zgQPImjNrkCKKbSwUxbe7/08nM65dtYbRKNdyaktDAHfyB9CvdlZn7ebL8DX5a306i3XkxXF/qSOnkRkLilt7zaIkoe6sBeSAalVQxnqsJMxddMGlXCu6VwsvvFIQYc1E5YyuzXKQBiEtA0M3n0jRcbs8MnrHHYlLZFE1z4KrtLT9sjLOqsptxmafAEKIgfQ=" />
+
+## 添加额外的内容
+
+`v0.13.1+`版本新增了一个`addCustomContentToNode`实例化选项，进一步增强了添加自定义内容的能力，通过这个选项创建的自定义内容需要自己来定位在节点内的位置，如下示例用于给节点添加一个角标，显示子节点的数量：
+
+```js
+new MindMap({
+  addCustomContentToNode: {
+    // 返回要添加的DOM元素信息
+    // 接收的node参数为节点实例
     create: node => {
       const childrenLength = node.nodeData.children.length
       if (childrenLength <= 0) return null
@@ -23,9 +70,41 @@ addCustomContentToNode: {
         height: 20
       }
     },
-    // 处理生成的@svgdotjs/svg.js库的ForeignObject节点实例，可以设置其在节点内的位置
+    // 处理生成的@svgdotjs/svg.js库的ForeignObject节点实例，可以设置其在节点内的位置，定位的方法需要自行查看@svgdotjs/svg.js库的文档
+    // content：create函数返回的数据
+    // element：ForeignObject节点实例
+    // node：当前所属节点实例
     handle: ({ content, element, node }) => {
       element.x(node.width - content.width / 2).y(-content.height / 2)
     }
   }
+})
 ```
+
+<iframe style="width: 100%; height: 455px; border: none;" src="https://wanglin2.github.io/playground/#eNq1VVtvG0UU/iujrZDXyN51C7wYpyo0ICERiqq+sZXY7IztCbMzq5nZXBT5gdJEqBRRiT4gQCUPUJCQ0hcEakLKn8nG5om/wJmd2UsS84JUS7Znzv3yzTm73ltZFmzmxBt6I5VImmmkiM6z6xGnaSakRrtIknEPCb4mcq4J7iE1jRkTW7fJGM3QWIoUdcBCp9ZYoxyvxZllRZ4CMiP9FKj9NM4iL+IIRZwRjQzNSK4gnjMW8YjXbny/i1auo10j3BIjW5V5v2QhRNgQYZHkKeE6mBD9DiPm+PbOe9jvOM2bguuYciI73Z7VwrGOh9a6+USeIURei2SImmxrQ4y8s4Pniwf35veeR56zYCVyio3A1Yo2q7mRl0wpw5JwI/BRo9Ty8B+OLzo/PXo4P/p5if9zMVxr05s4lsRyt+G15V5WYK/9r8Cqo6NVepRTfVsI/YHA5EOhqKaCg2aHkbHu9FAngd5Dn+868Rjjm7nSIjUQANYdYRTrpMIQLf56XHz3ZPH007M/josHB/Nv76/eWiv2Ppv/drB49nR+vG8lE0liDYoc1GtglgzBlUZVGu8TPtFTg1SQC8zPKpQxqNgBK/mVLh0j/4LmaAUNuvDkdC65exVtP4SB7RruNiiHeL+D6WanW8kTFii9w0iQKHUHOgZ6Hzfl3aJYTwEzg2z7zYY6JXQy1ZfI63HyyUTCu8RDiAy3OUJiIvsyxjRXQ/TG4JUWMxFMyCG6Mh6PW1SDnn7M6ATaZpvVYjJ4pP2lUdSxQ16Uw1N2OZ0vXyXk6teCLmE9023orYPr5VKUAsXhyd+/frOsJPUTPw9Io/Pj/fmj/fnjH84+fwT4uaE2J1joDRXCIdhQxdHXQH1XSDDFb61vkETbGIrDJ6cvvvjnz4fFV89Oj39aHL6YnxwWe78X3//iBPb3QPP05EugW2/TmGMGMPR3DSAMonuQWtn/nsXmrJmbNu+SGWz7JSLLZFG/Unb3EF3rBjt+v6LapEuyS9b82Z8utGQG5FFo9wVsCrhoAkMesAg3hEYARJSwWKmVyHMjeJWkIvJKthOguOHWAxpERiFwrR13GoUt83AtcV1K3HArJ/KC0O4Ztx0ColKD/MgrEWS+QSuSqj6u91cHNXCzeqZIAh7pJikZZe7me+VixJWpRjFeV4Ll2ioCpmEyDdHA3bTImstl9xXcXh9U4AfPy/2+WnlOYzmh4LeymsHQo3xSEcAA9KosmdfzbMHMIgZkCg57v7QSOQYUrB6OkQdr3Q76IIRjIGEz05SY2vbXpdhSRIKRevAvWfVW93JnjJaLbebN/gUcKs6d" />
+
+上面这个示例初始渲染你发现很正常，正确的渲染出了当前节点子节点的数量，但是当你给节点动态再添加一个子节点后发现自定义内容中的数量没有更新，理想情况下应该是希望子节点数量改变了，自定义内容中的数量也跟着更新了，那么这时为什么呢。
+
+原因很简单，`simple-mind-map`是数据驱动的，对于某个节点，它只关心它自身的数据，也就是数据中的`data`，虽然它的子节点改变了，但只影响的是数据中的`children`数据，`data`并没有发生改变，所以库内部判断该节点数据没有发生改变便不会重新渲染它的内容，所以你的自定义内容也就不会重新渲染。
+
+所以解决的关键的是想办法触发自身数据的改变：
+
+```js
+mindMap.on('data_change_detail', list => {
+  list.forEach(item => {
+    if (item.action === 'update') {
+      if (item.oldData.children.length !== item.data.children.length) {
+        mindMap.renderer
+          .findNodeByUid(item.data.data.uid)
+          .setData({ _count: item.data.children.length })
+      }
+    }
+  })
+})
+```
+
+在前面的基础上我们监听一下`data_change_detail`事件，可以获取到数据更新明细，我们找出其中的`update`更新类型，然后就可以根据变更数据的切换判断出某个节点的子节点数量是否改变了，是的话我们就获取到该节点实例，然后给其添加一个自定义数据，这样库内部就会发现它的数据改变了，就会触发其重新渲染，这样自定义的内容也就会随之更新了。
+
+当然这只是一个示例，具体情况可能还需要具体的做法，但核心就是需要想办法触发数据改变，以触发节点重新渲染。
+
+<iframe style="width: 100%; height: 455px; border: none;" src="https://wanglin2.github.io/playground/#eNq1Vk9vG0UU/yrDVmjXyF67AS7GrkqbIiERiqpyYquw2RmvJ8zOrHZn80eWD5QmQqWISvSAAJUcoCAhpRcEakLKl4ljc+Ir8ObPrteJe6nUSN7svP/vze+9tyPn3TT1twridJ1eHmU0lSgnskivBJwmqcgkGqGMDJpI8DVRcElwE+XDkDGxfYsM0BgNMpEgFyy4lcYa5XgtTA0rcHIgM9JKgNpKwjRwAo5QwBmRSNGUZB/xgrGAB7xy43kN1L+CRkq4Jka2S/OeZiFEWBdhERUJ4dKPibzBiHq9tvs+9lyreV1wGVJOMrfRNFo4lGHXWFd/gaMIgVMjKaIkO1IRA+fs4Nns/t3p3WeBYy0YiYJiJeBehvQNbVzxAycaUoYzwpXIJ3O1mo8XuD7v/vTowfTo1yURLEaxUkWxGMmSaO7MeXW5Vxbamy8XWvlqaaUe5VTeEkJ+KDD5SORUUsFB02VkIN0mciNAANz2HSseYny9yKVIFBCAdVsoxSqtdhvN/nk0+eHx7MnnZ38dT+4fTL+/t3pzbbL3xfSPg9nTJ9PjfSMZZSSUoMhBvYKnZgieS1Sm8QHhsRwqvIKcrx6rUEi/ZPtM80tdOkDeOc1eH3Ua0HiyyLjtjbofwsB2BXoTlMW952K65TZKecL8XO4y4kd5fhvuDPQ+nZd3m2I57KKVTrrzzpw6JDQeygvkjTD6LM6gO3EXIsN1jsgwyVpZiGmRd9HbnddrzEgwkXXRpcFgUKMq/LRCRmO4NnNZNSaDVm0tjaKKHfKiHBra5rRYvlLI1q8GXsKa6rbhbi1gL5ZCC0wOT/79/btlJanafBGQSufne9OH+9NHP519+RDwczXfirGQm3kbXvzNfHL0LVDfExmY4jc3NkkkTQyTw8enz7/67+8Hk2+enh7/Mjt8Pj05nOz9OfnxNyuwvweapydfA914G4YcM4ChN1KAUIhuQmr6/psGm+P59DR5a6a/42lE6mRRq1S25zZaafi7XqukmqQ12Sar/plHQ19JbTj7ggP0AOXrEUQXk3VMYOQyaEaP0VzWw1EYFgBJJmLDM2T16g9EdiOMhp5HJUkWc1Btoqh+GKl2R/1+H7lFCj6J26hfciUoGF7Wd+g10NQCKt7z3AVT8/RAADBOMn8ABDU9ru1+TLHxo83oB0y7hg8LVLn1RuuR2mXdF/saV31aG3UlsjRPPdWv1zbbGfYyHMBeyiBvOCHUg4ZHEQvzvB84NtxVkojA0WwrQPGcW61DEOm1gWvs2Ldeu2Yejnp+aImrdsEHjt82W93uYp/kiZowgVPBwq9FUlbU9tjlTjUg0mp2ZwQ80i2iGboE6nfpfMSlqbliuAFgKqRRBBTBBuiijj1Jkc4PF92Xbf1Wpxwy4Hm53zdKz0mYxRT8llZTWC6UxyUBDMBd6ZI5TccUTH32wAQQHL6ytJXAMqBg1RIKHPiIMivVb8OrnwF2aEJUbVsbmdjOAXyboGEnzpIPK6N78WaUlo1t7Iz/B2mHQ0o=" />

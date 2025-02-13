@@ -131,3 +131,16 @@ Earlier versions currently do not have a convenient way to dynamically insert st
 ## 10.Cross browser window cannot copy and paste, or cannot paste data from the clipboard.
 
 Copying and pasting within a single mind map page only requires intercepting the Ctrl+c or Ctrl+v keys. The copied and pasted data can be easily saved through a variable, while in other cases, reading and writing data from the user's clipboard requires the use of the [clipboard](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/clipboard) API, which is only available under the HTTPS protocol.
+
+## 11.Shortcut keys do not take effect.
+
+`v0.12.2+` version has added that only when the event target of the key event is the body or internal text editing box element of the library, it is allowed to respond to shortcut key events. Therefore, if you are using a version higher than this and encounter the problem of shortcut key not working, you can use the `customCheckEnableShortcut` instantiation option to pass a custom judgment function:
+
+```js
+new MindMap({
+    // Pass a function that takes the key event object e as a parameter and needs to return true or false. Returning true means that it is allowed to respond to shortcut key events, while returning false means that it is not allowed. By default, the library responds to shortcut keys when the event target is the body or a text editing box element (regular text editing box, rich text editing box, associated line text editing box), and does not respond to others
+    customCheckEnableShortcut: (e) => {
+        return true
+    }
+})
+```

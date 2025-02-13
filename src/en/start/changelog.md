@@ -29,6 +29,8 @@ New:
 > 9.Code optimization: Replaced all replaceAll methods with replace methods.
 >
 > 10.Code optimization: Fixed the logic error in the debounce method.
+>
+> 11.Whether to allow the instantiation option of inheriting ancestral styles for the new node connection style;
 
 Demo:
 
@@ -49,6 +51,10 @@ Demo:
 > 8.Added settings for node content spacing.
 >
 > 9.Automatically hide the search box when importing data.
+>
+> 10.Whether the new node connection style allows inheritance of ancestral styles;
+>
+> 11.Optimize the scrollbar style throughout the page;
 
 ## 0.13.0
 

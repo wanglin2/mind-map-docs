@@ -124,3 +124,16 @@ new MindMap({
 ## 10.跨浏览器窗口无法复制粘贴，或无法粘贴剪贴板中的数据。
 
 在单个思维导图页面内复制和粘贴仅需要拦截Ctrl+c或Ctrl+v按键即可，复制和粘贴的数据可以简单的通过一个变量来保存，而其他情况需要读写用户剪贴板的数据，需要使用[clipboard](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/clipboard)API，该特性仅在https协议下可用。
+
+## 11.快捷键不生效。
+
+`v0.12.2+`版本增加了只有当按键事件的事件目标为body或库内部文本编辑框元素时才允许响应快捷键事件，所以如果使用的是该版本以上的版本，且出现了快捷键不生效的问题，那么可以使用`customCheckEnableShortcut`实例化选项来传递一个自定义的判断函数：
+
+```js
+new MindMap({
+    // 传递一个函数，接收按键事件对象e为参数，需要返回true或false，返回true代表允许响应快捷键事件，反之不允许，库默认当事件目标为body，或为文本编辑框元素（普通文本编辑框、富文本编辑框、关联线文本编辑框）时响应快捷键，其他不响应
+    customCheckEnableShortcut: (e) => {
+        return true
+    }
+})
+```

@@ -129,6 +129,7 @@ const mindMap = new MindMap({
 | quickCreateChildBtnIcon（v0.13.1+）     | 自定义快捷创建子节点按钮的图标  | Object | { icon: '', style: { color: '' } }，icon（svg字符串，如果不是确定要使用svg自带的样式，否则请去除其中的fill等样式属性）、style（图标大小使用的是expandBtnSize选项，color：图标颜色，不手动设置则会使用expandBtnStyle选项的color字段） |
 | customQuickCreateChildBtnClick（v0.13.1+）     | 自定义快捷创建子节点按钮的点击操作  | Function、null | null |
 | addCustomContentToNode（v0.13.1+）     | 添加自定义的节点内容，可传递一个对象，格式为：{ create: (node) => { return { el, width, height } }, handle: ({ content, element, node }) => {} }，create函数需要返回要添加的DOM元素信息（el：DOM节点、width，height：节点宽高）、handle函数用于处理生成的@svgdotjs/svg.js库的ForeignObject节点实例，一般用来设置其在节点内的位置（content：create函数返回的数据、element：ForeignObject节点实例、node：当前所属节点实例）  | Function、null | null |
+| enableInheritAncestorLineStyle（v0.13.1+）     | 节点连线样式是否允许继承祖先的连线样式  | Boolean | true |
 
 #### 1.1数据结构
 
