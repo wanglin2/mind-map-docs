@@ -134,7 +134,7 @@ Copying and pasting within a single mind map page only requires intercepting the
 
 ## 11.Shortcut keys do not take effect.
 
-`v0.12.2+` version has added that only when the event target of the key event is the body or internal text editing box element of the library, it is allowed to respond to shortcut key events. Therefore, if you are using a version higher than this and encounter the problem of shortcut key not working, you can use the `customCheckEnableShortcut` instantiation option to pass a custom judgment function:
+`v0.12.2+` version has added that only when the event target of the key event is the body or internal text editing box element of the library, it is allowed to respond to shortcut key events. Therefore, if you are using a version higher than this and encounter the problem of shortcut key not working, you can try use the `customCheckEnableShortcut` instantiation option to pass a custom judgment function:
 
 ```js
 new MindMap({
@@ -144,3 +144,7 @@ new MindMap({
     }
 })
 ```
+
+> One possible reason is:
+>
+> If the current focus is not in an obvious input box and the event target (e.target) of the key event is not 'body', it is possible that an element has a tabIndex attribute that captures the focus state.
