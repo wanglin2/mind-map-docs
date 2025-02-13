@@ -20,14 +20,14 @@ export const zh = defineConfig({
         link: '/plugins/themes',
         activeMatch: '/plugins/'
       },
-      { text: '使用帮助', link: '/help/help1', activeMatch: '/help/' },
       { text: '赞助', link: '/sponsor' },
       { text: '客户端', link: '/client' },
       { text: '云存储版', link: '/cloudStorage' },
+      { text: '博客', link: '/blog' },
       {
         text: '更多',
         items: [
-          { text: '博客', link: '/blog' },
+          { text: '使用帮助', link: '/help/help1', activeMatch: '/help/' },
           { text: '理想文档', link: 'https://github.com/wanglin2/lx-doc' },
           {
             text: '意见反馈',
@@ -157,10 +157,6 @@ export const zh = defineConfig({
         {
           text: '收费',
           items: [
-            {
-              text: '关于收费插件',
-              link: '/plugins/about'
-            },
             {
               text: 'HandDrawnLikeStyle插件',
               link: '/plugins/handDrawnLikeStyle'

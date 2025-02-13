@@ -12,6 +12,8 @@ Scanning the code and transferring money, please note the plugin you want to pur
 
 Price: ￥ 29.9, including unpackaged source code and packaged files.
 
+> If you buy 4 or more fee-based plug-ins at a time, you will get a 20% discount. If you want to take action ~
+
 <p style="display:flex;align-items: flex-end;">
 
 <img src="../../assets/img/alipay.jpg" style="width: 300px" />

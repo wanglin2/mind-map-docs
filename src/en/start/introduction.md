@@ -8,7 +8,7 @@ This project mainly includes the following contents:
 
 1.A JS mind map library that does not rely on any framework and can be used to quickly develop web mind map products.
 
-Development documentation: [Course](../course/course1.md).
+Development documentation: [Course](../../course/course1.md).
 
 2.A web mind map developed based on the mind map library, Vue 2. x, and ElementUI. It can manipulate local files on the computer and can be used as an online mind map application, as well as self deployment and secondary development.
 
@@ -16,7 +16,7 @@ Online address: [https://wanglin2.github.io/mind-map/](https://wanglin2.github.i
 
 3.In addition, it also supports using it in a client-side manner. The [uTools](https://www.u.tools/) plugin application market has been launched, and it is strongly recommended to experience it through uTools.
 
-You can directly search for ideas and install them in the uTools plugin application market, or you can directly access this address: [Search in utools](https://www.u-tools.cn/plugins/search/?t=%E6%80%9D%E7%BB%AA%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE), Click the 'Start' button on the right to proceed with the installation. [Click here to learn more](../client).
+You can directly search for ideas and install them in the uTools plugin application market, or you can directly access this address: [Homepage](https://www.u-tools.cn/plugins/detail/%E6%80%9D%E7%BB%AA%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/), Click the 'Start' button on the right to proceed with the installation. [Click here to learn more](../client).
 
 > Independent client download: Github: [releases](https://github.com/wanglin2/mind-map/releases). Baidu Cloud Drive: [address](https://pan.baidu.com/s/1huasEbKsGNH2Af68dvWiOg?pwd=3bp3).
 >

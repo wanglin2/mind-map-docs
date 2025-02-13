@@ -12,6 +12,8 @@ Checkbox插件提供待办的功能，即可以给节点添加一个勾选框，
 
 价格：￥ 29.9，包含未打包的源码和打包后的文件。
 
+> 一次性购买4个及以上收费插件打8折，心动不如行动~
+
 <p style="display:flex;align-items: flex-end;">
 
 <img src="../assets/img/alipay.jpg" style="width: 300px" />

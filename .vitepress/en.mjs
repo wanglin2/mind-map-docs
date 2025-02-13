@@ -24,14 +24,14 @@ export const en = defineConfig({
         link: '/en/plugins/themes',
         activeMatch: '/en/plugins/'
       },
-      { text: 'Help', link: '/help/help1', activeMatch: '/help/' },
       { text: 'Sponsor', link: '/sponsor' },
       { text: 'Client', link: '/en/client' },
       { text: 'Cloud storage', link: '/cloudStorage' },
+      { text: 'Blog', link: '/en/blog' },
       {
         text: 'More',
         items: [
-          { text: 'Blog', link: '/en/blog' },
+          { text: 'Help', link: '/help/help1', activeMatch: '/help/' },
           { text: 'Ideal Document', link: 'https://github.com/wanglin2/lx-doc' },
           { text: 'Issues', link: 'https://github.com/wanglin2/mind-map/issues' }
         ]
@@ -161,10 +161,6 @@ export const en = defineConfig({
         {
           text: 'Charge',
           items: [
-            {
-              text: 'Regarding paid plugins',
-              link: '/en/plugins/about'
-            },
             {
               text: 'HandDrawnLikeStyle plugin',
               link: '/en/plugins/handDrawnLikeStyle'

@@ -1,4 +1,6 @@
-# uTools plugin
+# Client
+
+## uTools plugin
 
 The `uTools` plugin inherits all the functions of an independent client and also adds the following features:
 
@@ -8,9 +10,9 @@ The `uTools` plugin inherits all the functions of an independent client and also
 
 3. The main interface also supports dark mode, and the settings have added options for setting dark mode;
 
-## Install
+### Install
 
-### Install uTools
+#### Install uTools
 
 If you have already installed `uTools`, you can ignore this step.
 
@@ -18,11 +20,11 @@ Installing `uTools` is very simple. Open its official website, download the file
 
 Official website: [https://www.u.tools/](https://www.u.tools/)
 
-### Install the Mind Mapping Plugin
+#### Install the Mind Mapping Plugin
 
 After installing `uTools`, you should be able to see its icon on the status bar of your computer.
 
-You can directly access this address: [Search in utools](https://www.u-tools.cn/plugins/search/?t=%E6%80%9D%E7%BB%AA%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE), Click the 'Start' button on the right to proceed with the installation.
+You can directly access this address: [Homepage](https://www.u-tools.cn/plugins/detail/%E6%80%9D%E7%BB%AA%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/), Click the 'Start' button on the right to proceed with the installation.
 
 You can also use the 'ALT+Space' key to bring up its search box on any interface, and then enter the plugin app store:
 
@@ -42,7 +44,7 @@ To use it in the future, simply use the `ALT+Space` keys to call up the search b
 
 <img src="../assets/img/client/utools4.png" style="width: 800px" />
 
-### Use tips
+#### Use tips
 
 1.Set to automatically separate into independent windows
 
@@ -58,7 +60,7 @@ When editing a mind map, selecting multiple nodes is done by holding down the ri
 
 So it is recommended to disable this feature or modify its triggering method. Set the path to: click on the avatar on the right side of the search box to enter the personal center ->click on the personal center in the bottom left corner ->click on settings ->close the super panel.
 
-# Independent Client
+## Independent Client
 
 This project also provides a client version using [Electron](https://www.electronjs.org/) Development. Supports 'Windows', 'Mac', and 'Linux'.
 
@@ -72,7 +74,7 @@ Currently, the function is relatively simple:
 
 3. Support the copying, deletion, and renaming of files;
 
-## Download
+### Download
 
 > The client version may lag behind the online version. To try new features, please prioritize using the online version.
 
@@ -82,11 +84,11 @@ Github：[releases](https://github.com/wanglin2/mind-map/releases)。
 
 Baidu cloud disk：[地址](https://pan.baidu.com/s/1huasEbKsGNH2Af68dvWiOg?pwd=3bp3)。
 
-## Development
+### Development
 
 If necessary, you can also conduct secondary development.
 
-### clone
+#### clone
 
 ```bash
 git clone https://github.com/wanglin2/mind-map.git
@@ -94,7 +96,7 @@ cd mind-map
 git checkout electron
 ```
 
-### Start serve
+#### Start serve
 
 Execute in the project root directory:
 
@@ -109,7 +111,7 @@ npm link simple-mind-map
 npm run electron:serve
 ```
 
-### Packaging client
+#### Packaging client
 
 You need at least two computers, one 'Windows' and one 'Mac'.
 

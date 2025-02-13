@@ -2,6 +2,8 @@
 
 ## 0.13.1
 
+> 2025/2/13
+
 Fix:
 
 > 1.Fixed the issue of the expand/collapse button flick duringering editing in the real-time rendering mode of the text editor.
