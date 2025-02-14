@@ -14,8 +14,8 @@ Price: ￥ 29.9, including unpackaged source code and packaged files.
 
 <p style="display:flex;align-items: flex-end;">
 
-<img src="../assets/img/alipay.jpg" style="width: 300px" />
-<img src="../assets/img/wechat.jpg" style="width: 300px" />
+<img src="../../assets/img/alipay.jpg" style="width: 300px" />
+<img src="../../assets/img/wechat.jpg" style="width: 300px" />
 
 </p>
 
