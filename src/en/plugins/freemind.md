@@ -34,7 +34,7 @@ Price: ￥ 29.9, including unpackaged source code and packaged files.
 ```js
 import MindMap from 'simple-mind-map'
 import Freemind from 'freemind.cjs.min.js'
-// 或 import Freemind from 'freemind.esm.min.js'
+// Or import Freemind from 'freemind.esm.min.js'
 
 MindMap.usePlugin(Freemind)
 ```

@@ -28,7 +28,7 @@ Price: ￥ 29.9, including unpackaged source code and packaged files.
 ```js
 import MindMap from 'simple-mind-map'
 import Checkbox from 'checkbox.cjs.min.js'
-// 或 import Checkbox from 'checkbox.esm.min.js'
+// Or import Checkbox from 'checkbox.esm.min.js'
 
 MindMap.usePlugin(Checkbox)
 ```

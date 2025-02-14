@@ -170,7 +170,8 @@ export const en = defineConfig({
             { text: 'Freemind plugin', link: '/en/plugins/freemind' },
             { text: 'Excel plugin', link: '/en/plugins/excel' },
             { text: 'Checkbox plugin', link: '/en/plugins/checkbox' },
-            { text: 'Lineflow plugin', link: '/en/plugins/lineflow' }
+            { text: 'Lineflow plugin', link: '/en/plugins/lineflow' },
+            { text: 'Momentum plugin', link: '/en/plugins/momentum' }
           ]
         }
       ],

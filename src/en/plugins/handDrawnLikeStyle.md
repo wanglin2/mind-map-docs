@@ -30,7 +30,7 @@ Price: ￥ 29.9, including unpackaged source code and packaged files.
 ```js
 import MindMap from 'simple-mind-map'
 import HandDrawnLikeStyle from 'handDrawnLikeStyle.cjs.min.js'
-// or import HandDrawnLikeStyle from 'handDrawnLikeStyle.esm.min.js'
+// Or import HandDrawnLikeStyle from 'handDrawnLikeStyle.esm.min.js'
 
 MindMap.usePlugin(HandDrawnLikeStyle)
 ```

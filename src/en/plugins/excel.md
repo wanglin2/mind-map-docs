@@ -34,7 +34,7 @@ Price: ￥ 29.9, including unpackaged source code and packaged files.
 ```js
 import MindMap from 'simple-mind-map'
 import Excel from 'excel.cjs.min.js'
-// 或 import Excel from 'excel.esm.min.js'
+// Or import Excel from 'excel.esm.min.js'
 
 MindMap.usePlugin(Excel)
 ```

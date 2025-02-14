@@ -30,7 +30,7 @@ Price: ￥ 29.9, including unpackaged source code and packaged files.
 ```js
 import MindMap from 'simple-mind-map'
 import Lineflow from 'lineflow.cjs.min.js'
-// 或 import Lineflow from 'lineflow.esm.min.js'
+// Or import Lineflow from 'lineflow.esm.min.js'
 
 MindMap.usePlugin(Lineflow)
 ```

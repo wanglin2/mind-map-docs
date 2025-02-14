@@ -30,7 +30,7 @@ Price:￥ 29.9, including unpackaged source code and packaged files.
 ```js
 import MindMap from 'simple-mind-map'
 import Notation from 'notation.cjs.min.js'
-// 或 import Notation from 'notation.esm.min.js'
+// Or import Notation from 'notation.esm.min.js'
 
 MindMap.usePlugin(Notation)
 ```

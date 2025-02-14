@@ -44,7 +44,7 @@ Price: ￥ 29.9, including unpackaged source code and packaged files.
 ```js
 import MindMap from 'simple-mind-map'
 import Numbers from 'numbers.cjs.min.js'
-// 或 import Numbers from 'numbers.esm.min.js'
+// Or import Numbers from 'numbers.esm.min.js'
 
 MindMap.usePlugin(Numbers)
 ```
