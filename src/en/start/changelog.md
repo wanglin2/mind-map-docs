@@ -33,6 +33,8 @@ New:
 > 10.Code optimization: Fixed the logic error in the debounce method.
 >
 > 11.Whether to allow the instantiation option of inheriting ancestral styles for the new node connection style;
+>
+> 12.Added Momentum effect plugin;
 
 Demo:
 
@@ -57,6 +59,8 @@ Demo:
 > 10.Whether the new node connection style allows inheritance of ancestral styles;
 >
 > 11.Optimize the scrollbar style throughout the page;
+>
+> 12.Support setting the momentum effect to enable dragging the canvas;
 
 ## 0.13.0
 
