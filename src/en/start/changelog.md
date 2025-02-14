@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.13.1-fix.1
+
+Fixed an issue where the Expand and collapse button would appear and not disappear when all nodes of a node were deleted after real-time rendering was enabled.
+
 ## 0.13.1
 
 > 2025/2/13
