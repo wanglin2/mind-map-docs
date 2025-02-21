@@ -2,6 +2,10 @@
 
 ## 0.13.1-fix.1
 
+Withdraw the modification in version 0.13.1 to fix the issue of flashing expand and collapse buttons in real-time rendering mode of text editing, in order to avoid causing more serious problems.
+
+## 0.13.1-fix.1
+
 Fixed an issue where the Expand and collapse button would appear and not disappear when all nodes of a node were deleted after real-time rendering was enabled.
 
 ## 0.13.1
