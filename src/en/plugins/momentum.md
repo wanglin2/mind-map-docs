@@ -4,6 +4,15 @@ The Momentum plugin is used to achieve momentum effects, which means holding dow
 
 You can experience it in the online version. If you want to turn off this feature, you can do so in the [Settings] on the right.
 
+## Changelog
+
+> v1.0.1
+>
+> 1.Fixed the issue of not considering the 'useLeftKeySelectionRightKeyDrag' option to avoid triggering momentum effects when selecting nodes.
+>
+> 2.Increase the mouse displacement threshold for triggering momentum effects to avoid unexpected movement effects.
+
+
 ## Charge
 
 Scanning the code and transferring money, please note the plugin you want to purchase and your email address(If you reach the maximum text limit, you can make the payment in two installments), and then the plugin file will be sent to your email. Purchase should be made after full use and consideration. If you are not familiar with front-end development and do not know how to use plugins, please consider purchasing carefully. There will be no refund unless there are special reasons. If you find bugs or have requirements, you can submit relevant issues.

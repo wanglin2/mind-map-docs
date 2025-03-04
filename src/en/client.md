@@ -4,6 +4,8 @@
 
 This project also provides a client version using [Electron](https://www.electronjs.org/) Development. Supports 'Windows', 'Mac', and 'Linux'.
 
+> The v0.13.1+version of the client supports AI functionality.
+
 Function Introduction:
 
 1. Support creating and opening files for editing;

@@ -4,6 +4,8 @@
 
 本项目也提供了独立客户端版本，使用[Electron](https://www.electronjs.org/)开发。支持`Windows`、`Mac`及`Linux`系统。
 
+> v0.13.1+版本的客户端支持AI功能。
+
 功能简介：
 
 1.支持新建、打开文件进行编辑；

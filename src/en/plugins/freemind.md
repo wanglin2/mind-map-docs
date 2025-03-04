@@ -1,16 +1,15 @@
 # Freemind chargeable plugin
 
-> Current Latest Version: v1.0.1
->
-> Changelog:
->
-> v1.0.1：
->
-> 1.Fixed the issue where no space was added before the LINK attribute of the node when exporting mm files, resulting in an error when importing again;
-
 This plugin can be used to import and export Freemind software in. mm file format.
 
 You can experience it in the online version.
+
+
+## Changelog
+
+> v1.0.1：
+>
+> 1.Fixed the issue where no space was added before the LINK attribute of the node when exporting mm files, resulting in an error when importing again;
 
 ## Charge
 
