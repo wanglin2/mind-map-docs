@@ -49,6 +49,15 @@
             </a>
         </td>       
     </tr>
+    <tr>
+        <td align="center" style="word-wrap: break-word; width: 300px; height: 300px">
+            <a href="https://mp.weixin.qq.com/s/JNb7PH4sCjWzIZ9G8wStGQ" target="_blank" style="text-decoration: none;">
+                <img src="./assets/img/wechat/7.png" width="100;"  style="align-items:center;justify-content:center;overflow:hidden;"/>
+                <br />
+                <sub style="font-size:14px"><b>虽然没有服务器，但我还是想办法让思绪思维导图用上了AI的能力</b></sub>
+            </a>
+        </td>
+    </tr>
 </table>
 
 # 掘金博客
