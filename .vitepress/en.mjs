@@ -26,7 +26,6 @@ export const en = defineConfig({
       },
       { text: 'Sponsor', link: '/sponsor' },
       { text: 'Client', link: '/en/client' },
-      { text: 'Cloud storage', link: '/cloudStorage' },
       { text: 'Blog', link: '/en/blog' },
       {
         text: 'More',

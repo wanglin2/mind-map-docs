@@ -22,7 +22,7 @@ export const zh = defineConfig({
       },
       { text: '赞助', link: '/sponsor' },
       { text: '客户端', link: '/client' },
-      { text: '云存储版', link: '/cloudStorage' },
+      { text: '收费资源', link: '/chargingResources' },
       { text: '博客', link: '/blog' },
       {
         text: '更多',

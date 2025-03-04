@@ -1,4 +1,4 @@
-# Lineflow 插件
+# Lineflow 收费插件
 
 > v0.12.2+
 

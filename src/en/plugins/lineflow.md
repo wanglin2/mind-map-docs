@@ -1,4 +1,4 @@
-# Lineflow plugin
+# Lineflow chargeable plugin
 
 > v0.12.2+
 

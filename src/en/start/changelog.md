@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.13.1-fix.1
+## 0.13.1-fix.2
 
 Withdraw the modification in version 0.13.1 to fix the issue of flashing expand and collapse buttons in real-time rendering mode of text editing, in order to avoid causing more serious problems.
 
