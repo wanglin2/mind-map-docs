@@ -75,6 +75,7 @@ export const zh = defineConfig({
         { text: '如何开发一个插件', link: '/course/course24' },
         { text: '关于概要', link: '/course/course25' },
         { text: '如何实现AI生成节点内容', link: '/course/course26' },
+        { text: '实战：实现AI生成思维导图', link: '/course/course34' },
         {
           text: '快捷键操作如何传递自定义参数',
           link: '/course/course27'

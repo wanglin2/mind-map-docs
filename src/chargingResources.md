@@ -2,11 +2,11 @@
 
 `simple-mind-map`库是永久免费的，另外仓库里所有代码都可以免费使用。
 
-当然，我们也提供了一些收费资源，如有需要，也欢迎尝试。
+当然，我们也提供了一些收费资源，如有需要，也欢迎使用。
 
 ## 收费插件
 
-提供的免费插件应该已经足够完成绝大多数需求了，免费的之外，也提供了一些收费的插件：
+提供的免费插件应该已经足够完成绝大多数需求了，免费的之外，也提供了一些收费的插件，用于支持更多的个性化需求：
 
 - [HandDrawnLikeStyle 插件](https://wanglin2.github.io/mind-map-docs/plugins/handDrawnLikeStyle.html)
 
@@ -42,13 +42,21 @@
 
 ## 收费教程
 
-## Vue3版本
+- [实战：使用simple-mind-map实现AI生成思维导图](https://mp.weixin.qq.com/s/HdmF2IfuHIBFdcuzgtJI9g)
 
-虽然`simple-mind-map`库本身是不依赖框架的，但是很多时候可能您想直接把[在线Demo](https://wanglin2.github.io/mind-map/)完整引入您的项目中，但是可能因为您的项目是`Vue3`版本，而`Demo`的[代码](https://github.com/wanglin2/mind-map/tree/main/web)是`Vue2`版本，无法直接引入，当然，您可以选择自己来升级，但如你所见其实费时费力，所以我们也提供了`Vue3`版本：
+## 适配Vue3的完整Demo
 
-`Vite`构建，支持`Node.js18+`版本，可以独立运行，也可以通过`npm`包的方式在其他项目中引入。
+虽然`simple-mind-map`库本身是不依赖框架的，但是很多时候可能您想直接把[在线Demo](https://wanglin2.github.io/mind-map/)完整引入您的项目中，但是可能因为您的项目是`Vue3`版本，而`Demo`的[代码](https://github.com/wanglin2/mind-map/tree/main/web)是`Vue2`版本，无法直接引入，当然，您可以选择自己来升级，但费时费力，所以我们也提供了`Vue3`版本：
 
-如有需要，可以咨询作者，价格美丽。
+- 改为`Vite`构建，支持`Node.js 18+`版本；
+
+- 将不兼容`Vue2`的语法升级为`Vue3`的写法，但仍保留了选项式`API`；
+
+- 将`element-ui`升级为`element-plus`；
+
+- 将`vuex`、`vue-i18n`、`v-viewer`依赖升级为适配`Vue3`的版本；
+
+价格：￥299。如有需要，欢迎咨询。
 
 ## 收费咨询
 
