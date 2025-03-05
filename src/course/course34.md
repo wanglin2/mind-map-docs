@@ -8,4 +8,4 @@
 
 [实战：使用simple-mind-map实现AI生成思维导图](https://mp.weixin.qq.com/s/HdmF2IfuHIBFdcuzgtJI9g)
 
-<img src="../assets/img/wechat/8.png" style="width: 300px" />
+<img src="../assets/img/wechat/8.png" style="width: 200px" />

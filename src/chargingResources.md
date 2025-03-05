@@ -8,45 +8,45 @@
 
 提供的免费插件应该已经足够完成绝大多数需求了，免费的之外，也提供了一些收费的插件，用于支持更多的个性化需求：
 
-- [HandDrawnLikeStyle 插件](https://wanglin2.github.io/mind-map-docs/plugins/handDrawnLikeStyle.html)
+- [HandDrawnLikeStyle 插件](./plugins/handDrawnLikeStyle.md)
 
 提供手绘风格的样式。
 
-- [Notation 插件](https://wanglin2.github.io/mind-map-docs/plugins/notation.html)
+- [Notation 插件](./plugins/notation.md)
 
 提供单个节点的标记功能。
 
-- [Numbers 插件](https://wanglin2.github.io/mind-map-docs/plugins/numbers.html)
+- [Numbers 插件](./plugins/numbers.md)
 
 提供一键编号某个节点的子节点的功能。
 
-- [Freemind 插件](https://wanglin2.github.io/mind-map-docs/plugins/freemind.html)
+- [Freemind 插件](./plugins/freemind.md)
 
 用于导入和导出Freemind软件的格式。
 
-- [Excel 插件](https://wanglin2.github.io/mind-map-docs/plugins/excel.html)
+- [Excel 插件](./plugins/excel.md)
 
 用于导入和导出Excel软件的格式。
 
-- [Checkbox 插件](https://wanglin2.github.io/mind-map-docs/plugins/checkbox.html)
+- [Checkbox 插件](./plugins/checkbox.md)
 
 提供待办的功能。
 
-- [Lineflow 插件](https://wanglin2.github.io/mind-map-docs/plugins/lineflow.html)
+- [Lineflow 插件](./plugins/lineflow.md)
 
 用于支持节点连线的流动效果。
 
-- [Momentum 插件](https://wanglin2.github.io/mind-map-docs/plugins/momentum.html)
+- [Momentum 插件](./plugins/momentum.md)
 
 用于实现动量效果。
 
 ## 收费教程
 
-- [实战：使用simple-mind-map实现AI生成思维导图](https://mp.weixin.qq.com/s/HdmF2IfuHIBFdcuzgtJI9g)
+- [实战：使用simple-mind-map实现AI生成思维导图](./course/course34.md)
 
 ## 适配Vue3的完整Demo
 
-虽然`simple-mind-map`库本身是不依赖框架的，但是很多时候可能您想直接把[在线Demo](https://wanglin2.github.io/mind-map/)完整引入您的项目中，但是可能因为您的项目是`Vue3`版本，而`Demo`的[代码](https://github.com/wanglin2/mind-map/tree/main/web)是`Vue2`版本，无法直接引入，当然，您可以选择自己来升级，但费时费力，所以我们也提供了`Vue3`版本：
+虽然`simple-mind-map`库本身是不依赖框架的，但是很多时候可能您想直接把[在线Demo](https://wanglin2.github.io/mind-map/)完整引入您的项目中，但是可能因为您的项目是`Vue3`版本，而`Demo`的[代码](https://github.com/wanglin2/mind-map/tree/main/web)是`Vue2`版本，无法直接引入，您可以选择自己来升级，也可以通过付费购买我们提供的`Vue3`版本：
 
 - 改为`Vite`构建，支持`Node.js 18+`版本；
 
@@ -56,7 +56,9 @@
 
 - 将`vuex`、`vue-i18n`、`v-viewer`依赖升级为适配`Vue3`的版本；
 
-价格：￥299。如有需要，欢迎咨询。
+- 免费同步至当前仓库最新功能；
+
+源码价格：￥499。如有需要，欢迎咨询。
 
 ## 收费咨询
 

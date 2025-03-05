@@ -69,13 +69,13 @@ export const zh = defineConfig({
         { text: '插入和扩展节点图标', link: '/course/course19' },
         { text: '如何自定义整个节点内容', link: '/course/course20' },
         { text: '如何自定义部分节点内容', link: '/course/course33' },
+        { text: '如何实现AI生成节点内容', link: '/course/course26' },
+        { text: '实战：实现AI生成思维导图', link: '/course/course34' },
         { text: '如何复制、剪切、粘贴', link: '/course/course21' },
         { text: '如何实现搜索、替换', link: '/course/course22' },
         { text: '如何渲染滚动条', link: '/course/course23' },
         { text: '如何开发一个插件', link: '/course/course24' },
         { text: '关于概要', link: '/course/course25' },
-        { text: '如何实现AI生成节点内容', link: '/course/course26' },
-        { text: '实战：实现AI生成思维导图', link: '/course/course34' },
         {
           text: '快捷键操作如何传递自定义参数',
           link: '/course/course27'
