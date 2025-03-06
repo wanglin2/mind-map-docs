@@ -35,6 +35,7 @@ Momentum 插件用于实现动量效果，即鼠标按住拖动画布，然后�
 import MindMap from 'simple-mind-map'
 import Momentum from 'momentum.cjs.min.js'
 // 或 import Momentum from 'momentum.esm.min.js'
+// 如果你想要iife格式的打包文件，可以在插件的package.json的build命令中添加：esbuild ./index.js --bundle --minify --external:buffer --format=iife --outfile=./dist/xxx.iife.min.js --global-name=xxx，然后再执行一次npm run build即可生成
 
 MindMap.usePlugin(Momentum, options)
 ```

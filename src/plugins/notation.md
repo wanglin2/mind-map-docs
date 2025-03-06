@@ -31,6 +31,7 @@ Notation 插件提供单个节点的标记功能，也就是可以在单个节�
 import MindMap from 'simple-mind-map'
 import Notation from 'notation.cjs.min.js'
 // 或 import Notation from 'notation.esm.min.js'
+// 如果你想要iife格式的打包文件，可以在插件的package.json的build命令中添加：esbuild ./index.js --bundle --minify --external:buffer --format=iife --outfile=./dist/xxx.iife.min.js --global-name=xxx，然后再执行一次npm run build即可生成
 
 MindMap.usePlugin(Notation)
 ```

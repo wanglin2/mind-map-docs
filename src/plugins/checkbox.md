@@ -29,6 +29,7 @@ Checkbox插件提供待办的功能，即可以给节点添加一个勾选框，
 import MindMap from 'simple-mind-map'
 import Checkbox from 'checkbox.cjs.min.js'
 // 或 import Checkbox from 'checkbox.esm.min.js'
+// 如果你想要iife格式的打包文件，可以在插件的package.json的build命令中添加：esbuild ./index.js --bundle --minify --external:buffer --format=iife --outfile=./dist/xxx.iife.min.js --global-name=xxx，然后再执行一次npm run build即可生成
 
 MindMap.usePlugin(Checkbox)
 ```

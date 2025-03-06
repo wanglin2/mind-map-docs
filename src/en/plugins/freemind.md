@@ -34,6 +34,7 @@ Price: ￥ 29.9, including unpackaged source code and packaged files.
 import MindMap from 'simple-mind-map'
 import Freemind from 'freemind.cjs.min.js'
 // Or import Freemind from 'freemind.esm.min.js'
+// If you want a package file in iife format, you can add the following in the build command of the package.json plugin: esbuild ./index.js --bundle --minify --external:buffer --format=iife --outfile=./dist/xxx.iife.min.js --global-name=xxx, Then execute npm run build again to generate
 
 MindMap.usePlugin(Freemind)
 ```
