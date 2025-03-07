@@ -32,6 +32,10 @@ You can directly download the corresponding client for installation and use, and
 
 2.[Baidu cloud disk](https://pan.baidu.com/s/1huasEbKsGNH2Af68dvWiOg?pwd=3bp3)
 
+Linux users can also download from Flathub:
+
+[![Get it on Flathub](https://flathub.org/api/badge?svg)](https://flathub.org/apps/io.github.wanglin2.mind-map)
+
 ### Development
 
 If necessary, you can also conduct secondary development.

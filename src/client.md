@@ -32,6 +32,10 @@
 
 2.[百度云盘](https://pan.baidu.com/s/1huasEbKsGNH2Af68dvWiOg?pwd=3bp3)
 
+Linux 用户也可以通过 Flathub 下载：
+
+[![下载应用，请到 Flathub](https://flathub.org/api/badge?svg&locale=zh-Hans)](https://flathub.org/apps/io.github.wanglin2.mind-map)
+
 ### 开发
 
 如果有需要，你也可以进行二次开发。
