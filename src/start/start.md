@@ -127,6 +127,8 @@ npm run serve
 ```
 
 > 如果安装依赖出错，可以尝试调整node版本，作者使用的是14.x版本。
+>
+> 如果遇到simple-mind-map-plugin-handdrawnlikestyle等依赖的引用报错，可以进入/web/src/pages/Edit/components/Edit.vue里注释掉对应的引入代码。这些为付费插件，如有需要也可以考虑购买：[付费插件](../plugins/handDrawnLikeStyle.md)
 
 ### 打包库
 

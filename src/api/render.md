@@ -107,13 +107,19 @@
 
 > v0.1.6+
 
-若有文字编辑需求可调用该方法，会禁用回车键和删除键相关快捷键防止冲突 。
+若有文字编辑需求可调用该方法，会禁用回车键和删除键相关快捷键防止冲突。
+
+内部其实调用的是`mindMap.keyCommand.save()`方法。
 
 ### endTextEdit()
 
 > v0.1.6+
 
 结束文字编辑，会恢复回车键和删除键相关快捷键。
+
+内部其实调用的是`mindMap.keyCommand.restore()`方法。
+
+如果你是想结束当前正在进行文本编辑中的状态可以调用`mindMap.renderer.textEdit.hideEditTextBox()`方法。
 
 ### addActiveNode(node)
 

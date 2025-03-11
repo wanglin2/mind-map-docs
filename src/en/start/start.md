@@ -130,6 +130,8 @@ npm run serve
 ```
 
 > If there is an installation dependency error, you can try adjusting the node version. The author is using version 14. x.
+>
+> If you encounter reference errors for dependencies such as 'simple-mind-map-plugin-handdrawnlikestyle', you can comment out the corresponding imported code in '/web/src/pages/Edit/components/Edit.vue'. These are paid plugins, and if needed, you can also consider purchasing: [Paid plugins](../plugins/handDrawnLikeStyle.mdd)
 
 ### Packaging the Library
 

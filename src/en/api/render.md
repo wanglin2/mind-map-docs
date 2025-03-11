@@ -109,11 +109,17 @@ Clears all currently active nodes but not triggers the `node_active` event.
 If there is a text editing requirement, this method can be called to
 disable the enter key and delete key related shortcuts to prevent conflicts.
 
+Internally, the 'mindMap.keyCommand.save()' method is actually called.
+
 ### endTextEdit()
 
 > v0.1.6+
 
 End text editing, restore enter key and delete key related shortcuts.
+
+Internally, the 'mindMap.keyCommand.restate()' method is actually called.
+
+If you want to end the current state of text editing, you can call the `mindMap.renderer.textEdit.hidEditTextC()` method.
 
 ### addActiveNode(node)
 
