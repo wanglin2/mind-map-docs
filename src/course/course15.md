@@ -56,7 +56,7 @@ mindMap.on('mouseup', (e) => {
     // 如果鼠标松开和按下的距离大于3，则不认为是点击事件
     if (
         Math.abs(mousedownX.value - e.clientX) > 3 ||
-        Math.abs(mousedownX.value - e.clientY) > 3
+        Math.abs(mousedownY.value - e.clientY) > 3
     ) {
         hide()
         return
