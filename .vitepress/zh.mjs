@@ -70,7 +70,7 @@ export const zh = defineConfig({
         { text: '如何自定义整个节点内容', link: '/course/course20' },
         { text: '如何自定义部分节点内容', link: '/course/course33' },
         { text: '如何实现AI生成节点内容', link: '/course/course26' },
-        { text: '实战：实现AI生成思维导图', link: '/course/course34' },
+        { text: '[收费]实战：实现AI生成思维导图', link: '/course/course34' },
         { text: '如何复制、剪切、粘贴', link: '/course/course21' },
         { text: '如何实现搜索、替换', link: '/course/course22' },
         { text: '如何渲染滚动条', link: '/course/course23' },
