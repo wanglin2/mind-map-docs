@@ -54,6 +54,41 @@ Note: The plugin needs to be registered before instantiating `MindMap`.
 
 Get whether a plugin is registered, The index of the plugin in the registered plugin list is returned, If it is `-1`, it means that the plugin is not registered.
 
+### extendNodeDataNoStylePropList(list = [])
+
+> v0.14.0+
+
+Expand the list of non styled fields in node data.
+
+Internally, based on this list, fields that are not in this list will be considered as style fields.
+
+For example, the data of a node is:
+ 
+```
+{
+   data: {
+     text: '',
+     note: '',
+     color: ''
+   },
+   children: []
+ }
+```
+ 
+`The 'color' field is not in the 'nodeDataNoStylePropList' list, so it is a style that some internal operation methods will use. Therefore, if you add custom node data that does not start with '_', you need to extend it through this method.
+
+Usage example:
+
+```js
+mindMap.extendNodeDataNoStylePropList(['xxx', 'xxx2'])
+```
+
+### resetNodeDataNoStylePropList()
+
+> v0.14.0+
+
+Restore the 'nodeDataNoStylePropList' list to the default list, i.e. remove the extended properties.
+
 ## Instance methods
 
 ### on(event, fn)
@@ -132,6 +167,9 @@ Listen to an event. Event list:
 | search_match_node_list_change（v0.11.0+）    | Search plugin: Triggered when the list of matched nodes changes during search | list（The matching node list, please note that the data in the array items may be node instances or node data, and it is necessary to make a good judgment）  |
 | node_text_edit_change（v0.11.1+）    | Triggered when the input text changes in node text editing | { node, text, richText } The meanings of the fields are: the node instance currently being edited, the latest text, and whether it is rich text |
 | afterExecCommand（v0.12.2+）    | The event after the execution of the method corresponding to the command, where new data has not yet been added to the history stack | name(Command to be executed)、...(Parameters of this command) |
+| delete_node_img_from_delete_btn（v0.14.0+）    | Triggered when the delete button displayed by moving the mouse into the node image is used to delete the node image | node(Node instance) |
+| node_img_adjust_btn_mousedown（v0.14.0+）    | When the mouse is moved into the size adjustment button displayed in the node image, it is triggered when the mouse is pressed | node(Node instance) |
+| beforeAddHistory（v0.14.0+）    | Triggered before adding historical stack data, If you modify mindMap. renderer. renderTree at this point, the data to be added to the history stack will be the modified version |  |
 
 ### emit(event, ...args)
 

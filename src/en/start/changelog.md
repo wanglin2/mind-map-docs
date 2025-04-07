@@ -1,5 +1,125 @@
 # Changelog
 
+## 0.14.0
+
+> 2025/4/7
+
+Code optimization:
+
+> 1. Optimize the code logic for rendering.
+> 
+> 2. Change the historical stack list from storing objects to storing strings to reduce memory usage.
+> 
+> 3. If the Painter plugin is not registered, the node instance will not save the effectiveStyles data.
+> 
+> 4. Under the read-only mode, the node instance will not save the nodeDataSnapshot data.
+> 
+> 5. Remove the hard coding for fishbone diagrams in the node connection rendering logic.
+> 
+> 6. Change the hard coding of shortcut response targets in the KeyCommand class to be controlled by plugins.
+
+Fix:
+
+> 1. Fix the issue where the position of the connection line control point is displayed incorrectly after it is reactivated following an update.
+> 
+> 2. Fix the issue where the connection line style value type in the default theme configuration is an array; change it to a string.
+> 
+> 3. Fix the issue where the position of the node image adjustment button is not updated when the canvas is zoomed.
+> 
+> 4. After enabling performance mode, fix the issue where nodes still exist on the canvas after moving the canvas and then clearing the node data.
+> 
+> 5. When exporting to PNG, SVG, or PDF, terminate any ongoing text editing first to prevent the exported node text from appearing blank.
+> 
+> 6. Fix the issue of incorrect recognition of bold, code, and other syntax when importing Markdown files.
+> 
+> 7. Fix the issue where all nodes are still recreated during each rendering in performance mode.
+> 
+> 8. Fix the issue where the position of the connection line text is not updated after modifying the text.
+
+New:
+
+> 1. Added a plugin for the right-oriented fishbone diagram structure.
+> 
+> 2. Added a fishbone diagram structure with fish head and tail.
+> 
+> 3. Added two types of vertical timeline structures.
+> 
+> 4. The outer frame now supports adding text.
+> 
+> 5. Support for extending node shapes.
+> 
+> 6. Added a node link plugin.
+> 
+> 7. Added a plugin for handling base64 format storage: NodeBase64ImageStorage.
+> 
+> 8. Exporting images and PDFs now supports setting whether to display the full background image.
+> 
+> 9. Support for exporting in JPG format.
+> 
+> 10. Added the beforeAddHistory event.
+> 
+> 11. The node image adjustment plugin now throws two events: delete_node_img_from_delete_btn and node_img_adjust_btn_mousedown.
+> 
+> 12. The KeyCommand class now supports a method to pause checking if the mouse is within the canvas.
+> 
+> 13. The MindMap constructor has added a static method to extend the nodeDataNoStylePropList.
+> 
+> 14. The MindMap instance now has the getSvgObjects method.
+> 
+> 15. Plugins now have a preload configuration, supporting loading before the core class is instantiated.
+> 
+> 16. Support for reading the layout structure class from the mind map instance.
+> 
+> 17. If the node shape does not exist, the rectangle shape will be used by default.
+> 
+> 18. Support for adding library post-content.
+
+Demo:
+
+> 1. Added a right-oriented fishbone diagram.
+> 
+> 2. Added a fishbone diagram with a fish head and tail.
+> 
+> 3. Added two vertical timeline structures.
+> 
+> 4. The right-click menu now includes functions to add and delete node links.
+> 
+> 5. AI continuation supports modifying prompts.
+> 
+> 6. Exporting images now supports choosing formats.
+> 
+> 7. Adjusted the style of the structure sidebar.
+> 
+> 8. Added several themes with backgrounds.
+> 
+> 9. Added several node shapes.
+> 
+> 10. Included several built-in background images.
+> 
+> 11. Exporting images now supports choosing whether to display the full background image.
+> 
+> 12. Changed the frame style settings to a sidebar form, and added support for text style settings.
+> 
+> 13. Clicking the note icon will display the note content in the sidebar form.
+> 
+> 14. Automatically focuses on the search box when the search is invoked.
+> 
+> 15. Fixed the issue where the note layer of nodes at the edge of the canvas is not fully displayed.
+> 
+> 16. Fixed the issue where the outer frame style is incorrectly filled by default when activating a specific outer frame among multiple ones.
+> 
+> 17. Added a prompt when the mind map data exceeds the upper limit allowed for browser local storage.
+> 
+> 18. The read-only mode does not hide the AI sidebar button.
+> 
+> 19. Hides the node image position setting toolbar when moving the canvas, deleting images, or holding down the image adjustment button.
+> 
+> 20. Fixed the issue where two right-click menus are displayed simultaneously on the root node in some unknown cases.
+> 
+> 21. Added 14-point font size to the node text font size list.
+
+Client: 
+
 ## 0.13.1-fix.2
 
 Withdraw the modification in version 0.13.1 to fix the issue of flashing expand and collapse buttons in real-time rendering mode of text editing, in order to avoid causing more serious problems.

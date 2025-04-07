@@ -23,6 +23,15 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
 
 </p>
 
+### 🏆最强王者
+
+<div style="display: flex;">
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;flex-shrink: 0;">
+        <img src="./assets/avatar/hi.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>hi</p>
+    </div>
+</div>
+
 ### 💎钻石赞助
 
 <div style="display: flex;">
@@ -501,5 +510,9 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/星夜寒.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>星夜寒</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/神话.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>神话</p>
     </div>
 </div>

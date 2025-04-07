@@ -152,7 +152,8 @@ export const zh = defineConfig({
             { text: 'RainbowLines插件', link: '/plugins/rainbowLines' },
             { text: 'Demonstrate插件', link: '/plugins/demonstrate' },
             { text: 'OuterFrame插件', link: '/plugins/outerFrame' },
-            { text: 'MindMapLayoutPro插件', link: '/plugins/mindMapLayoutPro' }
+            { text: 'MindMapLayoutPro插件', link: '/plugins/mindMapLayoutPro' },
+            { text: 'NodeBase64ImageStorage插件', link: '/plugins/nodeBase64ImageStorage' }
           ]
         },
         {

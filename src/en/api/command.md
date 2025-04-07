@@ -11,6 +11,8 @@ to an operation that needs to add a copy to the history stack data. The
 
 The current list of all historical data. Do not manually modify the array.
 
+Before `v0.14.0`, the array stores historical data objects, while in later versions, serialized strings are stored. If you want to use them, they need to be deserialized.
+
 ### activeHistoryIndex
 
 The current historical data index. Do not manually modify this property.

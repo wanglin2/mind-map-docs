@@ -154,7 +154,8 @@ export const en = defineConfig({
             { text: 'RainbowLines plugin', link: '/en/plugins/rainbowLines' },
             { text: 'Demonstrate plugin', link: '/en/plugins/demonstrate' },
             { text: 'OuterFrame plugin', link: '/en/plugins/outerFrame' },
-            { text: 'MindMapLayoutPro plugin', link: '/en/plugins/mindMapLayoutPro' }
+            { text: 'MindMapLayoutPro plugin', link: '/en/plugins/mindMapLayoutPro' },
+            { text: 'NodeBase64ImageStorage plugin', link: '/en/plugins/nodeBase64ImageStorage' }
           ]
         },
         {

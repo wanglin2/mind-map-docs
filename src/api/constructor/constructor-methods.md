@@ -55,6 +55,40 @@ mindMap.setTheme('主题名称')
 
 获取是否注册了某个插件，返回的是插件在注册插件列表里的索引，为`-1`则代表插件没有注册。
 
+### extendNodeDataNoStylePropList(list = [])
+
+> v0.14.0+
+
+扩展节点数据中非样式的字段列表。
+
+内部会根据这个列表判断，如果不在这个列表里的字段都会认为是样式字段。
+
+比如一个节点的数据为：
+ 
+```
+{
+   data: {
+     text: '',
+     note: '',
+     color: ''
+   },
+   children: []
+ }
+```
+ 
+`color`字段不在`nodeDataNoStylePropList`列表中，所以是样式，内部一些操作的方法会用到，所以如果你新增了自定义的节点数据，并且不是`_`开头的，那么需要通过该方法扩展。
+
+使用示例：
+
+```js
+mindMap.extendNodeDataNoStylePropList(['xxx', 'xxx2'])
+```
+
+### resetNodeDataNoStylePropList()
+
+> v0.14.0+
+
+恢复`nodeDataNoStylePropList`列表为默认列表，即去除扩展的属性。
 
 ## 实例方法
 
@@ -133,6 +167,9 @@ mindMap.setTheme('主题名称')
 | search_match_node_list_change（v0.11.0+）    | 搜索插件：当搜索匹配的节点列表改变时触发 | list（匹配的节点列表，请注意，数组项里的数据可能是节点实例也可能是节点数据，需要做好判断）  |
 | node_text_edit_change（v0.11.1+）    | 节点文本编辑中当输入的文本改变时触发 | { node, text, richText } 字段含义依次为：当前正在编辑的节点实例、当前最新的文本、是否是富文本 |
 | afterExecCommand（v0.12.2+）    | 命令对应的方法执行后的事件，此时还没有将新的数据添加到历史记录堆栈中 | name（执行的命令）、...（该命令的参数） |
+| delete_node_img_from_delete_btn（v0.14.0+）    | 通过鼠标移入节点图片显示的删除按钮删除节点图片时触发 | node（节点实例） |
+| node_img_adjust_btn_mousedown（v0.14.0+）    | 鼠标移入节点图片显示的尺寸调整按钮内鼠标按下时触发 | node（节点实例） |
+| beforeAddHistory（v0.14.0+）    | 即将添加历史堆栈数据前触发，此时如果你修改mindMap.renderer.renderTree，那么即将添加到历史堆栈中的数据就是你修改后的 |  |
 
 ### emit(event, ...args)
 
