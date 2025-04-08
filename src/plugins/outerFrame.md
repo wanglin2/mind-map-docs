@@ -4,6 +4,8 @@
 
 该插件用于实现外框功能。
 
+`v0.14.0+`版本新增了外框文本编辑和显示。
+
 ## 注册
 
 ```js
@@ -35,6 +37,16 @@ mindMap.execCommand('ADD_OUTER_FRAME', appointNodes, config = {})
 | strokeColor | String | #0984e3 | 外框边框颜色 |
 | strokeDasharray | String | 5,5 | 外框边框虚线 |
 | fill | String | rgba(9,132,227,0.05) | 外框填充颜色 |
+| fontSize（v0.14.0+） | Number | 14 | 外框文字字号 |
+| fontFamily（v0.14.0+） | String | 微软雅黑, Microsoft YaHei | 外框文字字体 |
+| fontWeight（v0.14.0+） | String | normal | 加粗，bold |
+| fontStyle（v0.14.0+） | String | normal | 斜体，italic |
+| color（v0.14.0+） | String | #fff | 外框文字颜色 |
+| lineHeight（v0.14.0+） | Number | 1.2 | 外框文字行高 |
+| textFill（v0.14.0+） | String | #0984e3 | 外框文字背景 |
+| textFillRadius（v0.14.0+） | Number | 5 | 外框文字圆角 |
+| textFillPadding（v0.14.0+） | Array | [5, 5, 5, 5] | 外框文字矩内边距，左上右下 |
+| textAlign（v0.14.0+） | String | left | 外框文字水平显示位置，相对于外框，可选值：left、center、right |
 
 ## 事件
 
@@ -57,6 +69,41 @@ mindMap.on('outer_frame_active', (el, parentNode, range) => {
 ### outer_frame_delete
 
 删除画布当前激活的外框时触发。
+
+### before_show_text_edit
+
+> v0.14.0+
+
+即将进入外框文本编辑时触发。
+
+### hide_text_edit
+
+> v0.14.0+
+
+结束外框文本编辑时触发。
+
+## 静态属性
+
+### OuterFrame.defaultStyle
+
+> v0.14.0+
+
+外框默认的样式配置。你可以用于ui界面的回显。
+
+## 实例属性
+
+### activeOuterFrame
+
+当前激活的外框信息，对象类型，包含以下内容：
+
+```js
+{
+    el,// 外框容器元素，@svgdotjs/svg.js库的Rect节点实例
+    node,// 当前外框所属节点实例
+    range// 当前外框在所属节点实例中包含的子节点范围
+    textNode// 外框文本容器元素，@svgdotjs/svg.js库的G节点实例
+}
+```
 
 ## 方法
 
@@ -87,3 +134,41 @@ mindMap.on('outer_frame_active', (el, parentNode, range) => {
 ### clearActiveOuterFrame()
 
 清除当前激活的外框。
+
+### getNodeRangeFirstNode(node, range)
+
+> v0.14.0+
+
+获取某个节点指定范围的带外框的第一个子节点。
+
+### getStyle(node)
+
+> v0.14.0+
+
+获取指定外框的样式。
+
+### showEditTextBox(g)
+
+> v0.14.0+
+
+- `g`：可以通过实例属性获取，activeOuterFrame.textNode
+
+进入外框文本编辑。
+
+### hideEditTextBox()
+
+> v0.14.0+
+
+隐藏文本编辑框。也就是结束文本编辑。
+
+### removeActiveOuterFrameText()
+
+> v0.14.0+
+
+删除当前激活外框的文字。
+
+### updateOuterFrameStyle()
+
+> v0.14.0+
+
+更新当前激活外框的样式。

@@ -169,7 +169,9 @@ export const zh = defineConfig({
             { text: 'Excel插件', link: '/plugins/excel' },
             { text: 'Checkbox插件', link: '/plugins/checkbox' },
             { text: 'Lineflow插件', link: '/plugins/lineflow' },
-            { text: 'Momentum插件', link: '/plugins/momentum' }
+            { text: 'Momentum插件', link: '/plugins/momentum' },
+            { text: 'RightFishbone插件', link: '/plugins/rightFishbone' },
+            { text: 'NodeLink插件', link: '/plugins/nodeLink' }
           ]
         }
       ],

@@ -392,21 +392,31 @@ mindMap.updateConfig({
 
 导出
 
-`type`：要导出的类型，可选值：png、svg、json、pdf（v0.2.1+）、smm（本质也是json）
+`type`：要导出的类型，可选值：png、svg、json、pdf（v0.2.1+）、smm（本质也是json）、jpg（v0.14.0+）
 
 `isDownload`：是否需要直接触发下载，布尔值，默认为`false`
 
 `fileName`：（v0.1.6+）导出文件的名称，默认为`思维导图`
 
-如果是导出为`png`，那么可以传递第四个参数：
+- 如果是导出为`png`、`jpg`，那么可以传递第四个、五个、六个参数：
 
 `transparent`：v0.5.7+, `Boolean`，默认为`false`，指定导出图片的背景是否是透明的
 
-如果是导出为`svg`，那么可以传递第四个参数：
+`node`：导出指定节点，默认为`null`，导出所有节点
+
+`fitBg`：v0.14.0+，`Boolean`，如果带背景图片的话，传`true`则导出的图片尺寸会调整为显示完整的背景图片，否则思维导图内容多大则导出多大的尺寸，背景图片可能显示不完全。如果`transparent`传递了`true`，那么会忽略该参数
+
+- 如果导出为`pdf`，那么可以传递第四个、五个参数：
+
+`transparent`：v0.5.7+, `Boolean`，默认为`false`，指定导出图片的背景是否是透明的
+
+`fitBg`：v0.14.0+，`Boolean`，如果带背景图片的话，传`true`则导出的图片尺寸会调整为显示完整的背景图片，否则思维导图内容多大则导出多大的尺寸，背景图片可能显示不完全。如果`transparent`传递了`true`，那么会忽略该参数
+
+- 如果是导出为`svg`，那么可以传递第四个参数：
 
 `plusCssText`：附加的`css`样式，如果`svg`中存在`dom`节点，想要设置一些针对节点的样式可以通过这个参数传入
 
-如果是导出为`json`或`smm`，那么可以传递第四个参数：
+- 如果是导出为`json`或`smm`，那么可以传递第四个参数：
 
 `withConfig`：`Boolean`，默认为`true`，指定导出的数据中是否包含配置数据，否则只导出纯节点树数据
 
@@ -445,3 +455,74 @@ mindMap.updateConfig({
 - `key`：唯一的标识。
 
 移除追加的css样式。
+
+### addEditNodeClass(className)
+
+> v0.14.0+
+
+- `className`：String，css类名，比如：textEdit
+
+添加一个编辑节点类名。
+
+快捷键响应会检查事件目标是否是`body`或编辑节点类名列表中的元素，是的话才会响应。如果添加了一个文本编辑框，发现通过`mindMap.keyCommand.addShortcut`方法添加了快捷键却不响应时，可能需要通过该方法把文本编辑框的类名添加到检查列表中。
+
+### deleteEditNodeClass(className)
+
+> v0.14.0+
+
+删除一个编辑节点类名。
+
+### addShape(shape)
+
+> v0.14.0+
+
+- `shape`：要扩展的节点形状配置，对象类型：
+
+```js
+{
+  name: 'xxx',
+  createShape: (node) => {
+    // node：思维导图节点实例
+
+    // 返回形状节点，一般为@svgdotjs/svg.js库的Path对象实例
+    return path
+  },
+  getPadding: ({ node, width, height, paddingX, paddingY }) => {
+    // node：节点实例
+    // width、height：节点内容宽高
+    // paddingX, paddingY：通过主题或自定义的内边距
+
+    // 返回额外要附加的内边距，相当于调整了最终形状的大小
+    return {
+      paddingX: 0,
+      paddingY: 0
+    }  
+  }
+}
+```
+
+扩展节点形状。
+
+### removeShape(name)
+
+> v0.14.0+
+
+- `name`：扩展的节点形状名称。
+
+删除扩展的形状。
+
+### getSvgObjects()
+
+> v0.14.0+
+
+返回：
+
+```js
+{
+  SVG,
+  G,
+  Rect
+}
+```
+
+获取@svgdotjs/svg.js库的一些对象。可以用于创建相应的实例。

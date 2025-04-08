@@ -399,8 +399,7 @@ view, etc. data
 
 Export
 
-`type`: the type to be exported, optional values: png, svg, json, pdf (v0.2.1+),
-smm (essentially also json)
+`type`: the type to be exported, optional values: png, svg, json, pdf (v0.2.1+), smm (essentially also json), jpg（v0.14.0+）
 
 `isDownload`: whether to directly trigger download, Boolean value, default is
 `false`
@@ -408,15 +407,25 @@ smm (essentially also json)
 `fileName`: (v0.1.6+) the name of the exported file, default is `思维导图` (mind
 map).
 
-If it is exported as `png`, the fourth parameter can be passed:
+- If it is exported as `png`、`jpg`, So we can pass the fourth, fifth, and sixth parameters:
 
 `transparent`: v0.5.7+, `Boolean`, default is `false`, Specify whether the background of the exported image is transparent
 
-If it is exported as `svg`, the fourth parameter can be passed:
+`node`：Export specified node, default is 'null', export all nodes
+
+`fitBg `：v0.14.0+，`Boolean`，If there is a background image, the exported image size will be adjusted to display the complete background image when passing 'true'. Otherwise, the mind map content will be exported in the same size, and the background image may not be fully displayed. If 'transparent' passes 'true', then this parameter will be ignored
+
+- If it is exported as `pdf`, So we can pass the fourth, fifth parameters:
+
+`transparent`: v0.5.7+, `Boolean`, default is `false`, Specify whether the background of the exported image is transparent
+
+`fitBg `：v0.14.0+，`Boolean`，If there is a background image, the exported image size will be adjusted to display the complete background image when passing 'true'. Otherwise, the mind map content will be exported in the same size, and the background image may not be fully displayed. If 'transparent' passes 'true', then this parameter will be ignored
+
+- If it is exported as `svg`, the fourth parameter can be passed:
 
 `plusCssText`: Additional `CSS` style. If there is a `dom` node in `svg`, you can pass in some styles specific to the node through this parameter
 
-If it is exported as `json` or `smm`, the fourth parameter can be passed:
+- If it is exported as `json` or `smm`, the fourth parameter can be passed:
 
 `withConfig`: `Boolean`, default is `true`, Specify whether the exported data includes configuration data, otherwise only pure node tree data will be exported
 
@@ -456,3 +465,74 @@ Add necessary CSS styles. This style will be dynamically added to the page durin
 - `key`: The unique identifier.
 
 Remove the added CSS styles.
+
+### addEditNodeClass(className)
+
+> v0.14.0+
+
+- `className`：String, css class name, such as: textEdit
+
+Add an edit node class name.
+
+The shortcut key response will check whether the event target is 'body' or an element in the node class name list, and will only respond if it is. If you add a text editing box and find that a shortcut key is added through the 'mindMap.keyCommand.addShortcut' method but does not respond, you may need to use this method to add the name of the text editing box to the check list.
+
+### deleteEditNodeClass(className)
+
+> v0.14.0+
+
+Delete an editing node class name.
+
+### addShape(shape)
+
+> v0.14.0+
+
+- `shape`：Node shape configuration to be extended, object type:
+
+```js
+{
+  name: 'xxx',
+  createShape: (node) => {
+    // node：Example of Mind Map Node instance
+
+    // Return the shape node, usually the Path object instance of the @svgdotjs/svg.js library
+    return path
+  },
+  getPadding: ({ node, width, height, paddingX, paddingY }) => {
+    // node：Node instance
+    // width、height：Node content width and height
+    // paddingX, paddingY：By theme or custom margins
+
+    // Return the additional margin to be attached, which is equivalent to adjusting the size of the final shape
+    return {
+      paddingX: 0,
+      paddingY: 0
+    }  
+  }
+}
+```
+
+Expand node shape.
+
+### removeShape(name)
+
+> v0.14.0+
+
+- `name`：Extended node shape name.
+
+Delete the extended shape.
+
+### getSvgObjects()
+
+> v0.14.0+
+
+Return: 
+
+```js
+{
+  SVG,
+  G,
+  Rect
+}
+```
+
+Retrieve some objects from the @svgdotjs/svg.js library. Can be used to create corresponding instances.

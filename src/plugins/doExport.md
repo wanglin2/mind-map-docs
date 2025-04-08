@@ -35,12 +35,12 @@ const export = async () => {
 
 ```js
 let a = document.createElement('a')
-a.href = 'xxx.png'// .png、.svg、.pdf、.md、.json、.smm
+a.href = 'xxx.png'// .png、.svg、.pdf、.md、.json、.smm、.jpg
 a.download = 'xxx'
 a.click()
 ```
 
-### png(name, transparent = false, node = null)
+### png(name, transparent = false, node = null, fitBg = false)
 
 > v0.9.2以下版本为：png(name, transparent = false, checkRotate, compress)
 
@@ -58,7 +58,15 @@ a.click()
 
 - `node`：v0.9.11+，节点实例，如果传了，那么会仅导出该节点的内容；
 
+- `fitBg`：v0.14.0+，`Boolean`，如果带背景图片的话，传`true`则导出的图片尺寸会调整为显示完整的背景图片，否则思维导图内容多大则导出多大的尺寸，背景图片可能显示不完全。如果`transparent`传递了`true`，那么会忽略该参数
+
 导出为`png`。
+
+### jpg(name, transparent = false, node = null, fitBg = false)
+
+> v0.14.0+
+
+导出为`jpg`。参数同`png`。
 
 ### svg(name, plusCssText)
 
@@ -80,7 +88,7 @@ svg(
 
 导出为`svg`。
 
-### pdf(name, transparent = false)
+### pdf(name, transparent = false, fitBg = false)
 
 > v0.8.1：pdf(name, useMultiPageExport, maxImageWidth)
 
@@ -93,6 +101,8 @@ svg(
 - `maxImageWidth`：v0.8.1+，（v0.9.2+已废弃），null | Number，默认为a4纸的宽度的2倍, 压缩图片的参数，某些情况下图片的长宽可能非常大，导致pdf体积也非常大，所以如果希望减小体积，那么可以通过该参数来控制图片的最大宽度
 
 - `transparent`：v0.9.2+，Boolean，默认为false，指定导出图片的背景是否是透明的
+
+- `fitBg`：v0.14.0+，`Boolean`，如果带背景图片的话，传`true`则导出的图片尺寸会调整为显示完整的背景图片，否则思维导图内容多大则导出多大的尺寸，背景图片可能显示不完全。如果`transparent`传递了`true`，那么会忽略该参数
 
 导出为`pdf`，
 

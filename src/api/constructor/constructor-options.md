@@ -33,7 +33,7 @@ const mindMap = new MindMap({
 | el                               | 容器元素，必传，必须为DOM元素（当容器元素在页面上的位置发生了改变，但大小没有改变的情况下必须调用`getElRectInfo()`方法更新库内部的相关信息；当大小也发生了改变后必须调用`resize()`方法，否则会造成一些功能异常）              | Element |                  |
 | data                             | 思维导图数据，可参考下方【数据结构】介绍。v0.9.9+支持传空对象或者null，画布会显示空白 | Object 、 null  |   |
 | viewData   | 视图数据，可以用于恢复画布的位置和缩放。该数据可以通过`mindMap.view.getTransformData()`方法获取 | Object 、 null  |   |
-| layout                           | 布局类型，可选列表：logicalStructure（逻辑结构图）、logicalStructureLeft（v0.10.2+，向左逻辑结构图）、mindMap（思维导图）、catalogOrganization（目录组织图）、organizationStructure（组织结构图）、timeline（v0.5.4+，时间轴）、timeline2（v0.5.4+，上下交替型时间轴）、fishbone（v0.5.4+，鱼骨图） | String  | logicalStructure |
+| layout                           | 布局类型，可选列表：logicalStructure（逻辑结构图）、logicalStructureLeft（v0.10.2+，向左逻辑结构图）、mindMap（思维导图）、catalogOrganization（目录组织图）、organizationStructure（组织结构图）、timeline（v0.5.4+，时间轴）、timeline2（v0.5.4+，上下交替型时间轴）、fishbone（v0.5.4+，鱼骨图）、fishbone2（v0.14.0+，带鱼头鱼尾形状的鱼骨图）、rightFishbone（v0.14.0+，向右鱼骨图插件，需要注册simple-mind-map-plugin-right-fishbone插件）、rightFishbone2（v0.14.0+，带鱼头鱼尾形状的向右鱼骨图，需要注册simple-mind-map-plugin-right-fishbone插件）、verticalTimeline（竖向时间轴，三级节点左右交替分布）、verticalTimeline2（v0.14.0+，竖向时间轴，三级节点全部分布在左侧）、verticalTimeline3（v0.14.0+，竖向时间轴，三级节点全部分布在右侧） | String  | logicalStructure |
 | fishboneDeg（v0.5.4+）                      |  设置鱼骨结构图的斜线角度               | Number |  45          |
 | theme                            | 主题，v0.12.0+将库内置的主题抽离到单独的插件中（simple-mind-map-plugin-themes，详见插件文档），库只有默认主题（default）。v0.12.0以下版本库内置可选的主题列表：default（默认）、classic（脑图经典）、minions（小黄人）、pinkGrape（粉红葡萄）、mint（薄荷）、gold（金色vip）、vitalityOrange（活力橙）、greenLeaf（绿叶）、dark2（暗色2）、skyGreen（天清绿）、classic2（脑图经典2）、classic3（脑图经典3）、classic4（脑图经典4，v0.2.0+）、classicGreen（经典绿）、classicBlue（经典蓝）、blueSky（天空蓝）、brainImpairedPink（脑残粉）、dark（暗色）、earthYellow（泥土黄）、freshGreen（清新绿）、freshRed（清新红）、romanticPurple（浪漫紫）、simpleBlack（v0.5.4+简约黑）、courseGreen（v0.5.4+课程绿）、coffee（v0.5.4+咖啡）、redSpirit（v0.5.4+红色精神）、blackHumour（v0.5.4+黑色幽默）、lateNightOffice（v0.5.4+深夜办公室）、blackGold（v0.5.4+黑金）、avocado（v.5.10-fix.2+牛油果）、autumn（v.5.10-fix.2+秋天）、orangeJuice（v.5.10-fix.2+橙汁） | String  | default          |
 | themeConfig                      | 主题配置，会和所选择的主题进行合并，可用字段可参考：[default.js](https://github.com/wanglin2/mind-map/blob/main/simple-mind-map/src/theme/default.js) | Object  | {}               |
@@ -378,6 +378,7 @@ new MindMap({
 | -------------------------------- | ------- | ---------------- | ------- |
 | outerFramePaddingX（v0.10.3+）     | Number  | 10 | 外框的水平内边距 |
 | outerFramePaddingY（v0.10.3+）     | Number  | 10 | 外框的垂直内边距 |
+| defaultOuterFrameText（v0.14.0+）     | String  | 外框 | 默认的外框文字 |
 
 ### 16.Painter插件
 

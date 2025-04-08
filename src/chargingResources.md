@@ -40,9 +40,19 @@
 
 用于实现动量效果。
 
+- [RightFishbone 插件](./plugins/rightFishbone.md)
+
+用于实现向右鱼骨图结构。
+
+- [NodeLink 插件](./plugins/nodeLink.md)
+
+用于提供节点链接的功能。
+
 ## 收费教程
 
 - [实战：使用simple-mind-map实现AI生成思维导图](./course/course34.md)
+
+- [simple-mind-map超多节点情况下的性能优化指北](./course/course35.md)
 
 ## 适配Vue3的完整Demo
 

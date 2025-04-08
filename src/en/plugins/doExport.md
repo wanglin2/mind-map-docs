@@ -35,12 +35,12 @@ The returned data is in the format of `data:URL`. You can create an `a` tag to t
 
 ```js
 let a = document.createElement('a')
-a.href = 'xxx.png'// .png、.svg、.pdf、.md、.json、.smm
+a.href = 'xxx.png'// .png、.svg、.pdf、.md、.json、.smm、.jpg
 a.download = 'xxx'
 a.click()
 ```
 
-### png(name, transparent = false, node = null)
+### png(name, transparent = false, node = null, fitBg = false)
 
 > Versions below v0.9.2 are：png(name, transparent = false, checkRotate, compress)
 
@@ -58,7 +58,15 @@ a.click()
 
 - `node`：v0.9.11+，Node instances, if passed, will only export the content of that node;
 
+- `fitBg`：v0.14.0+，`Boolean`，If there is a background image, the exported image size will be adjusted to display the complete background image when passing 'true'. Otherwise, the mind map content will be exported in the same size, and the background image may not be fully displayed. If 'transparent' passes 'true', then this parameter will be ignored
+
 Exports as `png`.
+
+### jpg(name, transparent = false, node = null, fitBg = false)
+
+> v0.14.0+
+
+Export as 'jpg'. The parameters are the same as 'png'.
 
 ### svg(name, plusCssText)
 
@@ -80,7 +88,7 @@ svg(
 
 Exports as `svg`.
 
-### pdf(name, transparent = false)
+### pdf(name, transparent = false, fitBg = false)
 
 > v0.8.1：pdf(name, useMultiPageExport, maxImageWidth)
 
@@ -93,6 +101,8 @@ Exports as `svg`.
 - `maxImageWidth`：v0.8.1+, (v0.9.2+obsolete)，null | Number，The default is twice the width of A4 paper, which is a parameter for compressing images. In some cases, the length and width of the image may be very large, resulting in a very large PDF volume. Therefore, if you want to reduce the volume, you can use this parameter to control the maximum width of the image
 
 - `transparent`：v0.9.2+，Boolean，default is false，Specify whether the background of the exported image is transparent
+
+- `fitBg`：v0.14.0+，`Boolean`，If there is a background image, the exported image size will be adjusted to display the complete background image when passing 'true'. Otherwise, the mind map content will be exported in the same size, and the background image may not be fully displayed. If 'transparent' passes 'true', then this parameter will be ignored
 
 Export as `pdf`. Unlike other export methods, this method does not return data and directly triggers the download.
 

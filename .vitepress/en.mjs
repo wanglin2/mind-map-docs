@@ -172,7 +172,9 @@ export const en = defineConfig({
             { text: 'Excel plugin', link: '/en/plugins/excel' },
             { text: 'Checkbox plugin', link: '/en/plugins/checkbox' },
             { text: 'Lineflow plugin', link: '/en/plugins/lineflow' },
-            { text: 'Momentum plugin', link: '/en/plugins/momentum' }
+            { text: 'Momentum plugin', link: '/en/plugins/momentum' },
+            { text: 'RightFishbone plugin', link: '/en/plugins/rightFishbone' },
+            { text: 'NodeLink plugin', link: '/en/plugins/nodeLink' }
           ]
         }
       ],

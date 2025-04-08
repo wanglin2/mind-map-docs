@@ -62,3 +62,17 @@ mindMap.keyCommand.addShortcut('Control+Enter', () => {})
 - `e`：事件对象。
 
 判断是否按下了组合键。
+
+### stopCheckInSvg()
+
+> v0.14.0+
+
+停止对鼠标是否在画布内的检查，前提是开启了`enableShortcutOnlyWhenMouseInSvg`实例化选项。
+
+库内部节点文本编辑、关联线文本编辑、外框文本编辑前都会暂停检查，否则无法响应回车快捷键用于结束编辑。如果你新增了额外的文本编辑，也可以在进入编辑前调用此方法。
+
+### recoveryCheckInSvg()
+
+> v0.14.0+
+
+恢复对鼠标是否在画布内的检查。

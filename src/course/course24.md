@@ -26,6 +26,8 @@ class YourPlugin {
 }
 
 Scrollbar.instanceName = 'yourPlugin'
+// v0.14.0+，插件是否在核心类实例化前加载。默认插件会在内部的事件类、按键类、命令类、渲染类等实例化后才会实例化插件。
+Scrollbar.preload = true
 ```
 
 实例化插件时会传入思维导图实例，你可以保存起来，后续可以通过它来监听方法或调用实例的方法，甚至是其他插件的方法。

@@ -67,3 +67,17 @@ Restore saved shortcut data, then clear the cache data
 - `e`: Event object.
 
 Determine if the combination key has been pressed.
+
+### stopCheckInSvg()
+
+> v0.14.0+
+
+Stop checking if the mouse is within the canvas, provided that the 'enableShortcutOnlyWhenModeInSvg' instantiation option is enabled.
+
+Before editing the internal node text, associated line text, and outer frame text in the library, the check will be paused, otherwise it will not respond to the Enter shortcut key to end the editing. If you add additional text editing, you can also call this method before entering editing.
+
+### recoveryCheckInSvg()
+
+> v0.14.0+
+
+Restore the check of whether the mouse is within the canvas.
