@@ -47,49 +47,70 @@ export const zh = defineConfig({
         { text: '更新记录', link: '/start/changelog' }
       ],
       '/course/': [
-        { text: '基本使用', link: '/course/course1' },
-        { text: '操作节点内容', link: '/course/course2' },
-        { text: '插入/删除节点、前进回退', link: '/course/course3' },
-        { text: '设置节点样式的简单方式', link: '/course/course4' },
-        { text: '设置节点样式的更多方式', link: '/course/course31' },
-        { text: '设置基础样式', link: '/course/course5' },
-        { text: '显示水印', link: '/course/course6' },
-        { text: '开启节点自由拖拽', link: '/course/course7' },
-        { text: '开启节点富文本编辑', link: '/course/course8' },
-        { text: '修改鼠标滚轮的行为', link: '/course/course9' },
-        { text: '主题', link: '/course/course10' },
-        { text: '结构', link: '/course/course11' },
-        { text: '如何渲染一个大纲', link: '/course/course12' },
-        { text: '快捷键', link: '/course/course13' },
-        { text: '如何渲染一个小地图', link: '/course/course14' },
-        { text: '如何渲染一个右键菜单', link: '/course/course15' },
-        { text: '如何渲染富文本的悬浮工具栏', link: '/course/course16' },
-        { text: '导入和导出', link: '/course/course17' },
-        { text: '如何持久化数据', link: '/course/course18' },
-        { text: '插入和扩展节点图标', link: '/course/course19' },
-        { text: '如何自定义整个节点内容', link: '/course/course20' },
-        { text: '如何自定义部分节点内容', link: '/course/course33' },
-        { text: '如何实现AI生成节点内容', link: '/course/course26' },
-        { text: '[收费]实战：实现AI生成思维导图', link: '/course/course34' },
-        { text: '如何复制、剪切、粘贴', link: '/course/course21' },
-        { text: '如何实现搜索、替换', link: '/course/course22' },
-        { text: '如何渲染滚动条', link: '/course/course23' },
-        { text: '如何开发一个插件', link: '/course/course24' },
-        { text: '关于概要', link: '/course/course25' },
         {
-          text: '快捷键操作如何传递自定义参数',
-          link: '/course/course27'
+          text: '收费',
+          items: [
+            {
+              text: '实战：实现AI生成思维导图',
+              link: '/course/course34'
+            },
+            {
+              text: '超多节点情况下的性能优化指北',
+              link: '/course/course35'
+            }
+          ]
         },
         {
-          text: '如何动态修改自定义元素的大小',
-          link: '/course/course28'
-        },
-        {
-          text: '局域网docker部署解决HTTPS问题的一种方法',
-          link: '/course/course29'
-        },
-        { text: '如何通过代码激活节点', link: '/course/course30' },
-        { text: '如何实现单独设置某条关联线的样式', link: '/course/course32' }
+          text: '免费',
+          items: [
+            { text: '基本使用', link: '/course/course1' },
+            { text: '操作节点内容', link: '/course/course2' },
+            { text: '插入/删除节点、前进回退', link: '/course/course3' },
+            { text: '设置节点样式的简单方式', link: '/course/course4' },
+            { text: '设置节点样式的更多方式', link: '/course/course31' },
+            { text: '设置基础样式', link: '/course/course5' },
+            { text: '显示水印', link: '/course/course6' },
+            { text: '开启节点自由拖拽', link: '/course/course7' },
+            { text: '开启节点富文本编辑', link: '/course/course8' },
+            { text: '修改鼠标滚轮的行为', link: '/course/course9' },
+            { text: '主题', link: '/course/course10' },
+            { text: '结构', link: '/course/course11' },
+            { text: '如何渲染一个大纲', link: '/course/course12' },
+            { text: '快捷键', link: '/course/course13' },
+            { text: '如何渲染一个小地图', link: '/course/course14' },
+            { text: '如何渲染一个右键菜单', link: '/course/course15' },
+            { text: '如何渲染富文本的悬浮工具栏', link: '/course/course16' },
+            { text: '导入和导出', link: '/course/course17' },
+            { text: '如何持久化数据', link: '/course/course18' },
+            { text: '插入和扩展节点图标', link: '/course/course19' },
+            { text: '如何自定义整个节点内容', link: '/course/course20' },
+            { text: '如何自定义部分节点内容', link: '/course/course33' },
+            { text: '如何实现AI生成节点内容', link: '/course/course26' },
+
+            { text: '如何复制、剪切、粘贴', link: '/course/course21' },
+            { text: '如何实现搜索、替换', link: '/course/course22' },
+            { text: '如何渲染滚动条', link: '/course/course23' },
+            { text: '如何开发一个插件', link: '/course/course24' },
+            { text: '关于概要', link: '/course/course25' },
+            {
+              text: '快捷键操作如何传递自定义参数',
+              link: '/course/course27'
+            },
+            {
+              text: '如何动态修改自定义元素的大小',
+              link: '/course/course28'
+            },
+            {
+              text: '局域网docker部署解决HTTPS问题的一种方法',
+              link: '/course/course29'
+            },
+            { text: '如何通过代码激活节点', link: '/course/course30' },
+            {
+              text: '如何实现单独设置某条关联线的样式',
+              link: '/course/course32'
+            }
+          ]
+        }
       ],
       '/api/': [
         {
@@ -153,7 +174,10 @@ export const zh = defineConfig({
             { text: 'Demonstrate插件', link: '/plugins/demonstrate' },
             { text: 'OuterFrame插件', link: '/plugins/outerFrame' },
             { text: 'MindMapLayoutPro插件', link: '/plugins/mindMapLayoutPro' },
-            { text: 'NodeBase64ImageStorage插件', link: '/plugins/nodeBase64ImageStorage' }
+            {
+              text: 'NodeBase64ImageStorage插件',
+              link: '/plugins/nodeBase64ImageStorage'
+            }
           ]
         },
         {
