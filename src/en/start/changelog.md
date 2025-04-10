@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.14.0-fix.1
+
+Fix:
+
+> 1.Fixed the issue of incomplete display of exported image nodes when there are a large number of nodes;
+
 ## 0.14.0
 
 > 2025/4/7

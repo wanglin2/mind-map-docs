@@ -148,3 +148,11 @@ new MindMap({
 > One possible reason is:
 >
 > If the current focus is not in an obvious input box and the event target (e.target) of the key event is not 'body', it is possible that an element has a tabIndex attribute that captures the focus state.
+
+## 12.When the parent container of the mind map container has a scrollbar, exporting images may result in incomplete display of nodes
+
+resolvent:
+
+1. Call the mindMap.getElRectInfo() method every time the scroll bar scrolls;
+
+2. Before calling the exported method, first call the mindMap.getElRectInfo() method;
