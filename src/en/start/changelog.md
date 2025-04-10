@@ -123,6 +123,8 @@ Demo:
 > 20. Fixed the issue where two right-click menus are displayed simultaneously on the root node in some unknown cases.
 > 
 > 21. Added 14-point font size to the node text font size list.
+>
+> 22. Support pasting MD content for import;
 
 Client: 
 
