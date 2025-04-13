@@ -128,6 +128,20 @@ Demo:
 
 Client: 
 
+> 1.Reconstruct the membership pop-up window and membership function logic;
+> 
+> 2.Added help page, follow page, and update log page;
+> 
+> 3.The window displays the software name and version number;
+> 
+> 4.Optimized file reading logic: if it returns null, directly prompt the user to close the window and restart the software; if there is no content, prompt the user whether to display default data to avoid accidental data loss;
+> 
+> 5.Optimized dark mode in some areas;
+> 
+> 6.The AI service port will not start if it is occupied, to avoid errors;
+> 
+> 7.Support setting the default save path;
+
 ## 0.13.1-fix.2
 
 Withdraw the modification in version 0.13.1 to fix the issue of flashing expand and collapse buttons in real-time rendering mode of text editing, in order to avoid causing more serious problems.
