@@ -63,6 +63,106 @@ However, this requires backend support, as our application is a single page clie
 
 ## Docker
 
+### Image 1
+
+> Thank you very much [Hraulein](https://github.com/Hraulein), the corresponding Docker package is maintained by him.
+
+> Supporting architecture: `amd64` `arm64` `arm/v7` `arm/v8`
+
+#### Install
+
+> `docker cli`
+
+``` bash			
+docker run -d --name mind-map -p 8080:8080 --restart always -e GIN_MODE=release hraulein/mind-map:latest
+```
+
+> `docker compose`
+
+``` bash
+services:
+  mind-map:
+    image: hraulein/mind-map:latest
+    container_name: mind-map
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - GIN_MODE=release # Debug is in debugging mode
+```
+
+#### Usage
+
+Enter the following address in the browser to use the web version of mind map: `http://$IP_ADDRESS:$PORT`
+
+Options:
+
+* `$IP_ADDRESS`
+
+  - Local access: using `127.0.0.1` or `localhost`
+  - LAN access: Enter the internal IP address of the deployment host（Such as `172.16.19.156`）
+  - Public network access (if available): Enter the server's public IP or domain name
+
+* `$PORT`
+
+  - By default, port 8080 is used. If the port mapping is modified during startup (such as - p 8888:8080), the corresponding host port needs to be changed to the mapped port (i.e. 8888)
+  
+Example:
+
+> Local access:`http://127.0.0.1:8080`  
+> LAN access:`http://172.16.19.156:8080`  
+> Custom port:`http://172.16.19.156:8888`  
+
+#### Nginx reverse proxy configuration (optional)
+
+> Need domain name/HTTPS certificate
+
+```
+# HTTP redirect HTTPS
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    return 301 https://$host$request_uri;
+}
+
+server {
+	
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;    
+  
+    server_name mind-map.hraulein.localhost;   # <<< Replace with your domain name
+    set $IPADDR 172.16.19.156;                 # <<< Replace with the internal IP address of your server
+
+    ssl_certificate '/etc/nginx/*****/*****/fullchain.cer';    # <<< Replace with the actual certificate address
+    ssl_certificate_key '/etc/nginx/*****/*****/*****.key';    # <<< Replace with the actual certificate address
+    ssl_trusted_certificate '/etc/nginx/*****/*****/ca.cer';   # <<< Replace with the actual certificate address
+    ssl_session_cache shared:SSL:1m;
+    ssl_session_timeout 10m;
+    ssl_session_tickets off;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    resolver 8.8.8.8 1.1.1.1 valid=300s;
+    resolver_timeout 5s;
+    add_header Strict-Transport-Security "max-age=31536000" always;
+
+    location / {
+        proxy_pass http://$IPADDR:8080;        # <<< Replace with mind map service actual mapping port
+        proxy_set_header Host $host;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection upgrade;
+        proxy_set_header Accept-Encoding gzip;
+    }
+}
+
+```
+
+
+### Image 2
+
 > Thank you very much [水车](https://github.com/shuiche-it), the corresponding Docker package is maintained by him.
 
 Install directly from Docker Hub:

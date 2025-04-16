@@ -63,6 +63,106 @@ const router = new VueRouter({
 
 ## Docker
 
+### 镜像1
+
+> 非常感谢[Hraulein](https://github.com/Hraulein)维护的`Docker`镜像。
+
+> 支持架构: `amd64` `arm64` `arm/v7` `arm/v8`
+
+#### 安装
+
+> `docker cli`
+
+``` bash			
+docker run -d --name mind-map -p 8080:8080 --restart always -e GIN_MODE=release hraulein/mind-map:latest
+```
+
+> `docker compose`
+
+``` bash
+services:
+  mind-map:
+    image: hraulein/mind-map:latest
+    container_name: mind-map
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - GIN_MODE=release # debug 为调试模式
+```
+
+#### 使用
+
+在浏览器中输入以下地址即可使用 Web 版思维导图: `http://$IP_ADDRESS:$PORT`
+
+参数: 
+
+* `$IP_ADDRESS`
+
+  - 本机访问: 使用 `127.0.0.1` 或 `localhost`
+  - 局域网访问: 输入部署主机的内网 IP（如 `172.16.19.156`）
+  - 公网访问（如有）: 输入服务器公网 IP 或域名
+
+* `$PORT`
+
+  - 默认使用 `8080` 端口，若启动时修改了端口映射（如 `-p 8888:8080`），此处需对应改为映射的主机端口（即 `8888`）
+
+示例:  
+
+> 本机访问: `http://127.0.0.1:8080`  
+> 局域网访问: `http://172.16.19.156:8080`  
+> 自定义端口: `http://172.16.19.156:8888`  
+
+#### nginx 反向代理配置 (可选)
+
+> 需要有域名/HTTPS证书
+
+```
+# HTTP 重定向 HTTPS
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    return 301 https://$host$request_uri;
+}
+
+server {
+	
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;    
+  
+    server_name mind-map.hraulein.localhost;   # <<< 替换为你的域名
+    set $IPADDR 172.16.19.156;                 # <<< 替换为你服务器的内网 IP 地址
+
+    ssl_certificate '/etc/nginx/*****/*****/fullchain.cer';    # <<< 替换为实际的证书地址
+    ssl_certificate_key '/etc/nginx/*****/*****/*****.key';    # <<< 替换为实际的证书地址
+    ssl_trusted_certificate '/etc/nginx/*****/*****/ca.cer';   # <<< 替换为实际的证书地址
+    ssl_session_cache shared:SSL:1m;
+    ssl_session_timeout 10m;
+    ssl_session_tickets off;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    resolver 8.8.8.8 1.1.1.1 valid=300s;
+    resolver_timeout 5s;
+    add_header Strict-Transport-Security "max-age=31536000" always;
+
+    location / {
+        proxy_pass http://$IPADDR:8080;        # <<< 替换为 mind-map 服务实际映射端口
+        proxy_set_header Host $host;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection upgrade;
+        proxy_set_header Accept-Encoding gzip;
+    }
+}
+
+```
+
+
+### 镜像2
+
 > 非常感谢[水车](https://github.com/shuiche-it)维护的`Docker`镜像。
 
 直接从 Docker hup 中安装：
