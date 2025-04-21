@@ -36,67 +36,6 @@ Linux 用户也可以通过 Flathub 下载：
 
 [![下载应用，请到 Flathub](https://flathub.org/api/badge?svg&locale=zh-Hans)](https://flathub.org/apps/io.github.wanglin2.mind-map)
 
-### 开发
-
-如果有需要，你也可以进行二次开发。
-
-#### clone
-
-```bash
-git clone https://github.com/wanglin2/mind-map.git
-cd mind-map
-git checkout electron
-```
-
-#### 启动服务
-
-在项目根目录下执行：
-
-```bash
-cd simple-mind-map
-npm i
-npm link
-cd ..
-cd web
-npm i
-npm link simple-mind-map
-npm run electron:serve
-```
-
-#### 打包客户端
-
-你至少需要两台电脑，一台`Windows`和一台`Mac`。
-
-打包`Windows`应用：
-
-```bash
-npm run electron:build-win
-```
-
-打包`Mac`应用：
-
-```bash
-npm run electron:build-mac
-```
-
-打包`Linux`应用：
-
-```bash
-npm run electron:build-linux
-```
-
-打包全部应用：
-
-```bash
-npm run electron:build-all
-```
-
-根据你的电脑系统自动打包：
-
-```bash
-npm run electron:build
-```
-
 ## uTools 插件
 
 `uTools`插件继承了独立客户端所有功能的同时还增加以下功能：

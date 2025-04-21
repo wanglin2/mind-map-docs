@@ -54,22 +54,6 @@
 
 - [simple-mind-map超多节点情况下的性能优化指北](./course/course35.md)
 
-## 适配Vue3的完整Demo
-
-虽然`simple-mind-map`库本身是不依赖框架的，但是很多时候可能您想直接把[在线Demo](https://wanglin2.github.io/mind-map/)完整引入您的项目中，但是可能因为您的项目是`Vue3`版本，而`Demo`的[代码](https://github.com/wanglin2/mind-map/tree/main/web)是`Vue2`版本，无法直接引入，您可以选择自己来升级，也可以通过付费购买我们提供的`Vue3`版本：
-
-- 是一个完整项目，支持独立运行，也支持打包成一个`npm`包在其他项目中引入；
-
-- 将不兼容`Vue2`的语法升级为`Vue3`的写法，但仍保留了选项式`API`；
-
-- 将`element-ui`升级为`element-plus`；
-
-- 将`vuex`、`vue-i18n`、`v-viewer`依赖升级为适配`Vue3`的版本；
-
-- 免费同步至当前仓库最新功能；
-
-如有需要，欢迎咨询。
-
 ## 收费咨询
 
 如有问题，可以微信添加`wanglinguanfang`入群咨询。同时也提供收费咨询，私聊请先发红包（￥9.9+每次）。

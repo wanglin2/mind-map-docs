@@ -36,67 +36,6 @@ Linux users can also download from Flathub:
 
 [![Get it on Flathub](https://flathub.org/api/badge?svg)](https://flathub.org/apps/io.github.wanglin2.mind-map)
 
-### Development
-
-If necessary, you can also conduct secondary development.
-
-#### clone
-
-```bash
-git clone https://github.com/wanglin2/mind-map.git
-cd mind-map
-git checkout electron
-```
-
-#### Start serve
-
-Execute in the project root directory:
-
-```bash
-cd simple-mind-map
-npm i
-npm link
-cd ..
-cd web
-npm i
-npm link simple-mind-map
-npm run electron:serve
-```
-
-#### Packaging client
-
-You need at least two computers, one 'Windows' and one 'Mac'.
-
-Packaging 'Windows' application:
-
-```bash
-npm run electron:build-win
-```
-
-Packaging 'Mac' application:
-
-```bash
-npm run electron:build-mac
-```
-
-Packaging 'Linux' application:
-
-```bash
-npm run electron:build-linux
-```
-
-Packaging all applications:
-
-```bash
-npm run electron:build-all
-```
-
-Automatically pack according to your computer system:
-
-```bash
-npm run electron:build
-```
-
 ## uTools plugin
 
 The `uTools` plugin inherits all the functions of an independent client and also adds the following features:

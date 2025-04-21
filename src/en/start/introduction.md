@@ -86,10 +86,6 @@ The folder containing the packaged resources for the `web` folder.
 
 - `feature`: Development branch, the branch currently under development. If you want to submit 'pr', please submit to that branch;
 
-- `electron`: Client branch;
-
-- `utools`: `uTools` plugin branch;
-
 ## Special Note
 
 When applying this project to actual projects, please first experience in depth whether it can meet your needs.
