@@ -66,6 +66,10 @@
 
 保留`mind-map`版权声明和注明来源的情况下可随意商用，如有疑问或不想保留可联系作者，支持付费的方式去版权。
 
+> 示例：可以在你应用中的关于页面、帮助页面、文档页面、开源声明等任何页面添加以下内容：
+>
+> 本产品思维导图部分功能使用了SimpleMindMap项目，[开源协议](https://github.com/wanglin2/mind-map/blob/main/LICENSE)。
+
 ## 理想文档
 
 如果你需要带后端的云存储版本，可以尝试我们开发的另一个项目[理想文档](https://github.com/wanglin2/lx-doc)。

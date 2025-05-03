@@ -18,8 +18,6 @@ Momentum 插件用于实现动量效果，即鼠标按住拖动画布，然后�
 
 价格：￥ 29.9，包含未打包的源码和打包后的文件。
 
-> 一次性购买4个及以上收费插件打8折，心动不如行动~
-
 <p style="display:flex;align-items: flex-end;">
 
 <img src="../assets/img/alipay.jpg" style="width: 300px" />
