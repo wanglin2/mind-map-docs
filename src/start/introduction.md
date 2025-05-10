@@ -121,7 +121,7 @@
 
 > 示例：可以在你应用中的关于页面、帮助页面、文档页面、开源声明等任何页面添加以下内容：
 >
-> 本产品思维导图部分功能使用了SimpleMindMap项目，[开源协议](https://github.com/wanglin2/mind-map/blob/main/LICENSE)。
+> 本产品思维导图部分功能使用了SimpleMindMap项目，版权归源项目所有，[开源协议](https://github.com/wanglin2/mind-map/blob/main/LICENSE)。
 
 ## 微信交流群
 
