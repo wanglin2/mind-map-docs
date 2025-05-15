@@ -1,5 +1,11 @@
 # 客户端
 
+## obsidian插件
+
+正在开发中，敬请期待~
+
+> 目前存在一些第三方开发者使用 simple-mind-map 开发的 ob 插件，如需付费，请谨慎购买。
+
 ## 独立客户端
 
 本项目也提供了独立客户端版本，使用[Electron](https://www.electronjs.org/)开发。支持`Windows`、`Mac`及`Linux`系统。
@@ -97,3 +103,7 @@ Linux 用户也可以通过 Flathub 下载：
 <img src="./assets/img/client/utools6.png" style="width: 800px" />
 
 所以建议关闭这个功能，或者修改它的触发方式，设置路径为：点击搜索框右侧的头像进入个人中心 -> 点击左下角的个人中心 -> 点击设置 -> 关闭超级面板。
+
+## 更多
+
+我们在积极探索和开发各个软件的插件，如你有建议，欢迎issue留言。

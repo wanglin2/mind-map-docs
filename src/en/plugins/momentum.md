@@ -2,8 +2,6 @@
 
 The Momentum plugin is used to achieve momentum effects, which means holding down the mouse and dragging the canvas, then releasing it and the canvas will continue to move a certain distance based on inertia.
 
-You can experience it in the online version. If you want to turn off this feature, you can do so in the [Settings] on the right.
-
 ## Changelog
 
 > v1.0.1

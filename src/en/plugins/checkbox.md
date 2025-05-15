@@ -4,8 +4,6 @@ The Checkbox plugin provides a to-do function, which means adding a checkbox to 
 
 <img src="../../assets/img/待办.png" style="width: 800px" />
 
-You can experience it in the online version by right clicking on the node and clicking on 'Add ToDo'.
-
 ## Charge
 
 Please switch to the Chinese documentation for this plugin to view.

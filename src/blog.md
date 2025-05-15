@@ -3,25 +3,21 @@
 <table>
     <tr>
         <td align="center" style="word-wrap: break-word; width: 300px; height: 300px">
-            <a href="https://mp.weixin.qq.com/s/sVdaeB3chIjkfOnW4GkyUg" target="_blank" style="text-decoration: none;">
+            <a href="https://www.xiaohongshu.com/user/profile/5e9278d8000000000100b606?xsec_token=YBs1N5Tem6vnleeKEV8JSZjqDT_9E1THEqzp4bV6Pw-ys%3D&xsec_source=app_share&xhsshare=CopyLink&appuid=5e9278d8000000000100b606&apptime=1747271708&share_id=a721fd08912b49e69f3d63c49d2c107b&share_channel=copy_link" target="_blank" style="text-decoration: none;">
                 <img src="./assets/img/xhs.jpg" width="150;"  style="align-items:center;justify-content:center;overflow:hidden;"/>
                 <br />
                 <sub style="font-size:14px"><b>小红书</b></sub>
             </a>
         </td>
         <td align="center" style="word-wrap: break-word; width: 300px; height: 300px">
-            <a href="https://mp.weixin.qq.com/s/LgaeFhPa2j1IZWA0_f_zFA" target="_blank" style="text-decoration: none;">
-                <img src="./assets/img/gzh.jpg" width="150;"  style="align-items:center;justify-content:center;overflow:hidden;"/>
-                <br />
-                <sub style="font-size:14px"><b>微信公众号</b></sub>
-            </a>
+            <img src="./assets/img/gzh.jpeg" width="150;"  style="align-items:center;justify-content:center;overflow:hidden;"/>
+            <br />
+            <sub style="font-size:14px"><b>微信公众号</b></sub>
         </td>
         <td align="center" style="word-wrap: break-word; width: 300px; height: 300px">
-            <a href="https://mp.weixin.qq.com/s/sVdaeB3chIjkfOnW4GkyUg" target="_blank" style="text-decoration: none;">
-                <img src="./assets/img/wechat.png" width="150;"  style="align-items:center;justify-content:center;overflow:hidden;"/>
-                <br />
-                <sub style="font-size:14px"><b>微信扫码加我好友</b></sub>
-            </a>
+            <img src="./assets/img/wechat.png" width="150;"  style="align-items:center;justify-content:center;overflow:hidden;"/>
+            <br />
+            <sub style="font-size:14px"><b>微信扫码加我好友</b></sub>
         </td>
     </tr>
 </table>

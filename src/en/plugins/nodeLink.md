@@ -4,8 +4,6 @@
 
 The NodeLink plugin is used to provide node linking functionality. You can link node 'b' to node 'a', and after successful addition, a link icon will be displayed on node 'a'. Clicking on the icon will redirect you to and activate node 'b'.
 
-You can activate a node in the online version by right clicking and selecting 'Link to specified node' from the right-click menu.
-
 ## Charge
 
 Please switch to the Chinese documentation for this plugin to view.

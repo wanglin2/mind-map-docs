@@ -4,10 +4,6 @@ HandDrawnLikeStyle 插件的功能是提供手绘风格的样式，也就是节�
 
 <img src="../assets/img/手绘风格.png" style="width: 800px" />
 
-你也可以在在线版中通过【基础样式】-【是否开启手绘风格】设置来开启手绘风格样式进行尝试。
-
-内部实现是通过[rough](https://github.com/rough-stuff/rough)库，所以如果你有精力，也可以自己基于这个库来实现这个插件。
-
 ## 收费
 
 > 暂不支持购买单个插件，只能打包购买所有收费插件。

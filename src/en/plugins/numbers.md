@@ -20,8 +20,6 @@ The Numbers plugin provides the function of one click numbering of child nodes o
 
 <img src="../../assets/img/编号3.jpg" style="width: 400px" />
 
-You can experience it in the online version by right clicking on the node and clicking on its numbered child nodes.
-
 ## Charge
 
 Please switch to the Chinese documentation for this plugin to view.

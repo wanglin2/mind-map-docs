@@ -12,8 +12,6 @@ The RightFishbone plugin is used to provide a layout structure for the right fis
 
 </p>
 
-You can switch between the 'Structure' list in the online version to experience it.
-
 ## Charge
 
 Please switch to the Chinese documentation for this plugin to view.

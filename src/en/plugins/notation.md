@@ -4,10 +4,6 @@ Notation plugin that provides tagging functionality for individual nodes, allowi
 
 <img src="../../assets/img/标记.jpg" style="width: 900px" />
 
-You can also experience it in the online version by activating the node first, and then clicking the 【notation】 button above to add a notation.
-
-The internal implementation is done through the [rough-notation](https://github.com/rough-stuff/rough-notation) library, so if you have the energy, you can also implement this plugin based on this library yourself.
-
 ## Charge
 
 Please switch to the Chinese documentation for this plugin to view.

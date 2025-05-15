@@ -4,10 +4,6 @@ HandDrawnLikeStyle plugin provides a hand drawn style, where the connections and
 
 <img src="../../assets/img/手绘风格.png" style="width: 800px" />
 
-You can also try to turn on the hand drawn style in the online version through the settings of 【 Basic Style 】 - 【 Enable Hand drawn Style 】.
-
-The internal implementation is through the [rough](https://github.com/rough-stuff/rough) library, so if you have the energy, you can also implement this plugin based on this library yourself.
-
 ## Charge
 
 Please switch to the Chinese documentation for this plugin to view.

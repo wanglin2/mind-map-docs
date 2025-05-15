@@ -1,5 +1,11 @@
 # Client
 
+## obsidian plugin
+
+Under development, please stay tuned~
+
+> Currently, there are some third-party developers using simple mind map to develop ob plugins. If payment is required, please purchase with caution.
+
 ## Independent Client
 
 This project also provides a client version using [Electron](https://www.electronjs.org/) Development. Supports 'Windows', 'Mac', and 'Linux'.
@@ -95,3 +101,7 @@ When editing a mind map, selecting multiple nodes is done by holding down the ri
 <img src="../assets/img/client/utools6.png" style="width: 800px" />
 
 So it is recommended to disable this feature or modify its triggering method. Set the path to: click on the avatar on the right side of the search box to enter the personal center ->click on the personal center in the bottom left corner ->click on settings ->close the super panel.
+
+## More
+
+We are actively exploring and developing plugins for various software. If you have any suggestions, please feel free to leave an issue message.

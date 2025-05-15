@@ -4,10 +4,6 @@ Notation 插件提供单个节点的标记功能，也就是可以在单个节�
 
 <img src="../assets/img/标记.jpg" style="width: 900px" />
 
-你也可以在在线版中进行体验，先激活节点，然后点击上方【标记】按钮添加标记。
-
-内部实现是通过[rough-notation](https://github.com/rough-stuff/rough-notation)库，所以如果你有精力，也可以自己基于这个库来实现这个插件。
-
 ## 收费
 
 > 暂不支持购买单个插件，只能打包购买所有收费插件。

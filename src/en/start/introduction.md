@@ -128,9 +128,9 @@ Unsupported: `IE` browser.
 
 ## License
 
-[MIT](https://github.com/wanglin2/mind-map/blob/main/LICENSE). You can use it for commercial purposes without retaining the copyright statement of 'mind-map'. If you don't want to keep it, you can contact the author.
+[MIT](https://github.com/wanglin2/mind-map/blob/main/LICENSE). You can use it for commercial purposes without retaining the copyright statement of 'simple-mind-map'. If you don't want to keep it, you can contact the author.
 
 > Example: You can add the following content to any page in your application, such as the About page, Help page, Documentation page, Open Source Declaration, etc.:
 >
-> The mind map feature of this product utilizes the SimpleMindMap project, [Open source protocol](https://github.com/wanglin2/mind-map/blob/main/LICENSE)。
+> This product's mind map is developed based on the SimpleMindMap project, and the copyright belongs to the source project,  [Open source protocol](https://github.com/wanglin2/mind-map/blob/main/LICENSE)。
 

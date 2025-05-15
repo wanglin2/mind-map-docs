@@ -2,8 +2,6 @@
 
 This plugin can be used to import and export Excel software in .xlsx file format.
 
-You can experience it in the online version.
-
 ## Changelog
 
 > v1.0.1

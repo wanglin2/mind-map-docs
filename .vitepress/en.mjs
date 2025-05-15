@@ -7,7 +7,7 @@ export const en = defineConfig({
     ...common,
 
     nav: [
-      { text: 'Online use', link: 'https://wanglin2.github.io/mind-map/' },
+      { text: 'Online trial', link: 'https://wanglin2.github.io/mind-map/' },
       {
         text: 'Start',
         link: '/en/start/introduction',

@@ -6,8 +6,6 @@ This plugin is used to support the flow effect of node connections. The flow eff
 
 <img src="../../assets/img/lineflow.gif" style="width: 400px" />
 
-You can experience it in the online version, which can be set in the "Basic Style" or "Node Style" sidebar.
-
 ## Charge
 
 Please switch to the Chinese documentation for this plugin to view.
