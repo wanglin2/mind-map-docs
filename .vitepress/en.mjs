@@ -31,8 +31,14 @@ export const en = defineConfig({
         text: 'More',
         items: [
           { text: 'Help', link: '/help/help1', activeMatch: '/help/' },
-          { text: 'Ideal Document', link: 'https://github.com/wanglin2/lx-doc' },
-          { text: 'Issues', link: 'https://github.com/wanglin2/mind-map/issues' }
+          {
+            text: 'Ideal Document',
+            link: 'https://github.com/wanglin2/lx-doc'
+          },
+          {
+            text: 'Issues',
+            link: 'https://github.com/wanglin2/mind-map/issues'
+          }
         ]
       }
     ],
@@ -155,28 +161,34 @@ export const en = defineConfig({
             { text: 'RainbowLines plugin', link: '/en/plugins/rainbowLines' },
             { text: 'Demonstrate plugin', link: '/en/plugins/demonstrate' },
             { text: 'OuterFrame plugin', link: '/en/plugins/outerFrame' },
-            { text: 'MindMapLayoutPro plugin', link: '/en/plugins/mindMapLayoutPro' },
-            { text: 'NodeBase64ImageStorage plugin', link: '/en/plugins/nodeBase64ImageStorage' }
-          ]
-        },
-        {
-          text: 'Charge',
-          items: [
             {
-              text: 'HandDrawnLikeStyle plugin',
-              link: '/en/plugins/handDrawnLikeStyle'
+              text: 'MindMapLayoutPro plugin',
+              link: '/en/plugins/mindMapLayoutPro'
             },
-            { text: 'Notation plugin', link: '/en/plugins/notation' },
-            { text: 'Numbers plugin', link: '/en/plugins/numbers' },
-            { text: 'Freemind plugin', link: '/en/plugins/freemind' },
-            { text: 'Excel plugin', link: '/en/plugins/excel' },
-            { text: 'Checkbox plugin', link: '/en/plugins/checkbox' },
-            { text: 'Lineflow plugin', link: '/en/plugins/lineflow' },
-            { text: 'Momentum plugin', link: '/en/plugins/momentum' },
-            { text: 'RightFishbone plugin', link: '/en/plugins/rightFishbone' },
-            { text: 'NodeLink plugin', link: '/en/plugins/nodeLink' }
+            {
+              text: 'NodeBase64ImageStorage plugin',
+              link: '/en/plugins/nodeBase64ImageStorage'
+            }
           ]
         }
+        // {
+        //   text: 'Charge',
+        //   items: [
+        //     {
+        //       text: 'HandDrawnLikeStyle plugin',
+        //       link: '/en/plugins/handDrawnLikeStyle'
+        //     },
+        //     { text: 'Notation plugin', link: '/en/plugins/notation' },
+        //     { text: 'Numbers plugin', link: '/en/plugins/numbers' },
+        //     { text: 'Freemind plugin', link: '/en/plugins/freemind' },
+        //     { text: 'Excel plugin', link: '/en/plugins/excel' },
+        //     { text: 'Checkbox plugin', link: '/en/plugins/checkbox' },
+        //     { text: 'Lineflow plugin', link: '/en/plugins/lineflow' },
+        //     { text: 'Momentum plugin', link: '/en/plugins/momentum' },
+        //     { text: 'RightFishbone plugin', link: '/en/plugins/rightFishbone' },
+        //     { text: 'NodeLink plugin', link: '/en/plugins/nodeLink' }
+        //   ]
+        // }
       ],
       '/help/': [
         { text: '概要/关联线', link: '/help/help1' },

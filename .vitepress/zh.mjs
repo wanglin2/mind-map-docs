@@ -22,7 +22,6 @@ export const zh = defineConfig({
       },
       { text: '赞助', link: '/sponsor' },
       { text: '客户端', link: '/client' },
-      { text: '收费资源', link: '/chargingResources' },
       { text: '博客', link: '/blog' },
       {
         text: '更多',
@@ -179,25 +178,25 @@ export const zh = defineConfig({
               link: '/plugins/nodeBase64ImageStorage'
             }
           ]
-        },
-        {
-          text: '收费',
-          items: [
-            {
-              text: 'HandDrawnLikeStyle插件',
-              link: '/plugins/handDrawnLikeStyle'
-            },
-            { text: 'Notation插件', link: '/plugins/notation' },
-            { text: 'Numbers插件', link: '/plugins/numbers' },
-            { text: 'Freemind插件', link: '/plugins/freemind' },
-            { text: 'Excel插件', link: '/plugins/excel' },
-            { text: 'Checkbox插件', link: '/plugins/checkbox' },
-            { text: 'Lineflow插件', link: '/plugins/lineflow' },
-            { text: 'Momentum插件', link: '/plugins/momentum' },
-            { text: 'RightFishbone插件', link: '/plugins/rightFishbone' },
-            { text: 'NodeLink插件', link: '/plugins/nodeLink' }
-          ]
         }
+        // {
+        //   text: '收费',
+        //   items: [
+        //     {
+        //       text: 'HandDrawnLikeStyle插件',
+        //       link: '/plugins/handDrawnLikeStyle'
+        //     },
+        //     { text: 'Notation插件', link: '/plugins/notation' },
+        //     { text: 'Numbers插件', link: '/plugins/numbers' },
+        //     { text: 'Freemind插件', link: '/plugins/freemind' },
+        //     { text: 'Excel插件', link: '/plugins/excel' },
+        //     { text: 'Checkbox插件', link: '/plugins/checkbox' },
+        //     { text: 'Lineflow插件', link: '/plugins/lineflow' },
+        //     { text: 'Momentum插件', link: '/plugins/momentum' },
+        //     { text: 'RightFishbone插件', link: '/plugins/rightFishbone' },
+        //     { text: 'NodeLink插件', link: '/plugins/nodeLink' }
+        //   ]
+        // }
       ],
       '/help/': [
         { text: '概要/关联线', link: '/help/help1' },
