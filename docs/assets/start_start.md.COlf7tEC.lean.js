@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.B358x4hV.js";const E=JSON.parse('{"title":"开始","description":"","frontmatter":{},"headers":[],"relativePath":"start/start.md","filePath":"start/start.md"}'),p={name:"start/start.md"},e=n("",51),t=[e];function l(h,d,k,o,c,r){return a(),i("div",null,t)}const m=s(p,[["render",l]]);export{E as __pageData,m as default};

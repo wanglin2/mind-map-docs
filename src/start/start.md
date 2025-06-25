@@ -22,8 +22,6 @@ npm i simple-mind-map
 
 > 本仓库的`web`目录提供了一个基于`Vue2`的完整项目，如果你遇到了一些使用上的疑惑，可以参考该项目的实现。
 >
-> 我们也提供付费版的`Vue3`版本，详细详细：[适配Vue3的完整Demo](../chargingResources.md#适配vue3的完整demo)
->
 > 想要了解在其他框架中的使用，你可以参考以下这些非官方的实现：
 >
 > 1.[https://github.com/huangyuanyin/hyy-vue3-mindMap](https://github.com/huangyuanyin/hyy-vue3-mindMap)：一个基于 Vue3.2 +ElementPlus的思维导图。
