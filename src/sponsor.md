@@ -39,6 +39,10 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
         <img src="./assets/avatar/沨沄.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>沨沄</p>
     </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;flex-shrink: 0;">
+        <img src="./assets/avatar/行.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>行</p>
+    </div>
 </div>
 
 ### 黄金赞助
@@ -522,5 +526,9 @@ simple-mind-map 的目标是成为开源中最好的思维导图，为开发者�
     <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
         <img src="./assets/avatar/神话.jpg" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
         <p>神话</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; width: fit-content; margin: 5px;flex-shrink: 0;">
+        <img src="./assets/avatar/default.png" style="width: 50px;height: 50px;object-fit: cover;border-radius: 50%;" />
+        <p>安嘉</p>
     </div>
 </div>
