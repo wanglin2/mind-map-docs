@@ -2,9 +2,19 @@
 
 ## obsidian插件
 
-正在开发中，敬请期待~
+首个版本已发布，下载地址：[https://github.com/wanglin2/obsidian-simplemindmap/releases](https://github.com/wanglin2/obsidian-simplemindmap/releases)
 
-> 目前存在一些第三方开发者使用 simple-mind-map 开发的 ob 插件，如需付费，请谨慎购买。
+上架obsidian插件市场正在审核中，审核通过之前下载安装方式如下：
+
+1.下载`main.js`、`manifest.json`、`styles.css`三个文件到本地；
+
+2.打开obsidian，在设置-第三方插件-已安装插件右侧点击【目录】图标按钮打开插件目录，
+
+3.新建一个文件夹，名称为：obsidian-simplemindma，将下载好的三个文件复制到该目录下；
+
+4.重启ob，或在设置-第三方插件-已安装插件右侧点击【刷新】图标按钮，然后找到`Simple mind map`，点击【启用】按钮即可启用该插件。
+
+功能可以参考：[https://github.com/wanglin2/obsidian-simplemindmap?tab=readme-ov-file#simplemindmap-obsidian-plugin](https://github.com/wanglin2/obsidian-simplemindmap?tab=readme-ov-file#simplemindmap-obsidian-plugin)。
 
 ## 独立客户端
 
