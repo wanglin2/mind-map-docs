@@ -119,12 +119,8 @@
 
 ## License
 
-[MIT](https://github.com/wanglin2/mind-map/blob/main/LICENSE)。保留`simple-mind-map`版权声明的情况下可随意商用。如不想保留可联系作者通过付费的方式去除。
+[MIT](https://github.com/wanglin2/mind-map/blob/main/LICENSE)。保留`simple-mind-map`版权声明的情况下可随意商用。如不想保留可联系作者（微信：wanglinguanfang）通过付费的方式去除。
 
 > 示例：可以在你应用中的关于页面、帮助页面、文档页面、开源声明等任何页面添加以下内容：
 >
 > 本产品思维导图基于SimpleMindMap项目开发，版权归源项目所有，[开源协议](https://github.com/wanglin2/mind-map/blob/main/LICENSE)。
-
-## 微信交流群
-
-微信添加wanglinguanfang拉你入群。根据过往的经验，大部分问题都可以通过查看issue列表或文档解决，所以提问前请确保你已经阅读完了所有文档，文档里没有的可在群里提问，不必私聊作者，如果你一定要私聊，请先赞助本项目（￥200+）。
