@@ -20,35 +20,9 @@
 
 本项目也提供了独立客户端版本，使用[Electron](https://www.electronjs.org/)开发。支持`Windows`、`Mac`及`Linux`系统。
 
-> v0.13.1+版本的客户端支持AI功能。
-
-功能简介：
-
-1.支持新建、打开文件进行编辑；
-
-2.支持查看最近编辑文件列表；
-
-3.支持文件的复制、删除、重命名；
-
-`v0.13.1+`版本新增如下特性：
-
-1.支持多选文件进行删除，包括删除源文件，和从列表中删除；
-
-2.支持打开指定目录，自动扫描目录下的思维导图文件，一般来说，我们都会把相关的思维导图文件都放到同一个目录下，所以有了这个功能，就能方便的切换同个目录下的其他文件进行编辑；
-
-3.主界面也支持了暗黑模式，并且设置里也增加了暗黑模式的设置选项；
-
 ### 下载
 
-> 客户端版本会落后于在线版本，要尝试新功能请优先使用在线版。
-
-你可以直接下载对应的客户端安装使用，提供了两个下载地址：
-
-1.[Github](https://github.com/wanglin2/mind-map/releases)
-
-2.[百度云盘](https://pan.baidu.com/s/1huasEbKsGNH2Af68dvWiOg?pwd=3bp3)
-
-3.[夸克网盘](https://pan.quark.cn/s/d1594add58d8)
+下载地址：[Github](https://github.com/wanglin2/mind-map/releases)
 
 Linux 用户也可以通过 Flathub 下载：
 

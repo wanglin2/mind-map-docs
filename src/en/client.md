@@ -10,33 +10,9 @@ Under development, please stay tuned~
 
 This project also provides a client version using [Electron](https://www.electronjs.org/) Development. Supports 'Windows', 'Mac', and 'Linux'.
 
-> The v0.13.1+version of the client supports AI functionality.
-
-Function Introduction:
-
-1. Support creating and opening files for editing;
-
-2. Support viewing the list of recently edited files;
-
-3. Support the copying, deletion, and renaming of files;
-
-`The v0.13.1+` version has added the following features:
-
-1. Support deleting multiple files, including deleting source files and deleting from lists;
-
-2. Support opening specified directories and automatically scanning mind map files in the directory. Generally speaking, we will put all relevant mind map files in the same directory, so with this function, it is easy to switch to other files in the same directory for editing;
-
-3. The main interface also supports dark mode, and the settings have added options for setting dark mode;
-
 ### Download
 
-> The client version may lag behind the online version. To try new features, please prioritize using the online version.
-
-You can directly download the corresponding client for installation and use, and two download addresses are provided:
-
-1.[Github](https://github.com/wanglin2/mind-map/releases)
-
-2.[Baidu cloud disk](https://pan.baidu.com/s/1huasEbKsGNH2Af68dvWiOg?pwd=3bp3)
+Download address: [Github](https://github.com/wanglin2/mind-map/releases)
 
 Linux users can also download from Flathub:
 

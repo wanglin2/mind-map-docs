@@ -5,7 +5,7 @@ layout: home
 hero:
   name: 'SimpleMindMap'
   text: 'A powerful web mind map'
-  tagline: It is a JS mind mapping library and a complete mind mapping tool
+  tagline: It is a JS mind mapping library and a powerful mind mapping software
   image: /home.png
   actions:
     - theme: brand
@@ -23,5 +23,5 @@ features:
   - title: Easy to use
     details: Ready to use out of the box, easy to get started, rich in configuration, and clear documentation.
   - title: It's both a JS library and a tool
-    details: Not only is it a framework independent JS library, but it also provides a fully functional web version and client-side mind mapping tool.
+    details: Not only is it a framework independent JS library, but it also provides a fully functional web version and client-side mind mapping software.
 ---

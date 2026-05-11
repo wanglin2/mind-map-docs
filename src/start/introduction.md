@@ -16,13 +16,15 @@
 
 > 1. 独立客户端，支持`Windows`、`Mac`及`Linux`系统。
 >
-> 下载地址：[Github](https://github.com/wanglin2/mind-map/releases)、[百度云盘](https://pan.baidu.com/s/1huasEbKsGNH2Af68dvWiOg?pwd=3bp3)
+> 下载地址：[Github](https://github.com/wanglin2/mind-map/releases)
 
 > 2. `uTools`插件，现已上架[uTools](https://www.u.tools/)插件应用市场。
 >
 > 可直接在`uTools`插件应用市场中搜索思绪进行安装，也可以直接访问该地址：[主页](https://www.u-tools.cn/plugins/detail/%E6%80%9D%E7%BB%AA%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/)，点击右侧的【启动】按钮进行安装。[点此了解更多](../client)。
 
-> 3.`obsidian`插件正在开发中，敬请期待~
+> 3.`obsidian`插件。
+>
+> 下载地址：[Github](https://github.com/wanglin2/obsidian-simplemindmap)
 
 - 云存储版本，如果你需要带后端的云存储版本，可以尝试我们开发的另一个项目[理想文档](https://github.com/wanglin2/lx-doc)。
 
