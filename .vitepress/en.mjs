@@ -7,7 +7,7 @@ export const en = defineConfig({
     ...common,
 
     nav: [
-      { text: 'Online trial', link: 'https://wanglin2.github.io/mind-map/' },
+      { text: 'Online trial', link: 'http://web.sxmind.cn/' },
       {
         text: 'Start',
         link: '/en/start/introduction',
@@ -25,7 +25,7 @@ export const en = defineConfig({
         activeMatch: '/en/plugins/'
       },
       { text: 'Sponsor', link: '/sponsor' },
-      { text: 'Client', link: '/en/client' },
+      { text: 'Client', link: 'http://sxmind.cn/' },
       { text: 'Blog', link: '/en/blog' },
       {
         text: 'More',

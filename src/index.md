@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: 在线使用
-      link: https://wanglin2.github.io/mind-map/
+      link: http://web.sxmind.cn/
     - theme: alt
       text: 快速开始
       link: /start/start

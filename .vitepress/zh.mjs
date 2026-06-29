@@ -7,7 +7,7 @@ export const zh = defineConfig({
     ...common,
 
     nav: [
-      { text: '在线试用', link: 'https://wanglin2.github.io/mind-map/' },
+      { text: '在线试用', link: 'http://web.sxmind.cn/' },
       { text: '开始', link: '/start/introduction', activeMatch: '/start/' },
       { text: '教程', link: '/course/course1', activeMatch: '/course/' },
       {
@@ -21,7 +21,7 @@ export const zh = defineConfig({
         activeMatch: '/plugins/'
       },
       { text: '赞助', link: '/sponsor' },
-      { text: '客户端', link: '/client' },
+      { text: '客户端', link: 'http://sxmind.cn/' },
       { text: '博客', link: '/blog' },
       {
         text: '更多',
