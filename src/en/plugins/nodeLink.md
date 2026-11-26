@@ -15,7 +15,7 @@ Please switch to the Chinese documentation for this plugin to view.
 ```js
 import MindMap from 'simple-mind-map'
 import NodeLink from 'nodeLink.cjs.min.js'
-// 或 import NodeLink from 'nodeLink.esm.min.js'
+// or import NodeLink from 'nodeLink.esm.min.js'
 
 MindMap.usePlugin(NodeLink, opt)
 ```

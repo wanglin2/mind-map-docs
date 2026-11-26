@@ -104,7 +104,7 @@ Focus.
 
 ```js
 {
-    font: '字体',
+    font: 'Font family',
     size: '12px,' // font size
     bold: true, // Bold or not, true/false 
     italic: true, // Italic or not, true/false 

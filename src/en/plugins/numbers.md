@@ -83,7 +83,7 @@ This command can pass two parameters:
 
 When calling a command, you can pass only one field, such as '{type: 1}', and the other field will use the previous setting.
 
-示例：
+Example:
 
 ```js
 mindMap.execCommand('SET_NUMBER', [], {

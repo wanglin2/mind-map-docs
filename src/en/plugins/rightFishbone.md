@@ -23,7 +23,7 @@ Please switch to the Chinese documentation for this plugin to view.
 ```js
 import MindMap from 'simple-mind-map'
 import RightFishbone from 'rightFishbone.cjs.min.js'
-// 或 import RightFishbone from 'rightFishbone.esm.min.js'
+// or import RightFishbone from 'rightFishbone.esm.min.js'
 
 MindMap.usePlugin(RightFishbone)
 ```

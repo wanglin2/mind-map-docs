@@ -52,11 +52,11 @@ Enter 思绪 and search to find the Mind Map plugin:
 
 <img src="../assets/img/client/utools2.png" style="width: 800px" />
 
-Click the 【获取】 button on the right to install.
+Click the 【获取】 (Get) button on the right to install.
 
 <img src="../assets/img/client/utools3.png" style="width: 800px" />
 
-After installation, you can click on 【打开】 to enter the usage mode~
+After installation, you can click on 【打开】 (Open) to enter the usage mode~
 
 To use it in the future, simply use the `ALT+Space` keys to call up the search box, enter 【思绪】, and press enter to open it:
 
