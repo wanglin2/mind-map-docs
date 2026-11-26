@@ -144,7 +144,7 @@ The basic data structure is as follows:
     expand: true, // Whether the node is expanded
     isActive: false,// Whether is the activated state
     uid: '',// The unique ID of the node, which may not be passed, will be generated internally
-    icon: [], // The format of the icon can be found in the "插入和扩展节点图标" section of the tutorial
+    icon: [], // For the icon format, see the tutorial on inserting and extending node icons (/course/course19, in Chinese)
     image: '', // URL of the image
     imageTitle: '', // The title of the image can be blank
     imageSize: { // The size of the image

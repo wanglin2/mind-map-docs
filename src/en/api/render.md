@@ -64,7 +64,7 @@ The highlight effect is wrapped by a rectangular box.
 
 > v0.9.0+
 
-隐藏节点高亮框。
+Hides the node highlight box.
 
 ### setRootNodeCenter()
 

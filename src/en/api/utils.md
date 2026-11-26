@@ -328,14 +328,14 @@ Gets the position index of a node within its peers.
 
 ```js
 // const data = [
-//   { type: 'priority', name: '优先级图标', list: [{ name: '1', icon: 'a' }, { name: 2, icon: 'b' }] },
-//   { type: 'priority', name: '优先级图标', list: [{ name: '2', icon: 'c' }, { name: 3, icon: 'd' }] },
+//   { type: 'priority', name: 'Priority icon', list: [{ name: '1', icon: 'a' }, { name: 2, icon: 'b' }] },
+//   { type: 'priority', name: 'Priority icon', list: [{ name: '2', icon: 'c' }, { name: 3, icon: 'd' }] },
 // ];
 
 // mergerIconList(data)  result:
 
 // [
-//   { type: 'priority', name: '优先级图标', list: [{ name: '1', icon: 'a' }, { name: 2, icon: 'c' }, { name: 3, icon: 'd' }] },
+//   { type: 'priority', name: 'Priority icon', list: [{ name: '1', icon: 'a' }, { name: 2, icon: 'c' }, { name: 3, icon: 'd' }] },
 // ]
 ```
 

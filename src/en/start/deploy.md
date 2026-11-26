@@ -177,7 +177,7 @@ After the installation is completed, check the container's running status throug
 
 Open 127.0.0.1:8081 in the browser to use the Web mind map function.
 
-[在群晖上以 Docker 方式安装](https://laosu.gq/2023/09/02/%E5%BC%BA%E5%A4%A7%E7%9A%84%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E5%BA%93SimpleMindMap/)
+[Installing with Docker on Synology (in Chinese)](https://laosu.gq/2023/09/02/%E5%BC%BA%E5%A4%A7%E7%9A%84%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E5%BA%93SimpleMindMap/)
 
 ## Deployment instructions for using Baota Panel Docker
 
@@ -187,7 +187,7 @@ Open 127.0.0.1:8081 in the browser to use the Web mind map function.
 
 Before deploying this project through the Pagoda Panel, you need to install the Pagoda Panel tool on the server first.
  The next deployment process is built on the premise of the existing pagoda panel.
- Please refer to the installation of the pagoda ([宝塔官网](https://www.bt.cn/new/download.html?r=dk_simple))。
+ Please refer to the installation of the pagoda ([Pagoda (BT) Panel official website](https://www.bt.cn/new/download.html?r=dk_simple)).
 
 > Attention: This project requires Pagoda panel version 9.2.0 and above
 
@@ -254,7 +254,7 @@ This line of code will prompt the application not to initialize the application 
           mindMapData: {
             root: {
               "data": {
-                  "text": "根节点"
+                  "text": "Root node"
               },
               "children": []
             },

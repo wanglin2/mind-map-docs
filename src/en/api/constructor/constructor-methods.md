@@ -16,15 +16,15 @@ Define new theme.
 
 ```js
 import MindMap from 'simple-mind-map'
-// 注册新主题
+// Register a new theme
 MindMap.defineTheme('Theme name', {})
 
-// 1.实例化时使用新注册的主题
+// 1.Use the newly registered theme during instantiation
 const mindMap = new MindMap({
     theme: 'Theme name'
 })
 
-// 2.动态切换新主题
+// 2.Switch to the new theme dynamically
 mindMap.setTheme('Theme name')
 ```
 
@@ -351,7 +351,7 @@ Update config，That is update `opt` of `new MindMap(opt)`，You can only update
 
 ```js
 mindMap.updateConfig({
-    enableFreeDrag: true// 开启节点自由拖拽
+    enableFreeDrag: true// Enable node free drag
 })
 ```
 

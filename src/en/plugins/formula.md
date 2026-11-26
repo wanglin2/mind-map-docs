@@ -6,8 +6,6 @@
 
 This plugin is used to support inserting formulas into nodes.
 
-> 注意：公式是通过[KaTeX](https://github.com/KaTeX/KaTeX)库实现的，`KaTeX`提供了一些配置，插件默认的一个配置是：
-
 > Note: The formula is implemented through the [KaTeX](https://github.com/KaTeX/KaTeX) library, and 'KaTeX' provides some configurations. The default configuration for the plugin is:
 
 ```js
