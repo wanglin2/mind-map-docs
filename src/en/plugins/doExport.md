@@ -125,6 +125,10 @@ MindMap.usePlugin(ExportPDF)
 
 Return `json` data.
 
+### smm(name, withConfig)
+
+The custom file format of `simple-mind-map`. It is plain `json`, with the same data that the `json` method returns.
+
 ### md()
 
 > v0.4.7+

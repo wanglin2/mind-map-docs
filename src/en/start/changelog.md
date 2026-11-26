@@ -314,7 +314,7 @@ Fix:
 >
 > 10.Fixed the issue where the editing box would render abnormally when there are empty lines in the associated line text.
 
-新增：
+New:
 
 > 1.Added a plugin to change the layout structure of [Mind Maps], making it more in line with the practices of current mainstream mind mapping tools;
 >
@@ -899,15 +899,15 @@ New:
 
 Demo：
 
-> 1.支持配置水印显示在节点下方；
+> 1.Support configuring the watermark to be displayed beneath nodes;
 >
-> 2.导入存在多个画布的xmind文件支持选择指定的画布进行导入；
+> 2.When importing an xmind file with multiple canvases, support selecting the canvas to import;
 >
-> 3.优化富文本工具条下拉选项列表高度问题；
+> 3.Improve the height of the drop-down option list in the rich text toolbar;
 >
-> 4.新建和打开按钮增加导出的提示，防止内容丢失；
+> 4.Add an export reminder to the New and Open buttons to prevent content loss;
 >
-> 5.快捷键提示支持区分windows和mac；
+> 5.Shortcut key hints now distinguish between Windows and Mac;
 
 ## 0.9.12
 
@@ -1367,7 +1367,7 @@ New:
 >
 > 5.When the mouse scroll wheel behavior is to move the canvas up and down, it supports holding down the Ctrl key to zoom in and out of the canvas.
 
-Demo：支持配置创建新节点时的行为。
+Demo: Support configuring the behavior when creating new nodes.
 
 ## 0.9.0
 
@@ -1610,7 +1610,7 @@ Fix:
 >
 > 3.Fix that selecting all did not trigger node_ The issue with active events.
 
-新增：
+New:
 
 > 1.When folding nodes, displays the number of collapsed nodes.
 >
